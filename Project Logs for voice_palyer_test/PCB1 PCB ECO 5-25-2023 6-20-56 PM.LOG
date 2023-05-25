@@ -1,0 +1,12 @@
+Added Component: Designator=VR1(DPAK456P1010X240-3N)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "STMicroelectronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "LD1117DT33TR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "TO-252 STMicroelectronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/LD1117DT33TR/STMicroelectronics/view-part/8105/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=VR1-1
+Added Pin To Net: NetName=+5V Pin=VR1-3
+Added Pin To Net: NetName=+3v3 Pin=VR1-4
+Added Member To Class: ClassName=power Member=Component VR1 LD1117DT33TR
