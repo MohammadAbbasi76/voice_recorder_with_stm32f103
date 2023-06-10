@@ -1,0 +1,59 @@
+Removed Member From Class: ClassName=MCU Member=U?
+Removed Member From Class: ClassName=power Member=U?
+Change Component Designator: OldDesignator=C7 NewDesignator=C8
+Change Component Designator: OldDesignator=C8 NewDesignator=C9
+Change Component Designator: OldDesignator=C9 NewDesignator=C10
+Change Component Designator: OldDesignator=C10 NewDesignator=C11
+Change Component Designator: OldDesignator=K? NewDesignator=K1
+Change Component Designator: OldDesignator=U1 NewDesignator=U2
+Change Component Designator: OldDesignator=U? NewDesignator=U1
+Change Component Designator: OldDesignator=U? NewDesignator=U3
+Add Component: Footprint Not Found WCAP-ASLI_5x5.5
+Add Component: Footprint Not Found 0805 Capacitor
+Add Component: Footprint Not Found 0805 Capacitor
+Add Component: Footprint Not Found 0805 Capacitor
+Add Component: Footprint Not Found Tantalium Size B
+Add Component: Footprint Not Found DIOM4629X24N
+Add Component: Footprint Not Found HDR1X20
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found PH2P5.08
+Add Component: Footprint Not Found PH2P5.08
+Add Pin To Net: Unknown Pin: Pin C5-1
+Add Pin To Net: Unknown Pin: Pin C5-2
+Add Pin To Net: Unknown Pin: Pin C6-1
+Add Pin To Net: Unknown Pin: Pin C6-2
+Add Pin To Net: Unknown Pin: Pin C7-1
+Add Pin To Net: Unknown Pin: Pin C7-2
+Add Pin To Net: Unknown Pin: Pin Ct3-1
+Add Pin To Net: Unknown Pin: Pin Ct3-2
+Add Pin To Net: Unknown Pin: Pin d4-1
+Add Pin To Net: Unknown Pin: Pin d4-2
+Added Pin To Net: NetName=NetC7_2 Pin=P1-14
+Add Pin To Net: Unknown Pin: Pin P2-7
+Add Pin To Net: Unknown Pin: Pin P2-8
+Add Pin To Net: Unknown Pin: Pin P2-9
+Add Pin To Net: Unknown Pin: Pin P2-12
+Add Pin To Net: Unknown Pin: Pin P2-13
+Add Pin To Net: Unknown Pin: Pin P2-14
+Add Pin To Net: Unknown Pin: Pin P2-19
+Add Pin To Net: Unknown Pin: Pin P2-20
+Add Pin To Net: Unknown Pin: Pin R6-1
+Change Net Name : Old Net Name=NetC7_2 New Net Name=Accept_key
+Change Net Name : Old Net Name=NetC8_2 New Net Name=pause_key
+Change Net Name : Old Net Name=NetC9_2 New Net Name=Record_key
+Change Net Name : Old Net Name=NetC10_2 New Net Name=play_key
+Added Pin To Net: NetName=Audio_output_swtich Pin=P1-13
+Added Net: Name=Audio_output_swtich
+Added Net: Name=NetC12_1
+Add Class Member: Failed to add class member : Component C5 100uF, 25V
+Add Class Member: Failed to add class member : Component C6
+Add Class Member: Failed to add class member : Component C7
+Add Class Member: Failed to add class member : Component C12
+Add Class Member: Failed to add class member : Component Ct3 10uF
+Add Class Member: Failed to add class member : Component d4 Smbj5v
+Add Class Member: Failed to add class member : Component P2 Header 20
+Add Class Member: Failed to add class member : Component R6 10k
+Add Class Member: Failed to add class member : Component TO2 PHOENIX
+Add Class Member: Failed to add class member : Component TO3 PHOENIX
+Added Member To Class: ClassName=power Member=Component U2 L7805CDT
+Added Member To Class: ClassName=MCU Member=Component U3 W25Q64BVSSIG

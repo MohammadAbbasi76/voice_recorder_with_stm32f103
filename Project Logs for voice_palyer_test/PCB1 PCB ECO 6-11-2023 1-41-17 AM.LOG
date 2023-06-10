@@ -1,0 +1,44 @@
+Removed Pin From Net: NetName=GND Pin=IC1-1
+Removed Pin From Net: NetName=+5V Pin=IC1-3
+Removed Pin From Net: NetName=+3v3 Pin=IC1-4
+Removed Member From Class: ClassName=power Member=IC1
+Change Component Comment : Designator=U1 Old Comment=L7812CDT New Comment=L7805CDT
+Add Component: Footprint Not Found WCAP-ASLI_5x5.5
+Add Component: Footprint Not Found WCAP-ASLI_5x5.5
+Add Component: Footprint Not Found 0805 Capacitor
+Add Component: Footprint Not Found Tantalium Size B
+Add Component: Footprint Not Found DIOM4629X24N
+Add Component: Footprint Not Found DIP794W53P254L959H508Q8N
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found PH2P5.08
+Add Component: Footprint Not Found PH2P5.08
+Added Component: Designator=U?(TO228P972X240-3N)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "{'manufacturer': u'STMicroelectronics'}"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "LF33CDT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Add Pin To Net: Unknown Pin: Pin C5-1
+Add Pin To Net: Unknown Pin: Pin C5-2
+Add Pin To Net: Unknown Pin: Pin C6-1
+Add Pin To Net: Unknown Pin: Pin C6-2
+Add Pin To Net: Unknown Pin: Pin Ct3-1
+Add Pin To Net: Unknown Pin: Pin Ct3-2
+Add Pin To Net: Unknown Pin: Pin d4-1
+Add Pin To Net: Unknown Pin: Pin d4-2
+Added Pin To Net: NetName=Vin Pin=U?-1
+Added Pin To Net: NetName=GND Pin=U?-2
+Added Pin To Net: NetName=+3v3 Pin=U?-3
+Add Class Member: Failed to add class member : Component C5 100uF, 25V
+Add Class Member: Failed to add class member : Component C6 100uF, 25V
+Added Member To Class: ClassName=other Member=Component C7
+Added Member To Class: ClassName=other Member=Component C8
+Add Class Member: Failed to add class member : Component C11
+Add Class Member: Failed to add class member : Component Ct3 10uF
+Add Class Member: Failed to add class member : Component d4 Smbj5v
+Add Class Member: Failed to add class member : Component IC2 TL081BCP
+Add Class Member: Failed to add class member : Component R6 10k
+Add Class Member: Failed to add class member : Component TO2 PHOENIX
+Add Class Member: Failed to add class member : Component TO3 PHOENIX
+Added Member To Class: ClassName=power Member=Component U? LF33CDT

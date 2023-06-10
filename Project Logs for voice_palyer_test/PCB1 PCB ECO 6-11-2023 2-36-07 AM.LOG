@@ -1,0 +1,78 @@
+Removed Pin From Net: NetName=GND Pin=P2-19
+Removed Pin From Net: NetName=+3v3 Pin=P2-20
+Removed Member From Class: ClassName=MCU Member=P2
+Add Component: Footprint Not Found WCAP-ASLI_5x5.5
+Add Component: Footprint Not Found 0805 Capacitor
+Add Component: Footprint Not Found 0805 Capacitor
+Add Component: Footprint Not Found 0805 Capacitor
+Add Component: Footprint Not Found Tantalium Size B
+Add Component: Footprint Not Found DIOM4629X24N
+Added Component: Designator=K?(G6A234PSTUS5DC)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = "G6A-234P-ST-US 5DC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/g6a234pstus5dc/omron"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://componentsearchengine.com/Datasheets/2/G6A-234P-ST-US 5DC.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "8.4mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Omron Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "G6A-234P-ST-US 5DC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Testing Part Number"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Testing Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Add Component: Footprint Not Found HDR1X20
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found PH2P5.08
+Add Component: Footprint Not Found PH2P5.08
+Added Component: Designator=U?(SOIC127P790X216-8N)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "{'manufacturer': u'Winbond Electronics'}"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "W25Q64BVSSIG"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Add Pin To Net: Unknown Pin: Pin C5-1
+Add Pin To Net: Unknown Pin: Pin C5-2
+Add Pin To Net: Unknown Pin: Pin C?-1
+Add Pin To Net: Unknown Pin: Pin C?-1
+Add Pin To Net: Unknown Pin: Pin C?-2
+Add Pin To Net: Unknown Pin: Pin C?-2
+Add Pin To Net: Unknown Pin: Pin Ct3-1
+Add Pin To Net: Unknown Pin: Pin Ct3-2
+Add Pin To Net: Unknown Pin: Pin d4-1
+Add Pin To Net: Unknown Pin: Pin d4-2
+Add Pin To Net: Unknown Pin: Pin P?-19
+Add Pin To Net: Unknown Pin: Pin P?-20
+Add Pin To Net: Unknown Pin: Pin R6-1
+Added Pin To Net: NetName=GND Pin=U?-4
+Added Pin To Net: NetName=+3v3 Pin=U?-7
+Added Pin To Net: NetName=+3v3 Pin=U?-8
+Added Pin To Net: NetName=Accept_key Pin=P1-14
+Added Net: Name=Accept_key
+Added Pin To Net: NetName=ADC Pin=P1-8
+Added Net: Name=ADC
+Added Pin To Net: NetName=Flash_CS Pin=P1-9
+Added Pin To Net: NetName=Flash_CS Pin=U?-1
+Added Net: Name=Flash_CS
+Added Net: Name=NetC11_1
+Added Pin To Net: NetName=PMW Pin=P1-11
+Added Net: Name=PMW
+Added Pin To Net: NetName=Spi_clk Pin=U?-6
+Added Net: Name=Spi_clk
+Added Pin To Net: NetName=Spi_miso Pin=U?-2
+Added Net: Name=Spi_miso
+Added Pin To Net: NetName=Spi_mosi Pin=U?-5
+Added Net: Name=Spi_mosi
+Added Net: Name=Uart_CT
+Added Net: Name=Uart_rx
+Added Net: Name=Uart_tx
+Add Class Member: Failed to add class member : Component C5 100uF, 25V
+Add Class Member: Failed to add class member : Component C11
+Add Class Member: Failed to add class member : Component C?
+Add Class Member: Failed to add class member : Component C?
+Add Class Member: Failed to add class member : Component Ct3 10uF
+Add Class Member: Failed to add class member : Component d4 Smbj5v
+Added Member To Class: ClassName=other Member=Component K? G6A-234P-ST-US_5DC
+Add Class Member: Failed to add class member : Component P? Header 20
+Add Class Member: Failed to add class member : Component R6 10k
+Add Class Member: Failed to add class member : Component TO2 PHOENIX
+Add Class Member: Failed to add class member : Component TO3 PHOENIX
+Added Member To Class: ClassName=MCU Member=Component U? W25Q64BVSSIG
