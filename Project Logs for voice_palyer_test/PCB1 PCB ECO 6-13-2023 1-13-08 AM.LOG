@@ -1,0 +1,156 @@
+Change Component Footprint: Designator=C3 Old Footprint=0805 Capacitor New Footprint=CAP805
+Change Component Footprint: Designator=C4 Old Footprint=0805 Capacitor New Footprint=CAP805
+Change Component Footprint: Designator=C12 Old Footprint=0805 Capacitor New Footprint=CAP805
+Change Component Footprint: Designator=C13 Old Footprint=0805 Capacitor New Footprint=CAP805
+Change Component Footprint: Designator=C14 Old Footprint=0805 Capacitor New Footprint=CAP805
+Change Component Footprint: Designator=C15 Old Footprint=0805 Capacitor New Footprint=CAP805
+Add Component: Footprint Not Found WCAP-ASLI_5x5.5
+Added Component: Designator=C6(CAP805)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Added Component: Designator=C7(CAP805)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Added Component: Designator=C8(CAP805)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Added Component: Designator=C9(CAP805)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1uF"; VariantName = "[No Variations]"
+Added Component: Designator=C10(CAP805)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1uF"; VariantName = "[No Variations]"
+Added Component: Designator=C11(CAP805)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1uF"; VariantName = "[No Variations]"
+Added Component: Designator=C16(CAP805)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1uF"; VariantName = "[No Variations]"
+Added Component: Designator=C17(CAP805)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Add Component: Footprint Not Found WCAP-ASLI_5x5.5
+Added Component: Designator=C?(CAP805)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Add Component: Footprint Not Found Tantalium Size B
+Add Component: Footprint Not Found DIOM4629X24N
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found DIOM4629X24N
+Add Component: Footprint Not Found PH2P5.08
+Add Pin To Net: Unknown Pin: Pin C5-1
+Add Pin To Net: Unknown Pin: Pin C5-2
+Added Pin To Net: NetName=GND Pin=C6-1
+Added Pin To Net: NetName=+5V Pin=C6-2
+Added Pin To Net: NetName=GND Pin=C7-1
+Added Pin To Net: NetName=+3v3 Pin=C7-2
+Added Pin To Net: NetName=+5V Pin=C8-1
+Added Pin To Net: NetName=GND Pin=C8-2
+Added Pin To Net: NetName=+5V Pin=C9-1
+Added Pin To Net: NetName=NetC9_2 Pin=C9-2
+Added Pin To Net: NetName=NetC10_1 Pin=C10-1
+Added Pin To Net: NetName=NetC10_2 Pin=C10-2
+Added Pin To Net: NetName=NetC11_1 Pin=C11-1
+Added Pin To Net: NetName=NetC11_2 Pin=C11-2
+Added Pin To Net: NetName=GND Pin=C16-1
+Added Pin To Net: NetName=NetC16_2 Pin=C16-2
+Added Pin To Net: NetName=PWM_after_filter Pin=C17-1
+Add Pin To Net: Unknown Pin: Pin C18-1
+Add Pin To Net: Unknown Pin: Pin C18-2
+Added Pin To Net: NetName=Vin Pin=C?-1
+Added Pin To Net: NetName=GND Pin=C?-2
+Add Pin To Net: Unknown Pin: Pin Ct3-1
+Add Pin To Net: Unknown Pin: Pin Ct3-2
+Add Pin To Net: Unknown Pin: Pin d4-1
+Add Pin To Net: Unknown Pin: Pin d4-2
+Add Pin To Net: Unknown Pin: Pin R2-1
+Add Pin To Net: Unknown Pin: Pin R2-2
+Add Pin To Net: Unknown Pin: Pin R7-1
+Add Pin To Net: Unknown Pin: Pin R7-2
+Add Pin To Net: Unknown Pin: Pin R8-1
+Add Pin To Net: Unknown Pin: Pin R8-2
+Add Pin To Net: Unknown Pin: Pin R9-1
+Add Pin To Net: Unknown Pin: Pin R9-2
+Add Pin To Net: Unknown Pin: Pin R10-1
+Add Pin To Net: Unknown Pin: Pin R10-2
+Add Pin To Net: Unknown Pin: Pin R11-1
+Add Pin To Net: Unknown Pin: Pin R11-2
+Add Pin To Net: Unknown Pin: Pin R12-1
+Add Pin To Net: Unknown Pin: Pin R12-2
+Add Pin To Net: Unknown Pin: Pin R13-1
+Add Pin To Net: Unknown Pin: Pin R13-2
+Add Pin To Net: Unknown Pin: Pin R14-1
+Add Pin To Net: Unknown Pin: Pin R14-2
+Add Pin To Net: Unknown Pin: Pin R15-1
+Add Pin To Net: Unknown Pin: Pin R15-2
+Add Pin To Net: Unknown Pin: Pin R16-1
+Add Pin To Net: Unknown Pin: Pin R16-2
+Add Pin To Net: Unknown Pin: Pin ss?-1
+Add Pin To Net: Unknown Pin: Pin ss?-2
+Add Pin To Net: Unknown Pin: Pin TO3-1
+Add Pin To Net: Unknown Pin: Pin TO3-2
+Add Class Member: Failed to add class member : Component C5 100uF, 25V
+Added Member To Class: ClassName=power Member=Component C6
+Added Member To Class: ClassName=MCU Member=Component C7
+Added Member To Class: ClassName=other Member=Component C8
+Added Member To Class: ClassName=other Member=Component C9
+Added Member To Class: ClassName=other Member=Component C10
+Added Member To Class: ClassName=other Member=Component C11
+Added Member To Class: ClassName=other Member=Component C16
+Added Member To Class: ClassName=other Member=Component C17
+Add Class Member: Failed to add class member : Component C18 100uF, 25V
+Added Member To Class: ClassName=other Member=Component C?
+Add Class Member: Failed to add class member : Component Ct3 10uF
+Add Class Member: Failed to add class member : Component d4 Smbj5v
+Add Class Member: Failed to add class member : Component R2 1.2k
+Add Class Member: Failed to add class member : Component R7 120 ohm
+Add Class Member: Failed to add class member : Component R8 2.2k
+Add Class Member: Failed to add class member : Component R9 10k
+Add Class Member: Failed to add class member : Component R10 22k
+Add Class Member: Failed to add class member : Component R11 10k
+Add Class Member: Failed to add class member : Component R12 10k
+Add Class Member: Failed to add class member : Component R13 10k
+Add Class Member: Failed to add class member : Component R14 100k
+Add Class Member: Failed to add class member : Component R15 33k
+Add Class Member: Failed to add class member : Component R16 6.8k
+Added Member To Class: ClassName=other Member=Component R? 10 ohm
+Added Member To Class: ClassName=other Member=Component R? 33k
+Add Class Member: Failed to add class member : Component ss? M7
+Add Class Member: Failed to add class member : Component TO3 PHOENIX

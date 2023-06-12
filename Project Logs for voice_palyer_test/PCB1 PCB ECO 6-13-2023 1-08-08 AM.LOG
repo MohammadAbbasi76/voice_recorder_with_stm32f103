@@ -1,0 +1,157 @@
+Removed Member From Class: ClassName=other Member=K1
+Add Component: Footprint Not Found WCAP-ASLI_5x5.5
+Add Component: Footprint Not Found 0805 Capacitor
+Add Component: Footprint Not Found 0805 Capacitor
+Add Component: Footprint Not Found 0805 Capacitor
+Add Component: Footprint Not Found 0805 Capacitor
+Add Component: Footprint Not Found 0805 Capacitor
+Add Component: Footprint Not Found 0805 Capacitor
+Add Component: Footprint Not Found 0805 Capacitor
+Add Component: Footprint Not Found 0805 Capacitor
+Add Component: Footprint Not Found WCAP-ASLI_5x5.5
+Add Component: Footprint Not Found 0805 Capacitor
+Add Component: Footprint Not Found Tantalium Size B
+Add Component: Footprint Not Found DIOM4629X24N
+Added Component: Designator=K?(G6A234PSTUS5DC)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = "G6A-234P-ST-US 5DC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/g6a234pstus5dc/omron"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://componentsearchengine.com/Datasheets/2/G6A-234P-ST-US 5DC.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "8.4mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Omron Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "G6A-234P-ST-US 5DC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Testing Part Number"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Testing Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=Q?(SOT95P230X110-3N)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "{'manufacturer': u'Rectron'}"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "BC817"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Added Component: Designator=R?(0805 Resistor)
+Add component (AddParameter): Name = "Data"; Value = "16-12-2016"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Desc."; Value = "RES SMD 0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Designer"; Value = "Abbas Basereh"; VariantName = "[No Variations]"
+Added Component: Designator=R?(0805 Resistor)
+Add component (AddParameter): Name = "Data"; Value = "16-12-2016"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Desc."; Value = "RES SMD 0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Designer"; Value = "Abbas Basereh"; VariantName = "[No Variations]"
+Added Component: Designator=R?(0805 Resistor)
+Add component (AddParameter): Name = "Data"; Value = "16-12-2016"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Desc."; Value = "RES SMD 0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Designer"; Value = "Abbas Basereh"; VariantName = "[No Variations]"
+Add Component: Footprint Not Found DIOM4629X24N
+Add Component: Footprint Not Found PH2P5.08
+Add Pin To Net: Unknown Pin: Pin C5-1
+Add Pin To Net: Unknown Pin: Pin C5-2
+Add Pin To Net: Unknown Pin: Pin C6-1
+Add Pin To Net: Unknown Pin: Pin C6-2
+Add Pin To Net: Unknown Pin: Pin C7-1
+Add Pin To Net: Unknown Pin: Pin C7-2
+Add Pin To Net: Unknown Pin: Pin C8-1
+Add Pin To Net: Unknown Pin: Pin C8-2
+Add Pin To Net: Unknown Pin: Pin C9-1
+Add Pin To Net: Unknown Pin: Pin C9-2
+Add Pin To Net: Unknown Pin: Pin C10-1
+Add Pin To Net: Unknown Pin: Pin C10-2
+Add Pin To Net: Unknown Pin: Pin C11-1
+Add Pin To Net: Unknown Pin: Pin C11-2
+Add Pin To Net: Unknown Pin: Pin C16-1
+Add Pin To Net: Unknown Pin: Pin C16-2
+Add Pin To Net: Unknown Pin: Pin C18-1
+Add Pin To Net: Unknown Pin: Pin C18-2
+Add Pin To Net: Unknown Pin: Pin C?-1
+Add Pin To Net: Unknown Pin: Pin C?-2
+Add Pin To Net: Unknown Pin: Pin Ct3-1
+Add Pin To Net: Unknown Pin: Pin Ct3-2
+Add Pin To Net: Unknown Pin: Pin d4-1
+Add Pin To Net: Unknown Pin: Pin d4-2
+Added Pin To Net: NetName=Vin Pin=K?-1
+Added Pin To Net: NetName=GND Pin=Q?-2
+Add Pin To Net: Unknown Pin: Pin R2-1
+Add Pin To Net: Unknown Pin: Pin R2-2
+Add Pin To Net: Unknown Pin: Pin R7-1
+Add Pin To Net: Unknown Pin: Pin R7-2
+Add Pin To Net: Unknown Pin: Pin R8-1
+Add Pin To Net: Unknown Pin: Pin R8-2
+Add Pin To Net: Unknown Pin: Pin R9-1
+Add Pin To Net: Unknown Pin: Pin R10-1
+Add Pin To Net: Unknown Pin: Pin R10-2
+Add Pin To Net: Unknown Pin: Pin R11-1
+Add Pin To Net: Unknown Pin: Pin R11-2
+Add Pin To Net: Unknown Pin: Pin R12-1
+Add Pin To Net: Unknown Pin: Pin R12-2
+Add Pin To Net: Unknown Pin: Pin R13-1
+Add Pin To Net: Unknown Pin: Pin R13-2
+Add Pin To Net: Unknown Pin: Pin R14-1
+Add Pin To Net: Unknown Pin: Pin R14-2
+Add Pin To Net: Unknown Pin: Pin R15-1
+Add Pin To Net: Unknown Pin: Pin R15-2
+Add Pin To Net: Unknown Pin: Pin R16-1
+Add Pin To Net: Unknown Pin: Pin R16-2
+Added Pin To Net: NetName=Audio_output_swtich Pin=R?-1
+Added Pin To Net: NetName=GND Pin=R?-2
+Add Pin To Net: Unknown Pin: Pin ss?-2
+Add Pin To Net: Unknown Pin: Pin TO3-2
+Change Net Name : Old Net Name=ADC New Net Name=Aoudio_input
+Added Pin To Net: NetName=NetK?_16 Pin=K?-16
+Added Pin To Net: NetName=NetK?_16 Pin=R?-1
+Added Net: Name=NetK?_16
+Added Pin To Net: NetName=NetQ?_1 Pin=Q?-1
+Added Pin To Net: NetName=NetQ?_1 Pin=R?-1
+Added Pin To Net: NetName=NetQ?_1 Pin=R?-2
+Added Net: Name=NetQ?_1
+Added Pin To Net: NetName=NetQ?_3 Pin=Q?-3
+Added Pin To Net: NetName=NetQ?_3 Pin=R?-2
+Added Net: Name=NetQ?_3
+Added Pin To Net: NetName=PWM_after_filter Pin=K?-13
+Added Net: Name=PWM_after_filter
+Added Pin To Net: NetName=Quectel_mic Pin=K?-9
+Added Net: Name=Quectel_mic
+Added Pin To Net: NetName=Speaker_out Pin=K?-11
+Added Net: Name=Speaker_out
+Add Class Member: Failed to add class member : Component C5 100uF, 25V
+Add Class Member: Failed to add class member : Component C6
+Add Class Member: Failed to add class member : Component C7
+Add Class Member: Failed to add class member : Component C8
+Add Class Member: Failed to add class member : Component C9
+Add Class Member: Failed to add class member : Component C10
+Add Class Member: Failed to add class member : Component C11
+Add Class Member: Failed to add class member : Component C16
+Add Class Member: Failed to add class member : Component C17
+Add Class Member: Failed to add class member : Component C18 100uF, 25V
+Add Class Member: Failed to add class member : Component C?
+Add Class Member: Failed to add class member : Component Ct3 10uF
+Add Class Member: Failed to add class member : Component d4 Smbj5v
+Added Member To Class: ClassName=other Member=Component K? G6A-234P-ST-US_5DC
+Added Member To Class: ClassName=other Member=Component Q? BC817
+Add Class Member: Failed to add class member : Component R2 1.2k
+Added Member To Class: ClassName=other Member=Component R4 10k
+Add Class Member: Failed to add class member : Component R7 120 ohm
+Add Class Member: Failed to add class member : Component R8 2.2k
+Add Class Member: Failed to add class member : Component R9 10k
+Add Class Member: Failed to add class member : Component R10 22k
+Add Class Member: Failed to add class member : Component R11 10k
+Add Class Member: Failed to add class member : Component R12 10k
+Add Class Member: Failed to add class member : Component R13 10k
+Add Class Member: Failed to add class member : Component R14 100k
+Add Class Member: Failed to add class member : Component R15 33k
+Add Class Member: Failed to add class member : Component R16 6.8k
+Added Member To Class: ClassName=other Member=Component R? 10k
+Added Member To Class: ClassName=other Member=Component R? 10 ohm
+Added Member To Class: ClassName=other Member=Component R? 33k
+Add Class Member: Failed to add class member : Component ss? M7
+Add Class Member: Failed to add class member : Component TO3 PHOENIX

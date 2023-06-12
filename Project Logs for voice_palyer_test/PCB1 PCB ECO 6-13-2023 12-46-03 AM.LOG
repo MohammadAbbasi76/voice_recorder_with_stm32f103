@@ -1,0 +1,161 @@
+Change Component Designator: OldDesignator=C8 NewDesignator=C12
+Change Component Designator: OldDesignator=C9 NewDesignator=C13
+Change Component Designator: OldDesignator=C10 NewDesignator=C14
+Change Component Designator: OldDesignator=C11 NewDesignator=C15
+Change Component Designator: OldDesignator=R2 NewDesignator=R3
+Change Component Designator: OldDesignator=R3 NewDesignator=R4
+Change Component Designator: OldDesignator=R4 NewDesignator=R5
+Change Component Designator: OldDesignator=R5 NewDesignator=R6
+Add Component: Footprint Not Found WCAP-ASLI_5x5.5
+Add Component: Footprint Not Found 0805 Capacitor
+Add Component: Footprint Not Found 0805 Capacitor
+Add Component: Footprint Not Found 0805 Capacitor
+Add Component: Footprint Not Found 0805 Capacitor
+Add Component: Footprint Not Found 0805 Capacitor
+Add Component: Footprint Not Found 0805 Capacitor
+Add Component: Footprint Not Found 0805 Capacitor
+Add Component: Footprint Not Found 0805 Capacitor
+Add Component: Footprint Not Found WCAP-ASLI_5x5.5
+Add Component: Footprint Not Found Tantalium Size B
+Add Component: Footprint Not Found DIOM4629X24N
+Added Component: Designator=JP1(Jumper Small - 2.54 - GRAY)
+Add component (AddParameter): Name = "Company"; Value = "E.P.I.L"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Defualt State"; Value = "Close"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Design Date"; Value = "2011/11/02"; VariantName = "[No Variations]"
+Added Component: Designator=JP2(Jumper Small - 2.54 - GRAY)
+Add component (AddParameter): Name = "Company"; Value = "E.P.I.L"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Defualt State"; Value = "Close"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Design Date"; Value = "2011/11/02"; VariantName = "[No Variations]"
+Added Component: Designator=P2(HDR1X20)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P3(HDR1X2)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found 0805 Resistor
+Add Component: Footprint Not Found PH2P5.08
+Add Component: Footprint Not Found PH2P5.08
+Added Component: Designator=U4(SOIC127P600X175-16N)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "{'manufacturer': u'Analog Devices'}"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "MAX232CSE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=U5(DIP8)
+Add Pin To Net: Unknown Pin: Pin C5-1
+Add Pin To Net: Unknown Pin: Pin C5-2
+Add Pin To Net: Unknown Pin: Pin C6-1
+Add Pin To Net: Unknown Pin: Pin C6-2
+Add Pin To Net: Unknown Pin: Pin C7-1
+Add Pin To Net: Unknown Pin: Pin C7-2
+Add Pin To Net: Unknown Pin: Pin C8-1
+Add Pin To Net: Unknown Pin: Pin C8-2
+Add Pin To Net: Unknown Pin: Pin C9-1
+Add Pin To Net: Unknown Pin: Pin C16-1
+Add Pin To Net: Unknown Pin: Pin Ct3-1
+Add Pin To Net: Unknown Pin: Pin Ct3-2
+Add Pin To Net: Unknown Pin: Pin d4-1
+Add Pin To Net: Unknown Pin: Pin d4-2
+Added Pin To Net: NetName=ADC Pin=JP1-2
+Added Pin To Net: NetName=Uart_tx Pin=P2-7
+Added Pin To Net: NetName=Uart_rx Pin=P2-8
+Added Pin To Net: NetName=Uart_CT Pin=P2-9
+Added Pin To Net: NetName=Spi_clk Pin=P2-12
+Added Pin To Net: NetName=Spi_miso Pin=P2-13
+Added Pin To Net: NetName=Spi_mosi Pin=P2-14
+Added Pin To Net: NetName=GND Pin=P2-19
+Added Pin To Net: NetName=+3v3 Pin=P2-20
+Add Pin To Net: Unknown Pin: Pin R7-2
+Add Pin To Net: Unknown Pin: Pin R8-1
+Add Pin To Net: Unknown Pin: Pin R9-1
+Add Pin To Net: Unknown Pin: Pin R10-1
+Add Pin To Net: Unknown Pin: Pin R11-2
+Add Pin To Net: Unknown Pin: Pin R13-2
+Added Pin To Net: NetName=GND Pin=U4-10
+Added Pin To Net: NetName=Uart_rx Pin=U4-13
+Added Pin To Net: NetName=GND Pin=U4-15
+Added Pin To Net: NetName=+5V Pin=U4-16
+Added Pin To Net: NetName=ADC Pin=U5-1
+Added Pin To Net: NetName=+5V Pin=U5-8
+Added Pin To Net: NetName=AGND Pin=P3-1
+Added Pin To Net: NetName=AGND Pin=U5-4
+Added Net: Name=AGND
+Added Pin To Net: NetName=NetC9_2 Pin=U4-2
+Added Net: Name=NetC9_2
+Added Pin To Net: NetName=NetC10_1 Pin=U4-3
+Added Net: Name=NetC10_1
+Added Pin To Net: NetName=NetC10_2 Pin=U4-1
+Added Net: Name=NetC10_2
+Added Pin To Net: NetName=NetC11_1 Pin=U4-5
+Added Net: Name=NetC11_1
+Added Pin To Net: NetName=NetC11_2 Pin=U4-4
+Added Net: Name=NetC11_2
+Added Pin To Net: NetName=NetC16_2 Pin=U4-6
+Added Net: Name=NetC16_2
+Added Net: Name=NetC17_1
+Added Net: Name=NetC18_1
+Added Pin To Net: NetName=NetC18_2 Pin=JP2-2
+Added Net: Name=NetC18_2
+Added Pin To Net: NetName=NetJP1_1 Pin=JP1-1
+Added Pin To Net: NetName=NetJP1_1 Pin=JP2-1
+Added Pin To Net: NetName=NetJP1_1 Pin=P3-2
+Added Net: Name=NetJP1_1
+Added Pin To Net: NetName=NetR2_2 Pin=U4-12
+Added Net: Name=NetR2_2
+Added Pin To Net: NetName=NetR7_1 Pin=U4-11
+Added Net: Name=NetR7_1
+Added Pin To Net: NetName=NetR10_2 Pin=U5-2
+Added Net: Name=NetR10_2
+Added Pin To Net: NetName=NetR13_1 Pin=U5-3
+Added Net: Name=NetR13_1
+Added Net: Name=NetR15_2
+Added Net: Name=RX_out
+Added Pin To Net: NetName=TX_out Pin=U4-14
+Added Net: Name=TX_out
+Add Class Member: Failed to add class member : Component C5 100uF, 25V
+Add Class Member: Failed to add class member : Component C6
+Add Class Member: Failed to add class member : Component C7
+Add Class Member: Failed to add class member : Component C8
+Add Class Member: Failed to add class member : Component C9
+Added Member To Class: ClassName=other Member=Component C12
+Added Member To Class: ClassName=other Member=Component C13
+Added Member To Class: ClassName=other Member=Component C14
+Added Member To Class: ClassName=other Member=Component C15
+Add Class Member: Failed to add class member : Component C16
+Add Class Member: Failed to add class member : Component C17
+Add Class Member: Failed to add class member : Component C18 100uF, 25V
+Add Class Member: Failed to add class member : Component Ct3 10uF
+Add Class Member: Failed to add class member : Component d4 Smbj5v
+Added Member To Class: ClassName=other Member=Component JP1 Jumper
+Added Member To Class: ClassName=other Member=Component JP2 Jumper
+Added Member To Class: ClassName=MCU Member=Component P2 Header 20
+Added Member To Class: ClassName=other Member=Component P3 Header 2
+Added Member To Class: ClassName=other Member=Component R6 10k
+Add Class Member: Failed to add class member : Component R7 120 ohm
+Add Class Member: Failed to add class member : Component R8 2.2k
+Add Class Member: Failed to add class member : Component R9 10k
+Add Class Member: Failed to add class member : Component R10 22k
+Add Class Member: Failed to add class member : Component R11 10k
+Add Class Member: Failed to add class member : Component R12 10k
+Add Class Member: Failed to add class member : Component R13 10k
+Add Class Member: Failed to add class member : Component R14 100k
+Add Class Member: Failed to add class member : Component R15 33k
+Add Class Member: Failed to add class member : Component R16 6.8k
+Add Class Member: Failed to add class member : Component TO2 PHOENIX
+Add Class Member: Failed to add class member : Component TO3 PHOENIX
+Added Member To Class: ClassName=power Member=Component U1 LF33CDT
+Added Member To Class: ClassName=other Member=Component U4 MAX232CSE
+Added Member To Class: ClassName=other Member=Component U5 OpAmp
