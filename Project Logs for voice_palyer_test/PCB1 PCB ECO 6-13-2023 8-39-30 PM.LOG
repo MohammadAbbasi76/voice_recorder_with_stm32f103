@@ -1,0 +1,50 @@
+Removed Pin From Net: NetName=AGND Pin=P3-1
+Removed Pin From Net: NetName=NetJP1_1 Pin=P3-2
+Removed Member From Class: ClassName=other Member=P3
+Change Component Footprint: Designator=P3 Old Footprint=HDR1X2 New Footprint=HDR1X20
+Change Component Footprint: Designator=P1 Old Footprint=HDR1X20 New Footprint=MHDR1X20-254P
+Change Component Footprint: Designator=P2 Old Footprint=HDR1X20 New Footprint=MHDR1X20-254P
+Change Component Comment : Designator=P3 Old Comment=Header 2 New Comment=Header 20
+Change Component Comment : Designator=P1 Old Comment=Header 20 New Comment=MHDR_1X20
+Change Component Comment : Designator=P2 Old Comment=Header 20 New Comment=MHDR_1X20
+Change component parameters: Designator = "P1" ("P1"); Footprint = "HDR1X20"; UniqueID = "\QEMKFORR" ("\QEMKFORR")
+Change component parameters: Designator = "P2" ("P2"); Footprint = "HDR1X20"; UniqueID = "\BZRPWVSV" ("\BZRPWVSV")
+Add Component: Footprint Not Found Tantalium Size B
+Add Component: Footprint Not Found DIOM4629X24N
+Added Component: Designator=P4(MHDR1X02-254P)
+Added Component: Designator=P5(MHDR1X02-254P)
+Added Component: Designator=P6(MHDR1X02-254P)
+Added Component: Designator=P7(MHDR1X02-254P)
+Add Component: Footprint Not Found DIOM4629X24N
+Add Component: Footprint Not Found PH2P5.08
+Add Pin To Net: Unknown Pin: Pin Ct3-1
+Add Pin To Net: Unknown Pin: Pin Ct3-2
+Add Pin To Net: Unknown Pin: Pin d4-1
+Add Pin To Net: Unknown Pin: Pin d4-2
+Added Pin To Net: NetName=play_key Pin=P2-1
+Added Pin To Net: NetName=Record_key Pin=P2-2
+Added Pin To Net: NetName=pause_key Pin=P2-3
+Added Pin To Net: NetName=AGND Pin=P5-1
+Added Pin To Net: NetName=NetJP1_1 Pin=P5-2
+Add Pin To Net: Unknown Pin: Pin ss1-1
+Add Pin To Net: Unknown Pin: Pin ss1-2
+Add Pin To Net: Unknown Pin: Pin TO2-1
+Add Pin To Net: Unknown Pin: Pin TO2-2
+Added Pin To Net: NetName=Aouio_PMW Pin=C19-2
+Added Pin To Net: NetName=Aouio_PMW Pin=P1-11
+Added Net: Name=Aouio_PMW
+Added Member To Class: ClassName=other Member=Component C11
+Added Member To Class: ClassName=other Member=Component C14
+Added Member To Class: ClassName=other Member=Component C17
+Add Class Member: Failed to add class member : Component Ct3 10uF
+Add Class Member: Failed to add class member : Component d4 Smbj5v
+Added Member To Class: ClassName=MCU Member=Component P3 Header 20
+Added Member To Class: ClassName=other Member=Component P4 MHDR_1X02
+Added Member To Class: ClassName=other Member=Component P5 MHDR_1X02
+Added Member To Class: ClassName=other Member=Component P6 MHDR_1X02
+Added Member To Class: ClassName=other Member=Component P7 MHDR_1X02
+Added Member To Class: ClassName=other Member=Component R3 10k
+Added Member To Class: ClassName=other Member=Component R5 10k
+Added Member To Class: ClassName=other Member=Component R6 1.2k
+Add Class Member: Failed to add class member : Component ss1 M7
+Add Class Member: Failed to add class member : Component TO2 PHOENIX

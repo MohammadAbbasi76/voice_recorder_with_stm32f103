@@ -1,0 +1,18 @@
+Removed Member From Class: ClassName=MCU Member=R3
+Change Component Footprint: Designator=C1 Old Footprint=Cap 03 New Footprint=cap 04
+Change Component Footprint: Designator=C2 Old Footprint=Cap 03 New Footprint=cap 04
+Change Component Footprint: Designator=C4 Old Footprint=Cap 03 New Footprint=cap 04
+Change Component Footprint: Designator=C6 Old Footprint=Cap 03 New Footprint=cap 04
+Added Member To Class: ClassName=MCU Member=Component R2 10k
+Added Member To Class: ClassName=other Member=Component R4 10k
+Added Member To Class: ClassName=other Member=Component R6 10k
+Added Member To Class: ClassName=other Member=Component R7 1.2k
+Added Member To Class: ClassName=other Member=Component R8 120 ohm
+Added Member To Class: ClassName=other Member=Component R9 2.2k
+Added Member To Class: ClassName=other Member=Component R10 22k
+Added Member To Class: ClassName=other Member=Component R12 10k
+Added Member To Class: ClassName=other Member=Component R14 10 ohm
+Added Member To Class: ClassName=other Member=Component R16 22k
+Added Member To Class: ClassName=other Member=Component R18 100k
+Added Member To Class: ClassName=other Member=Component R20 33k
+Added Member To Class: ClassName=other Member=Component R21 10k

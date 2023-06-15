@@ -1,0 +1,55 @@
+Change Component Footprint: Designator=R1 Old Footprint=0805 Resistor New Footprint=RES0805
+Change Component Footprint: Designator=R2 Old Footprint=0805 Resistor New Footprint=RES0805
+Change Component Footprint: Designator=R3 Old Footprint=0805 Resistor New Footprint=RES0805
+Change Component Footprint: Designator=R4 Old Footprint=0805 Resistor New Footprint=RES0805
+Change Component Footprint: Designator=R5 Old Footprint=0805 Resistor New Footprint=RES0805
+Change Component Footprint: Designator=R6 Old Footprint=0805 Resistor New Footprint=RES0805
+Change Component Footprint: Designator=R7 Old Footprint=0805 Resistor New Footprint=RES0805
+Change Component Footprint: Designator=R8 Old Footprint=0805 Resistor New Footprint=RES0805
+Change Component Footprint: Designator=R9 Old Footprint=0805 Resistor New Footprint=RES0805
+Change Component Footprint: Designator=R10 Old Footprint=0805 Resistor New Footprint=RES0805
+Change Component Footprint: Designator=R11 Old Footprint=0805 Resistor New Footprint=RES0805
+Change Component Footprint: Designator=R12 Old Footprint=0805 Resistor New Footprint=RES0805
+Change Component Footprint: Designator=R13 Old Footprint=0805 Resistor New Footprint=RES0805
+Change Component Footprint: Designator=R14 Old Footprint=0805 Resistor New Footprint=RES0805
+Change Component Footprint: Designator=R15 Old Footprint=0805 Resistor New Footprint=RES0805
+Change Component Footprint: Designator=R16 Old Footprint=0805 Resistor New Footprint=RES0805
+Change Component Footprint: Designator=R17 Old Footprint=0805 Resistor New Footprint=RES0805
+Change Component Footprint: Designator=R18 Old Footprint=0805 Resistor New Footprint=RES0805
+Change Component Footprint: Designator=R19 Old Footprint=0805 Resistor New Footprint=RES0805
+Change Component Footprint: Designator=R20 Old Footprint=0805 Resistor New Footprint=RES0805
+Change Component Footprint: Designator=R21 Old Footprint=0805 Resistor New Footprint=RES0805
+Change Component Footprint: Designator=d1 Old Footprint=DIOM4629X24N New Footprint=DIODE SMA (DO-214AC)
+Change Component Footprint: Designator=d2 Old Footprint=DIOM4629X24N New Footprint=DIODE SMA (DO-214AC)
+Change Component Footprint: Designator=d3 Old Footprint=DIOM4629X24N New Footprint=DIODE SMA (DO-214AC)
+Change Footprint: Cannot match pads with new footprint in component :DS1 Footprint:LED-0805-K
+Change Component Footprint: Designator=Ct1 Old Footprint=Tantalium Size B New Footprint=TANTAL-CAP-Size B
+Change Component Footprint: Designator=Ct2 Old Footprint=Tantalium Size B New Footprint=TANTAL-CAP-Size B
+Added Component: Designator=Ct?(TANTAL-CAP-Size B)
+Add component (AddParameter): Name = "Value"; Value = "10uF"; VariantName = "[No Variations]"
+Added Component: Designator=d4(DIODE SMA (DO-214AC))
+Add component (AddParameter): Name = "Data"; Value = "16-12-2016"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Designer"; Value = "Abbas Basereh"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Link"; Value = "http://www.tme.eu/en/details/m7/smd-universal-diodes/dc-components/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "DC COMPONENTS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part. No"; Value = "M7"; VariantName = "[No Variations]"
+Added Component: Designator=ss1(DIODE SMA (DO-214AC))
+Add component (AddParameter): Name = "Data"; Value = "16-12-2016"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Designer"; Value = "Abbas Basereh"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Link"; Value = "http://www.tme.eu/en/details/m7/smd-universal-diodes/dc-components/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "DC COMPONENTS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part. No"; Value = "M7"; VariantName = "[No Variations]"
+Add Component: Footprint Not Found PH2P5.08
+Added Pin To Net: NetName=+5V Pin=Ct?-1
+Added Pin To Net: NetName=GND Pin=Ct?-2
+Added Pin To Net: NetName=GND Pin=d4-1
+Added Pin To Net: NetName=+5V Pin=d4-2
+Added Pin To Net: NetName=NetK1_16 Pin=ss1-1
+Added Pin To Net: NetName=Vin Pin=ss1-2
+Add Pin To Net: Unknown Pin: Pin TO2-1
+Add Pin To Net: Unknown Pin: Pin TO2-2
+Added Member To Class: ClassName=power Member=Component Ct? 10uF
+Added Member To Class: ClassName=power Member=Component d4 Smbj5v
+Added Member To Class: ClassName=other Member=Component P? FHDR_1X04
+Added Member To Class: ClassName=other Member=Component ss1 M7
+Add Class Member: Failed to add class member : Component TO2 PHOENIX

@@ -1,0 +1,25 @@
+Removed Pin From Net: NetName=GND Pin=C1-1
+Removed Pin From Net: NetName=NetC1_2 Pin=C1-2
+Change Component Footprint: Designator=C1 Old Footprint=CAP 05 New Footprint=cap 03
+Change Component Comment : Designator=C1 Old Comment=100uF, 25V New Comment=100uF
+Change component parameters: Designator = "C1" ("C1"); Footprint = "CAP 05"; UniqueID = "\CSHOUMEB" ("\CSHOUMEB")
+Change component parameters (AddParameter): Name = "Category"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Company"; Value = "SJ Libraries"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2Description"; Value = "Reference"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2URL"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Designer"; Value = "Eng. Saeid Jorablo"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "HelpURL"; Value = "http://s3.picofile.com/file/7443264187/Coming_Soon_logo.gif"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mounting Technology"; Value = "Surface Mount\Through-Hole"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageDescription"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pin Count"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "SJ Unlimited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Status"; Value = "Unreleased"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100uF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage"; Value = "25V"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC1_2 Pin=C1-1
+Added Pin To Net: NetName=GND Pin=C1-2
+Change Net Name : Old Net Name=NetC1_2 New Net Name=NetC1_1
+Added Member To Class: ClassName=power Member=Component C3 100uF
+Added Member To Class: ClassName=power Member=Component C4

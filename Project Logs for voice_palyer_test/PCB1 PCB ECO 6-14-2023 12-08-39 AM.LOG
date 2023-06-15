@@ -1,0 +1,72 @@
+Removed Pin From Net: NetName=Quectel_mic Pin=K1-9
+Removed Member From Class: ClassName=other Member=TP?
+Change Component Comment : Designator=P? Old Comment=MHDR_1X04 New Comment=xh 4pin
+Change Component Comment : Designator=P? Old Comment=MHDR_1X06 New Comment=xh 6pin
+Change Component Designator: OldDesignator=P5 NewDesignator=P3
+Change Component Designator: OldDesignator=P6 NewDesignator=P4
+Change Component Designator: OldDesignator=P7 NewDesignator=P5
+Change Component Designator: OldDesignator=P? NewDesignator=P6
+Change Component Designator: OldDesignator=P? NewDesignator=P7
+Change Component Designator: OldDesignator=R16 NewDesignator=R17
+Change Component Designator: OldDesignator=R17 NewDesignator=R18
+Change Component Designator: OldDesignator=R18 NewDesignator=R19
+Change Component Designator: OldDesignator=R19 NewDesignator=R21
+Change Component Designator: OldDesignator=TP? NewDesignator=TP1
+Change Component Designator: OldDesignator=TP? NewDesignator=TP2
+Change Component Designator: OldDesignator=TP? NewDesignator=TP3
+Change Component Designator: OldDesignator=TP? NewDesignator=TP4
+Change Component Designator: OldDesignator=TP? NewDesignator=TP5
+Add Component: Footprint Not Found Tantalium Size B
+Add Component: Footprint Not Found DIOM4629X24N
+Added Component: Designator=DS?(7Segment)
+Added Component: Designator=P?(FHDR1X04-254P)
+Added Component: Designator=R16(0805 Resistor)
+Add component (AddParameter): Name = "Data"; Value = "16-12-2016"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Desc."; Value = "RES SMD 0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Designer"; Value = "Abbas Basereh"; VariantName = "[No Variations]"
+Added Component: Designator=R20(0805 Resistor)
+Add component (AddParameter): Name = "Data"; Value = "16-12-2016"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Desc."; Value = "RES SMD 0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Designer"; Value = "Abbas Basereh"; VariantName = "[No Variations]"
+Add Component: Footprint Not Found DIOM4629X24N
+Add Component: Footprint Not Found PH2P5.08
+Add Pin To Net: Unknown Pin: Pin Ct3-1
+Add Pin To Net: Unknown Pin: Pin Ct3-2
+Add Pin To Net: Unknown Pin: Pin d4-1
+Add Pin To Net: Unknown Pin: Pin d4-2
+Added Pin To Net: NetName=Quectel_mic Pin=P6-1
+Added Pin To Net: NetName=GND Pin=P6-2
+Added Pin To Net: NetName=+3v3 Pin=P7-2
+Added Pin To Net: NetName=RX_out Pin=P7-3
+Added Pin To Net: NetName=TX_out Pin=P7-4
+Added Pin To Net: NetName=GND Pin=P7-5
+Added Pin To Net: NetName=input_voltag Pin=P7-6
+Added Pin To Net: NetName=+5V Pin=P?-1
+Added Pin To Net: NetName=GND Pin=P?-4
+Added Pin To Net: NetName=Quectel_mic Pin=R16-1
+Added Pin To Net: NetName=GND Pin=R20-2
+Add Pin To Net: Unknown Pin: Pin ss1-1
+Add Pin To Net: Unknown Pin: Pin ss1-2
+Add Pin To Net: Unknown Pin: Pin TO2-1
+Add Pin To Net: Unknown Pin: Pin TO2-2
+Change Net Name : Old Net Name=NetR18_2 New Net Name=NetR19_2
+Added Pin To Net: NetName=I2c_1 Pin=P?-2
+Added Net: Name=I2c_1
+Added Pin To Net: NetName=I2c_2 Pin=P?-3
+Added Net: Name=I2c_2
+Added Pin To Net: NetName=Quectel_mic_needed Pin=K1-9
+Added Pin To Net: NetName=Quectel_mic_needed Pin=R16-2
+Added Pin To Net: NetName=Quectel_mic_needed Pin=R20-1
+Added Net: Name=Quectel_mic_needed
+Add Class Member: Failed to add class member : Component Ct3 10uF
+Add Class Member: Failed to add class member : Component d4 Smbj5v
+Added Member To Class: ClassName=other Member=Component DS? SNS-50101BSR
+Added Member To Class: ClassName=other Member=Component P7 xh 6pin
+Added Member To Class: ClassName=other Member=Component R20 10k
+Added Member To Class: ClassName=other Member=Component R21 6.8k
+Add Class Member: Failed to add class member : Component ss1 M7
+Add Class Member: Failed to add class member : Component TO2 PHOENIX
+Added Member To Class: ClassName=power Member=Component TP1
+Added Member To Class: ClassName=power Member=Component TP3
+Added Member To Class: ClassName=power Member=Component TP4
+Added Member To Class: ClassName=other Member=Component TP5

@@ -1,0 +1,11 @@
+Change Component Footprint: Designator=FR1 Old Footprint=1206 Ferrit Bead New Footprint=RES1206
+Change Component Footprint: Designator=DS1 Old Footprint=LED_SMD_0805 New Footprint=LED 1206
+Change Component Designator: OldDesignator=Ct? NewDesignator=Ct3
+Change Component Designator: OldDesignator=P3 NewDesignator=P6
+Change Component Designator: OldDesignator=P6 NewDesignator=P3
+Change Component Designator: OldDesignator=P7 NewDesignator=P5
+Change Component Designator: OldDesignator=P? NewDesignator=P4
+Add Component: Footprint Not Found PH2P5.08
+Add Pin To Net: Unknown Pin: Pin TO2-1
+Add Pin To Net: Unknown Pin: Pin TO2-2
+Add Class Member: Failed to add class member : Component TO2 PHOENIX

@@ -1,0 +1,6 @@
+Change Footprint: Cannot match pads with new footprint in component :DS1 Footprint:LED-0805-K
+Add Component: Footprint Not Found PH2P5.08
+Add Pin To Net: Unknown Pin: Pin TO2-1
+Add Pin To Net: Unknown Pin: Pin TO2-2
+Added Member To Class: ClassName=other Member=Component P? FHDR_1X04
+Add Class Member: Failed to add class member : Component TO2 PHOENIX
