@@ -1,0 +1,7 @@
+Added Component: Designator=PT1(POT1)
+Add component (AddParameter): Name = "Designer"; Value = "Seyed Mohsen Ghasemian"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "WEB"; Value = "www.picpars.com"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=Output_voice Pin=PT1-2
+Added Pin To Net: NetName=NetR20_2 Pin=PT1-3
+Change Net Name : Old Net Name=NetR20_2 New Net Name=NetPT1_3
+Added Member To Class: ClassName=other Member=Component PT1 POT1

@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=Uart_rx Pin=P2-3
+Change Component Footprint: Designator=P4 Old Footprint=HDR1X2 New Footprint=MHDR1X02-254P
+Change Component Footprint: Designator=P2 Old Footprint=HDR1X3 New Footprint=HDR1X2
+Change Component Comment : Designator=P4 Old Comment=Header 2 New Comment=MHDR_1X02
+Change Component Comment : Designator=P2 Old Comment=Header 3 New Comment=Header 2
+Change component parameters: Designator = "P4" ("P4"); Footprint = "HDR1X2"; UniqueID = "\ULIEMMQE" ("\ULIEMMQE")
+Added Pin To Net: NetName=Uart_rx Pin=P2-2

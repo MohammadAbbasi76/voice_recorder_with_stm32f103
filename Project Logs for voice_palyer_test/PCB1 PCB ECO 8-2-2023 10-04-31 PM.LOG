@@ -1,0 +1,42 @@
+Removed Pin From Net: NetName=Aoudio_input Pin=P1-8
+Removed Pin From Net: NetName=Flash_CS Pin=P1-9
+Removed Pin From Net: NetName=Aouio_PMW Pin=P1-11
+Removed Pin From Net: NetName=Audio_output_swtich Pin=P1-13
+Removed Pin From Net: NetName=Puase Pin=P1-14
+Removed Pin From Net: NetName=+3v3 Pin=P1-18
+Removed Pin From Net: NetName=GND Pin=P1-19
+Removed Pin From Net: NetName=GND Pin=P1-20
+Removed Pin From Net: NetName=play_key Pin=P2-1
+Removed Pin From Net: NetName=Record_key Pin=P2-2
+Removed Pin From Net: NetName=UP_key Pin=P2-3
+Removed Pin From Net: NetName=M66_on_off_key Pin=P2-4
+Removed Pin From Net: NetName=Uart_tx Pin=P2-7
+Removed Pin From Net: NetName=Uart_rx Pin=P2-8
+Removed Pin From Net: NetName=Spi_clk Pin=P2-12
+Removed Pin From Net: NetName=Spi_miso Pin=P2-13
+Removed Pin From Net: NetName=Spi_mosi Pin=P2-14
+Removed Pin From Net: NetName=GND Pin=P2-19
+Removed Pin From Net: NetName=+3v3 Pin=P2-20
+Removed Member From Class: ClassName=MCU Member=P1
+Removed Member From Class: ClassName=MCU Member=P2
+Change Component Designator: OldDesignator=* NewDesignator=STM32f103 BluePill
+Added Pin To Net: NetName=GND Pin=STM32f103 BluePill-1
+Added Pin To Net: NetName=GND Pin=STM32f103 BluePill-2
+Added Pin To Net: NetName=+3v3 Pin=STM32f103 BluePill-3
+Added Pin To Net: NetName=Puase Pin=STM32f103 BluePill-5
+Added Pin To Net: NetName=Audio_output_swtich Pin=STM32f103 BluePill-9
+Added Pin To Net: NetName=Aouio_PMW Pin=STM32f103 BluePill-10
+Added Pin To Net: NetName=Flash_CS Pin=STM32f103 BluePill-12
+Added Pin To Net: NetName=Aoudio_input Pin=STM32f103 BluePill-13
+Added Pin To Net: NetName=play_key Pin=STM32f103 BluePill-21
+Added Pin To Net: NetName=Record_key Pin=STM32f103 BluePill-22
+Added Pin To Net: NetName=UP_key Pin=STM32f103 BluePill-23
+Added Pin To Net: NetName=M66_on_off_key Pin=STM32f103 BluePill-24
+Added Pin To Net: NetName=Uart_tx Pin=STM32f103 BluePill-26
+Added Pin To Net: NetName=Uart_rx Pin=STM32f103 BluePill-27
+Added Pin To Net: NetName=Spi_clk Pin=STM32f103 BluePill-31
+Added Pin To Net: NetName=Spi_miso Pin=STM32f103 BluePill-32
+Added Pin To Net: NetName=Spi_mosi Pin=STM32f103 BluePill-33
+Added Pin To Net: NetName=GND Pin=STM32f103 BluePill-39
+Added Pin To Net: NetName=+3v3 Pin=STM32f103 BluePill-40
+Change Net Name : Old Net Name=UP_key New Net Name=Next_key

@@ -1,0 +1,26 @@
+Removed Pin From Net: NetName=GND Pin=TO1-1
+Removed Pin From Net: NetName=input_voltag Pin=TO1-2
+Removed Member From Class: ClassName=power Member=TO1
+Added Component: Designator=J?(Power Jack)
+Add component (AddParameter): Name = "Adding Date"; Value = "10/21/2009"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Company"; Value = "Personal"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Designer"; Value = "Saeid Jorablo"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Project Name"; Value = "Laser"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=input_voltag Pin=J?-1
+Added Pin To Net: NetName=input_voltag Pin=J?-1
+Added Pin To Net: NetName=input_voltag Pin=J?-1
+Added Pin To Net: NetName=input_voltag Pin=J?-1
+Added Pin To Net: NetName=input_voltag Pin=J?-1
+Added Pin To Net: NetName=input_voltag Pin=J?-1
+Added Pin To Net: NetName=input_voltag Pin=J?-1
+Added Pin To Net: NetName=GND Pin=J?-2
+Added Pin To Net: NetName=GND Pin=J?-2
+Added Pin To Net: NetName=GND Pin=J?-2
+Added Pin To Net: NetName=GND Pin=J?-2
+Added Pin To Net: NetName=GND Pin=J?-2
+Added Pin To Net: NetName=GND Pin=J?-3
+Added Pin To Net: NetName=GND Pin=J?-3
+Added Pin To Net: NetName=GND Pin=J?-3
+Added Pin To Net: NetName=GND Pin=J?-3
+Added Pin To Net: NetName=GND Pin=J?-3
+Added Member To Class: ClassName=power Member=Component J? Power Jack

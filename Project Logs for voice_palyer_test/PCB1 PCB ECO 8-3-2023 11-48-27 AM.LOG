@@ -1,0 +1,22 @@
+Removed Member From Class: ClassName=MCU Member=Q?
+Change Component Designator: OldDesignator=Q? NewDesignator=Q1
+Change Component Designator: OldDesignator=Q? NewDesignator=Q2
+Change Component Designator: OldDesignator=Q? NewDesignator=Q3
+Change Component Designator: OldDesignator=Q? NewDesignator=Q4
+Change Net Name : Old Net Name=NetQ?_2 New Net Name=NetQ4_2
+Change Net Name : Old Net Name=NetQ?_3 New Net Name=NetQ1_3
+Added Pin To Net: NetName=NetQ2_3 Pin=Q2-3
+Added Pin To Net: NetName=NetQ2_3 Pin=R6-1
+Added Pin To Net: NetName=NetQ2_3 Pin=R8-2
+Added Net: Name=NetQ2_3
+Added Pin To Net: NetName=NetQ3_3 Pin=Q3-3
+Added Pin To Net: NetName=NetQ3_3 Pin=R18-2
+Added Pin To Net: NetName=NetQ3_3 Pin=R19-1
+Added Net: Name=NetQ3_3
+Added Pin To Net: NetName=NetQ4_3 Pin=Q4-3
+Added Pin To Net: NetName=NetQ4_3 Pin=R22-2
+Added Pin To Net: NetName=NetQ4_3 Pin=R25-1
+Added Net: Name=NetQ4_3
+Added Member To Class: ClassName=MCU Member=Component Q1 C945
+Added Member To Class: ClassName=MCU Member=Component Q2 C945
+Added Member To Class: ClassName=other Member=Component Q4 C945

@@ -1,0 +1,5 @@
+Added Component: Designator=DS?(7segCA 24*34)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "picpars.com"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.picpars.com"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Seyed Mohsen Ghasemian"; VariantName = "[No Variations]"
+Added Member To Class: ClassName=MCU Member=Component DS? 7Seg-1Digit-CA 24*34

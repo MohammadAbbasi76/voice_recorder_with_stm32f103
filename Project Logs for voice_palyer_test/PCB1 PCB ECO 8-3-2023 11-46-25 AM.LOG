@@ -1,0 +1,62 @@
+Removed Pin From Net: NetName=GND Pin=Q1-2
+Removed Pin From Net: NetName=NetD6_2 Pin=Q1-3
+Removed Pin From Net: NetName=GND Pin=Q2-2
+Removed Pin From Net: NetName=NetD5_2 Pin=Q2-3
+Removed Pin From Net: NetName=GND Pin=Q3-2
+Removed Pin From Net: NetName=P_M66_key Pin=Q3-3
+Removed Pin From Net: NetName=GND Pin=Q4-2
+Removed Member From Class: ClassName=MCU Member=Q1
+Removed Member From Class: ClassName=MCU Member=Q2
+Removed Member From Class: ClassName=other Member=Q3
+Removed Member From Class: ClassName=other Member=Q4
+Added Component: Designator=Q?(C945)
+Add component (AddParameter): Name = "Company"; Value = "IPA CO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Designer"; Value = "Saeid Jorablo"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Last Update Time"; Value = "2008/08/04"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "C945"; VariantName = "[No Variations]"
+Added Component: Designator=Q?(C945)
+Add component (AddParameter): Name = "Company"; Value = "IPA CO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Designer"; Value = "Saeid Jorablo"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Last Update Time"; Value = "2008/08/04"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "C945"; VariantName = "[No Variations]"
+Added Component: Designator=Q?(C945)
+Add component (AddParameter): Name = "Company"; Value = "IPA CO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Designer"; Value = "Saeid Jorablo"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Last Update Time"; Value = "2008/08/04"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "C945"; VariantName = "[No Variations]"
+Added Component: Designator=Q?(C945)
+Add component (AddParameter): Name = "Company"; Value = "IPA CO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Designer"; Value = "Saeid Jorablo"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Last Update Time"; Value = "2008/08/04"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "C945"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=Q?-1
+Added Pin To Net: NetName=GND Pin=Q?-1
+Added Pin To Net: NetName=GND Pin=Q?-1
+Added Pin To Net: NetName=GND Pin=Q?-1
+Added Pin To Net: NetName=NetD5_2 Pin=Q?-2
+Added Pin To Net: NetName=NetD6_2 Pin=Q?-2
+Added Pin To Net: NetName=P_M66_key Pin=Q?-2
+Added Pin To Net: NetName=NetQ?_2 Pin=Q?-2
+Added Pin To Net: NetName=NetQ?_2 Pin=R24-2
+Added Net: Name=NetQ?_2
+Added Pin To Net: NetName=NetQ?_3 Pin=Q?-3
+Added Pin To Net: NetName=NetQ?_3 Pin=R7-1
+Added Pin To Net: NetName=NetQ?_3 Pin=R9-2
+Added Net: Name=NetQ?_3
+Add Net: Net with name "NetQ?_3" already exists
+Add Net: Net with name "NetQ?_3" already exists
+Add Net: Net with name "NetQ?_3" already exists
+Added Member To Class: ClassName=other Member=Component P2 Header 3
+Added Member To Class: ClassName=other Member=Component P4 Header 2
+Added Member To Class: ClassName=MCU Member=Component Q? C945
+Added Member To Class: ClassName=MCU Member=Component Q? C945
+Added Member To Class: ClassName=other Member=Component Q? C945
+Added Member To Class: ClassName=other Member=Component Q? C945
+Added Member To Class: ClassName=MCU Member=Component R5 10k
+Added Member To Class: ClassName=MCU Member=Component R6 10k
+Added Member To Class: ClassName=other Member=Component R10 0 ohm
+Added Member To Class: ClassName=other Member=Component R11 10k
+Added Member To Class: ClassName=other Member=Component R12 10k
+Added Member To Class: ClassName=other Member=Component R16 120 ohm
+Added Member To Class: ClassName=other Member=Component R22 33k
+Added Member To Class: ClassName=other Member=Component R25 10k

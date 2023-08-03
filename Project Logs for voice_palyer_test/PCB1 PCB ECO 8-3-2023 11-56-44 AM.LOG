@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=input_voltag Pin=P3-6
+Added Pin To Net: NetName=Vin Pin=P3-6
+Added Member To Class: ClassName=MCU Member=Component Q1 C945
+Added Member To Class: ClassName=MCU Member=Component Q2 C945
+Added Member To Class: ClassName=other Member=Component Q3 C945
+Added Member To Class: ClassName=other Member=Component Q4 C945

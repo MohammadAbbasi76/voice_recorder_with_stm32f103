@@ -1,0 +1,17 @@
+Board Information Report
+Filename     : C:\Users\Administrator\Desktop\pcb\voice_recorder\PCB1.PcbDoc
+Date         : 8/3/2023
+Time         : 11:25:06 PM
+Time Elapsed : 00:00:00
+
+General
+    Board Size, 5374.734milsx4031.411mils
+    Components on board, 98
+count : 2
+
+Routing Information
+    Routing completion, 99.13%
+    Connections, 229
+    Connections routed, 227
+    Connections remaining, 2
+count : 4

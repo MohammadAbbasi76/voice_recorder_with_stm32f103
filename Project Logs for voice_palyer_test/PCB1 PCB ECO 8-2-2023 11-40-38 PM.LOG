@@ -1,0 +1,90 @@
+Removed Member From Class: ClassName=MCU Member=Q?
+Change Component Designator: OldDesignator=d5 NewDesignator=d7
+Change Component Designator: OldDesignator=d6 NewDesignator=d8
+Change Component Designator: OldDesignator=d7 NewDesignator=d9
+Change Component Designator: OldDesignator=d8 NewDesignator=d10
+Change Component Designator: OldDesignator=d9 NewDesignator=d11
+Change Component Designator: OldDesignator=D? NewDesignator=D5
+Change Component Designator: OldDesignator=D? NewDesignator=D6
+Change Component Designator: OldDesignator=DS? NewDesignator=DS2
+Change Component Designator: OldDesignator=J? NewDesignator=J1
+Change Component Designator: OldDesignator=P3 NewDesignator=P1
+Change Component Designator: OldDesignator=P4 NewDesignator=P2
+Change Component Designator: OldDesignator=P5 NewDesignator=P4
+Change Component Designator: OldDesignator=P? NewDesignator=P3
+Change Component Designator: OldDesignator=Q? NewDesignator=Q1
+Change Component Designator: OldDesignator=Q? NewDesignator=Q2
+Change Component Designator: OldDesignator=Q? NewDesignator=Q3
+Change Component Designator: OldDesignator=Q? NewDesignator=Q4
+Change Component Designator: OldDesignator=R3 NewDesignator=R11
+Change Component Designator: OldDesignator=R4 NewDesignator=R12
+Change Component Designator: OldDesignator=R5 NewDesignator=R13
+Change Component Designator: OldDesignator=R6 NewDesignator=R14
+Change Component Designator: OldDesignator=R7 NewDesignator=R15
+Change Component Designator: OldDesignator=R8 NewDesignator=R16
+Change Component Designator: OldDesignator=R9 NewDesignator=R17
+Change Component Designator: OldDesignator=R10 NewDesignator=R18
+Change Component Designator: OldDesignator=R11 NewDesignator=R19
+Change Component Designator: OldDesignator=R12 NewDesignator=R20
+Change Component Designator: OldDesignator=R13 NewDesignator=R21
+Change Component Designator: OldDesignator=R14 NewDesignator=R22
+Change Component Designator: OldDesignator=R15 NewDesignator=R23
+Change Component Designator: OldDesignator=R16 NewDesignator=R24
+Change Component Designator: OldDesignator=R17 NewDesignator=R25
+Change Component Designator: OldDesignator=R18 NewDesignator=R26
+Change Component Designator: OldDesignator=R19 NewDesignator=R27
+Change Component Designator: OldDesignator=R? NewDesignator=R3
+Change Component Designator: OldDesignator=R? NewDesignator=R4
+Change Component Designator: OldDesignator=R? NewDesignator=R5
+Change Component Designator: OldDesignator=R? NewDesignator=R6
+Change Component Designator: OldDesignator=R? NewDesignator=R7
+Change Component Designator: OldDesignator=R? NewDesignator=R8
+Change Component Designator: OldDesignator=R? NewDesignator=R9
+Change Component Designator: OldDesignator=R? NewDesignator=R10
+Change Component Designator: OldDesignator=STM32f103 BluePill NewDesignator=STM1
+Change Component Designator: OldDesignator=TO3 NewDesignator=TO1
+Change Component Designator: OldDesignator=U4 NewDesignator=U5
+Change Component Designator: OldDesignator=U5 NewDesignator=U6
+Change Component Designator: OldDesignator=U? NewDesignator=U4
+Change Net Name : Old Net Name=NetD?_2 New Net Name=NetD5_2
+Change Net Name : Old Net Name=NetDS?_3 New Net Name=NetDS2_3
+Change Net Name : Old Net Name=NetP3_2 New Net Name=NetP1_2
+Change Net Name : Old Net Name=NetQ?_1 New Net Name=NetQ4_1
+Change Net Name : Old Net Name=NetQ?_3 New Net Name=NetQ4_3
+Change Net Name : Old Net Name=NetR8_2 New Net Name=NetR16_2
+Change Net Name : Old Net Name=NetR9_1 New Net Name=NetR17_1
+Change Net Name : Old Net Name=NetR13_2 New Net Name=NetR21_2
+Change Net Name : Old Net Name=NetR19_2 New Net Name=NetR27_2
+Change Net Name : Old Net Name=NetR?_2 New Net Name=NetR4_2
+Added Pin To Net: NetName=NetD6_2 Pin=D6-2
+Added Pin To Net: NetName=NetD6_2 Pin=Q1-3
+Added Net: Name=NetD6_2
+Added Pin To Net: NetName=NetQ1_1 Pin=Q1-1
+Added Pin To Net: NetName=NetQ1_1 Pin=R6-1
+Added Pin To Net: NetName=NetQ1_1 Pin=R9-2
+Added Net: Name=NetQ1_1
+Added Pin To Net: NetName=NetQ2_1 Pin=Q2-1
+Added Pin To Net: NetName=NetQ2_1 Pin=R5-1
+Added Pin To Net: NetName=NetQ2_1 Pin=R8-2
+Added Net: Name=NetQ2_1
+Added Pin To Net: NetName=NetQ3_1 Pin=Q3-1
+Added Pin To Net: NetName=NetQ3_1 Pin=R19-2
+Added Pin To Net: NetName=NetQ3_1 Pin=R20-1
+Added Net: Name=NetQ3_1
+Added Pin To Net: NetName=NetR3_2 Pin=R3-2
+Added Pin To Net: NetName=NetR3_2 Pin=U4-3
+Added Net: Name=NetR3_2
+Added Pin To Net: NetName=NetR7_2 Pin=R7-2
+Added Pin To Net: NetName=NetR7_2 Pin=U4-5
+Added Net: Name=NetR7_2
+Added Member To Class: ClassName=MCU Member=Component D5 LED 5MM
+Added Member To Class: ClassName=MCU Member=Component Q1 C945
+Added Member To Class: ClassName=MCU Member=Component Q2 C945
+Added Member To Class: ClassName=other Member=Component Q3 C945
+Added Member To Class: ClassName=MCU Member=Component R3 10k
+Added Member To Class: ClassName=MCU Member=Component R4 10k
+Added Member To Class: ClassName=MCU Member=Component R5 10k
+Added Member To Class: ClassName=MCU Member=Component R6 10k
+Added Member To Class: ClassName=MCU Member=Component R7 10k
+Added Member To Class: ClassName=MCU Member=Component R9 10k
+Added Member To Class: ClassName=MCU Member=Component R10 0

@@ -1,0 +1,10 @@
+Added Component: Designator=*(BluePill)
+Added Member To Class: ClassName=MCU Member=Component * STM32f103 BluePill
+Added Member To Class: ClassName=other Member=Component C18
+Added Member To Class: ClassName=other Member=Component C19
+Added Member To Class: ClassName=other Member=Component d5 Smbj5.0
+Added Member To Class: ClassName=other Member=Component P3 xh 4pin
+Added Member To Class: ClassName=other Member=Component P4 xh 6pin
+Added Member To Class: ClassName=other Member=Component P5 Mic In
+Added Member To Class: ClassName=other Member=Component R15 33k
+Added Member To Class: ClassName=other Member=Component R18 10k

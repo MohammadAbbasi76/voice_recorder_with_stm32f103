@@ -1,0 +1,125 @@
+Removed Pin From Net: NetName=+3v3 Pin=U?-16
+Change Component Comment : Designator=DS? Old Comment=HDSP-301Y New Comment=HDSP-303A
+Change component parameters: Designator = "DS?" ("DS?"); Footprint = "F-10"; UniqueID = "\HTPOLZOG" ("\HTPOLZOG")
+Change component parameters (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer Link"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.agilent.com/"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2URL"; Value = "http://cp.literature.agilent.com/litweb/pdf/5988-4352EN.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "DatasheetDocument"; Value = "1-Oct-2001"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "LatestRevisionDate"; Value = "11-Oct-2004"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "LatestRevisionNote"; Value = "Display outline superimposed on PCB Footprint."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "LED_Colour"; Value = "AlGaAs Red"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "LuminousIntensity"; Value = "320 ucd (Minimum)."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageDocument"; Value = "17-Jan-2002"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageReference"; Value = "F-10"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "26-May-2004"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=R?(RES0805)
+Add component (AddParameter): Name = "Data"; Value = "16-12-2016"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Desc."; Value = "RES SMD 0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Designer"; Value = "Abbas Basereh"; VariantName = "[No Variations]"
+Added Component: Designator=R?(RES0805)
+Add component (AddParameter): Name = "Data"; Value = "16-12-2016"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Desc."; Value = "RES SMD 0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Designer"; Value = "Abbas Basereh"; VariantName = "[No Variations]"
+Added Component: Designator=R?(RES0805)
+Add component (AddParameter): Name = "Data"; Value = "16-12-2016"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Desc."; Value = "RES SMD 0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Designer"; Value = "Abbas Basereh"; VariantName = "[No Variations]"
+Added Component: Designator=R?(RES0805)
+Add component (AddParameter): Name = "Data"; Value = "16-12-2016"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Desc."; Value = "RES SMD 0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Designer"; Value = "Abbas Basereh"; VariantName = "[No Variations]"
+Added Component: Designator=R?(RES0805)
+Add component (AddParameter): Name = "Data"; Value = "16-12-2016"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Desc."; Value = "RES SMD 0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Designer"; Value = "Abbas Basereh"; VariantName = "[No Variations]"
+Added Component: Designator=R?(RES0805)
+Add component (AddParameter): Name = "Data"; Value = "16-12-2016"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Desc."; Value = "RES SMD 0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Designer"; Value = "Abbas Basereh"; VariantName = "[No Variations]"
+Added Component: Designator=R?(RES0805)
+Add component (AddParameter): Name = "Data"; Value = "16-12-2016"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Desc."; Value = "RES SMD 0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Designer"; Value = "Abbas Basereh"; VariantName = "[No Variations]"
+Added Component: Designator=R?(RES0805)
+Add component (AddParameter): Name = "Data"; Value = "16-12-2016"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Desc."; Value = "RES SMD 0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Designer"; Value = "Abbas Basereh"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+3v3 Pin=D?-1
+Added Pin To Net: NetName=+3v3 Pin=D?-1
+Added Pin To Net: NetName=GND Pin=Q?-2
+Added Pin To Net: NetName=GND Pin=Q?-2
+Added Pin To Net: NetName=+5V Pin=R?-1
+Added Pin To Net: NetName=+5V Pin=R?-1
+Added Pin To Net: NetName=GND Pin=R?-1
+Added Pin To Net: NetName=GND Pin=R?-1
+Added Pin To Net: NetName=GND Pin=R?-1
+Added Pin To Net: NetName=GND Pin=R?-2
+Added Pin To Net: NetName=+5V Pin=U?-16
+Added Pin To Net: NetName=7-Segment-A Pin=DS?-10
+Added Pin To Net: NetName=7-Segment-A Pin=U?-13
+Added Net: Name=7-Segment-A
+Added Pin To Net: NetName=7-Segment-B Pin=DS?-9
+Added Pin To Net: NetName=7-Segment-B Pin=U?-12
+Added Net: Name=7-Segment-B
+Added Pin To Net: NetName=7-Segment-C Pin=DS?-7
+Added Pin To Net: NetName=7-Segment-C Pin=U?-11
+Added Net: Name=7-Segment-C
+Added Pin To Net: NetName=7-Segment-D Pin=DS?-5
+Added Pin To Net: NetName=7-Segment-D Pin=U?-10
+Added Net: Name=7-Segment-D
+Added Pin To Net: NetName=7-Segment-E Pin=DS?-4
+Added Pin To Net: NetName=7-Segment-E Pin=U?-9
+Added Net: Name=7-Segment-E
+Added Pin To Net: NetName=7-Segment-F Pin=DS?-2
+Added Pin To Net: NetName=7-Segment-F Pin=U?-15
+Added Net: Name=7-Segment-F
+Added Pin To Net: NetName=7-Segment-G Pin=DS?-1
+Added Pin To Net: NetName=7-Segment-G Pin=U?-14
+Added Net: Name=7-Segment-G
+Added Pin To Net: NetName=BCD_A Pin=STM32f103 BluePill-29
+Added Pin To Net: NetName=BCD_A Pin=U?-7
+Added Net: Name=BCD_A
+Added Pin To Net: NetName=BCD_B Pin=STM32f103 BluePill-28
+Added Pin To Net: NetName=BCD_B Pin=U?-1
+Added Net: Name=BCD_B
+Added Pin To Net: NetName=BCD_C Pin=STM32f103 BluePill-25
+Added Pin To Net: NetName=BCD_C Pin=U?-2
+Added Net: Name=BCD_C
+Added Pin To Net: NetName=BCD_D Pin=STM32f103 BluePill-6
+Added Pin To Net: NetName=BCD_D Pin=U?-6
+Added Net: Name=BCD_D
+Added Pin To Net: NetName=NetD?_2 Pin=D?-2
+Added Pin To Net: NetName=NetD?_2 Pin=Q?-3
+Added Net: Name=NetD?_2
+Add Net: Net with name "NetD?_2" already exists
+Added Pin To Net: NetName=NetDS?_3 Pin=DS?-3
+Added Pin To Net: NetName=NetDS?_3 Pin=DS?-8
+Added Pin To Net: NetName=NetDS?_3 Pin=R?-1
+Added Net: Name=NetDS?_3
+Add Net: Net with name "NetQ?_1" already exists
+Add Net: Net with name "NetQ?_1" already exists
+Add Net: Net with name "NetQ?_1" already exists
+Added Pin To Net: NetName=NetR?_2 Pin=R?-2
+Added Pin To Net: NetName=NetR?_2 Pin=U?-4
+Added Net: Name=NetR?_2
+Add Net: Net with name "NetR?_2" already exists
+Add Net: Net with name "NetR?_2" already exists
+Added Pin To Net: NetName=Play_LED Pin=R?-2
+Added Pin To Net: NetName=Play_LED Pin=STM32f103 BluePill-35
+Added Net: Name=Play_LED
+Added Pin To Net: NetName=Record_LED Pin=R?-2
+Added Pin To Net: NetName=Record_LED Pin=STM32f103 BluePill-34
+Added Net: Name=Record_LED
+Added Member To Class: ClassName=MCU Member=Component D? LED 5MM
+Added Member To Class: ClassName=MCU Member=Component Q? C945
+Added Member To Class: ClassName=other Member=Component Q? C945
+Added Member To Class: ClassName=MCU Member=Component R? 10k
+Added Member To Class: ClassName=MCU Member=Component R? 10k
+Added Member To Class: ClassName=MCU Member=Component R? 10k
+Added Member To Class: ClassName=MCU Member=Component R? 0
+Added Member To Class: ClassName=MCU Member=Component R? 10k
+Added Member To Class: ClassName=MCU Member=Component R? 10k
+Added Member To Class: ClassName=MCU Member=Component R? 10k
+Added Member To Class: ClassName=MCU Member=Component R? 10k
