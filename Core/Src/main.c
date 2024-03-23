@@ -17,7 +17,6 @@
  */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-#include <state_machine.h>
 #include "main.h"
 #include "adc.h"
 #include "spi.h"
@@ -164,49 +163,7 @@ void SystemClock_Config(void)
   }
 }
 
-
-
-
-uint16_t ADC_read()
-{
-  return HAL_ADC_GetValue(&hadc1);
-}
-
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-{
-  //  play_Pin | recod_Pin | pause_Pin;
-
-  if (GPIO_Pin == play_Pin) // If The INT Source Is EXTI Line8 (B12 Pin)
-  {
-    state = PlayState;
-    DummyFunc();
-  }
-  else if (GPIO_Pin == recod_Pin) // If The INT Source Is EXTI Line8 (B13 Pin)
-  {
-    state = RecordState;
-    DummyFunc();
-  }
-  else if (GPIO_Pin == pause_Pin) // If The INT Source Is EXTI Line8 (B14 Pin)
-  {
-    if (state == PlayState)
-    {
-      StopPlaying();
-    }
-    if (state == RecordState)
-    {
-      StopRecording();
-    }
-  }
-  else if (GPIO_Pin == Next_Pin) // If The INT Source Is EXTI Line8 (B14 Pin)
-  {
-    NextPinFunc();
-  }
-}
-
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-{
-  interrupt_func();
-}
+/* USER CODE BEGIN 4 */
 
 /* USER CODE END 4 */
 

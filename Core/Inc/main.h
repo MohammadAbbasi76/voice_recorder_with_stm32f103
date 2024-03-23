@@ -80,8 +80,6 @@ void Error_Handler(void);
 #define Next_Pin GPIO_PIN_14
 #define Next_GPIO_Port GPIOB
 #define Next_EXTI_IRQn EXTI15_10_IRQn
-#define M66_on_off_key_Pin GPIO_PIN_15
-#define M66_on_off_key_GPIO_Port GPIOB
 #define BCD_C_Pin GPIO_PIN_8
 #define BCD_C_GPIO_Port GPIOA
 #define BCD_B_Pin GPIO_PIN_11

@@ -50,7 +50,6 @@ typedef enum
     PauseState,
     ReadKeyboardState,
     UartDataReceive,
-    M66State,
     FlashEraseState,
     PLayLoop
 } state_t;

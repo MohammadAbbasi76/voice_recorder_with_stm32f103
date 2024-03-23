@@ -44,13 +44,6 @@ void state_machine()
     state = ReadKeyboardState;
     break;
   }
-  case M66State:
-  {
-    HAL_GPIO_WritePin(GPIOB, M66_on_off_key_Pin, GPIO_PIN_SET);
-    HAL_Delay(M66DelayTime);
-    HAL_GPIO_WritePin(GPIOB, M66_on_off_key_Pin, GPIO_PIN_RESET);
-    break;
-  }
   case FlashEraseState:
   {
     FlashEraseFunc();
