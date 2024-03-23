@@ -2,83 +2,7 @@
 
 
 
-void init_value()
-{
-  HAL_GPIO_WritePin(GPIOB, Record_LED_Pin, GPIO_PIN_SET);
-  HAL_GPIO_WritePin(GPIOB, Play_LED_Pin, GPIO_PIN_SET);
-  /** adc init value*/
 
-  ADC_t.counter = 0;
-  flag.AdcArrayFull = 0;
-  ADC_t.TotallyStopTim = SampleRate * StopTimeInSec;
-  ADC_t.StopTimeCounter = 0;
-  voice_t.ArrayGoToSave = 0;
-  voice_t.number = 0;
-  FLGForVoiceStop = 0;
-  for (int i = 0; i < MaxNumberOfVoice; i++)
-  {
-    voice_t.WitchVoiceIsRecord[i] = 0;
-  }
-  /**  timer2 state changer flag */
-  flag.InterruptSwitch = 1;
-  /** first state*/
-  state = ReadKeyboardState;
-  /**  fris val for keyboard value*/
-  InputKey = non_;
-  /** pwm init val*/
-  PWM_t.counter = 0;
-  for (int i = 0; i < MaxNumberOfVoice; i++)
-    PWM_t.CountDataFromTotally[i] = 0;
-  flag.PwmArrayEmpty = 0;
-  state = ReadKeyboardState;
-  WitchVoiceWantToPlay = 1;
-  ccr_pwm_val = __HAL_TIM_GET_AUTORELOAD(&htim3);
-  HAL_ADCEx_Calibration_Start(&hadc1);
-  FirstTimeFLG = 1;
-  if (!W25qxx_Init())
-  {
-    while (1)
-    {
-    }
-    // flash have problem !
-  }
-  //  W25qxx_EraseChip();
-  RestoreDetail(voice_t.WitchVoiceIsRecord, voice_t.number, &(voice_t.ArrayGoToSave));
-  if (voice_t.WitchVoiceIsRecord[0] == 255)
-  {
-    voice_t.number = 0;
-    for (uint8_t i = 0; i < MaxNumberOfVoice; i++)
-      voice_t.WitchVoiceIsRecord[i] = 0;
-    voice_t.ArrayGoToSave = 0;
-  }
-  for (uint8_t i = 0; i < UartArraySize; i++)
-    UartReceive[i] = 0;
-  HAL_GPIO_WritePin(GPIOB, Record_LED_Pin, GPIO_PIN_RESET);
-  HAL_GPIO_WritePin(GPIOB, Play_LED_Pin, GPIO_PIN_RESET);
-  HAL_Delay(500);
-  HAL_GPIO_WritePin(GPIOB, Record_LED_Pin, GPIO_PIN_SET);
-  HAL_GPIO_WritePin(GPIOB, Play_LED_Pin, GPIO_PIN_SET);
-  HAL_Delay(500);
-  HAL_GPIO_WritePin(GPIOB, Record_LED_Pin, GPIO_PIN_RESET);
-  HAL_GPIO_WritePin(GPIOB, Play_LED_Pin, GPIO_PIN_RESET);
-  HAL_Delay(500);
-  HAL_GPIO_WritePin(GPIOB, Record_LED_Pin, GPIO_PIN_SET);
-  HAL_GPIO_WritePin(GPIOB, Play_LED_Pin, GPIO_PIN_SET);
-  HAL_Delay(500);
-  HAL_GPIO_WritePin(GPIOB, Record_LED_Pin, GPIO_PIN_RESET);
-  HAL_GPIO_WritePin(GPIOB, Play_LED_Pin, GPIO_PIN_RESET);
-  HAL_Delay(500);
-  HAL_GPIO_WritePin(GPIOB, Record_LED_Pin, GPIO_PIN_SET);
-  HAL_GPIO_WritePin(GPIOB, Play_LED_Pin, GPIO_PIN_SET);
-  HAL_Delay(500);
-  HAL_GPIO_WritePin(GPIOB, Record_LED_Pin, GPIO_PIN_RESET);
-  HAL_GPIO_WritePin(GPIOB, Play_LED_Pin, GPIO_PIN_RESET);
-  for (int i = 0; i < UartArraySize; i++)
-    UartReceive[i] = 0;
-  LastTimeKeyPress = HAL_GetTick() + 100;
-  NumberOfVoiceForLoopPlay = 0;
-  SevenSegmentDisplay(WitchVoiceWantToPlay);
-}
 void FlashEraseFunc()
 {
   if (!W25qxx_Init())
@@ -156,25 +80,7 @@ void DummyFunc()
     a++;
   }
 }
-void LoopPLayFunc()
-{
-  uint32_t TT1 = 0;
-  TT1 = HAL_GetTick() + PlayLoopTime;
-  while (1)
-  {
-    if (FLGForVoiceStop == 1)
-      break;
-    if (((TT1 - HAL_GetTick()) < 5))
-    {
-      break;
-    }
-    SetupForPlay(NumberOfVoiceForLoopPlay);
-    PlayStateFun();
-    SetupForPlay(9);
-    PlayStateFun();
-  }
-  FLGForVoiceStop = 0;
-}
+
 void SetupForPlay(uint8_t VoiceNumber)
 {
   if (voice_t.WitchVoiceIsRecord[VoiceNumber] == 1)
@@ -224,48 +130,7 @@ void choose_AudioOutput(AudioOutput out)
     HAL_GPIO_WritePin(Relay_SW_GPIO_Port, Relay_SW_Pin, GPIO_PIN_RESET);
   }
 }
-void ChooseVoiceForPlayfunc()
-{
-  // HAL_GPIO_WritePin(GPIOB, Record_LED_Pin, GPIO_PIN_SET);
-  // HAL_GPIO_WritePin(GPIOB, Play_LED_Pin, GPIO_PIN_SET);
-  // voice_t.number = HowManyVoiceIsRecord(
-  //     WitchVoiceWannaToPlay, voice_t.WitchVoiceIsRecord);
-  voice_t.number = WitchVoiceWantToPlay;
-  UART_Printf("voice_t.number =%d\n", voice_t.number);
-  SevenSegmentDisplay(voice_t.number);
-  if (voice_t.WitchVoiceIsRecord[voice_t.number] == 1)
-  {
-    SevenSegmentDisplay(voice_t.number);
-    flag.InterruptSwitch = 0;
-    flag.PwmArrayEmpty = 0;
-    VoiceArrayReadFromFlash = 0;
-    for (int i = 0; i < AdcArraySize; i++)
-    {
-      Buffer2[i] = 0;
-    }
-    RestoreDetail(voice_t.WitchVoiceIsRecord, voice_t.number, &(voice_t.ArrayGoToSave));
-    restore_2k_array(voice_t.number, VoiceArrayReadFromFlash, Buffer2);
-    PWM_t.CountDataFromTotally[voice_t.number] = (uint32_t)((voice_t.ArrayGoToSave) * (AdcArraySize));
-    for (int i = 0; i < AdcArraySize; i++)
-    {
-      Buffer1[i] = Buffer2[i];
-    }
-  }
-  else
-  {
-    flag.InterruptSwitch = 0;
-    flag.PwmArrayEmpty = 0;
-    VoiceArrayReadFromFlash = 0;
-    for (int i = 0; i < AdcArraySize; i++)
-    {
-      Buffer2[i] = 0;
-      Buffer1[i] = Buffer2[i];
-    }
-    StopPlaying();
-  }
-  // HAL_GPIO_WritePin(GPIOB, Record_LED_Pin, GPIO_PIN_RESET);
-  // HAL_GPIO_WritePin(GPIOB, Play_LED_Pin, GPIO_PIN_RESET);
-}
+
 void NextPinFunc()
 {
   int a = (LastTimeKeyPress - HAL_GetTick());
@@ -283,7 +148,7 @@ void NextPinFunc()
     LastTimeKeyPress = DebounceTime + HAL_GetTick();
   }
 }
-void RecordStatefunc()
+void StartRecording()
 {
   // voice.number = NextFreeSpaceInFlash(voice.WitchVoiceIsRecord);
   voice_t.number = WitchVoiceWantToPlay;
@@ -398,44 +263,7 @@ void FlashPrint()
   }
 }
 #endif
-void PlayStateFun()
-{
-  PalyLED_ON();
-  SetupForPlay(WitchVoiceWantToPlay);
-  HAL_TIM_Base_Start_IT(&htim2);
-  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1); // Start Pwm signal on PB-6 Pin
-  uint8_t flg_use = 0;
-  while (1)
-  {
-    if (VoiceArrayReadFromFlash == voice_t.ArrayGoToSave)
-    {
-      break;
-    }
-    if (flag.PwmArrayEmpty == 0)
-    {
-      if (flg_use == 0)
-      {
-        VoiceArrayReadFromFlash++;
-        restore_2k_array(voice_t.number, VoiceArrayReadFromFlash, Buffer2);
-        flg_use = 1;
-      }
-    }
-    else
-    {
-      for (int i = 0; i < AdcArraySize; i++)
-      {
-        Buffer1[i] = Buffer2[i];
-        Buffer2[i] = 0;
-      }
-      flag.PwmArrayEmpty = 0;
-      flg_use = 0;
-    }
-  }
-  VoiceArrayReadFromFlash = 0;
-  HAL_TIM_Base_Stop_IT(&htim2);
-  HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);
-  PlayLED_OFF();
-}
+
 void conv_adc_val_to_pwm_duty(uint16_t *val)
 {
   uint32_t a = 0;
