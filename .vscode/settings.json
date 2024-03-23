@@ -1,7 +1,4 @@
 {
-    "files.associations": {
-        "state_machine.h": "c",
-        "main.h": "c",
-        "typedef.h": "c"
-    }
+  "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+  "cmake.configureOnOpen": true
 }

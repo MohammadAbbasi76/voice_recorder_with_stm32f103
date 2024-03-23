@@ -64,10 +64,10 @@ target_link_options(
 
 target_sources(
     ${TARGET_NAME} PRIVATE
-    "state_machine\\state_machine_func.c"
-    "state_machine\\state_machine.c"
-    "w25q\\src\\w25qxx.c"
-    "w25q\\src\\write_to_flash.c"
+    "Component\\Log\\src\\print_with_uart.c"
+    "Component\\Voice_recorder\\src\\state_machine.c"
+    "Component\\W25QXX_deriver\\src\\w25qxx.c"
+    "Component\\W25QXX_deriver\\src\\write_to_flash.c"
     "Core\\Src\\adc.c"
     "Core\\Src\\gpio.c"
     "Core\\Src\\main.c"
@@ -97,6 +97,7 @@ target_sources(
     "Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_tim.c"
     "Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_uart.c"
     "Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal.c"
+    "Component\\Voice_recorder\\inc\\state_machine_func.c"
 )
 
 add_custom_command(

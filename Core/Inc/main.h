@@ -23,8 +23,7 @@
 #define __MAIN_H
 
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -36,18 +35,27 @@ extern "C"
 #include <stdarg.h>
 #include <stdbool.h>
 #include <stdio.h>
-  /* USER CODE END Includes */
+/* USER CODE END Includes */
 
-  /* Exported types ------------------------------------------------------------*/
-  /* USER CODE BEGIN ET */
-  uint16_t ADC_read();
-  void UART_Printf(const char *fmt, ...);
-  /* USER CODE END EM */
+/* Exported types ------------------------------------------------------------*/
+/* USER CODE BEGIN ET */
 
-  /* Exported functions prototypes ---------------------------------------------*/
-  void Error_Handler(void);
+/* USER CODE END ET */
 
-  /* USER CODE BEGIN EFP */
+/* Exported constants --------------------------------------------------------*/
+/* USER CODE BEGIN EC */
+
+/* USER CODE END EC */
+
+/* Exported macro ------------------------------------------------------------*/
+/* USER CODE BEGIN EM */
+
+/* USER CODE END EM */
+
+/* Exported functions prototypes ---------------------------------------------*/
+void Error_Handler(void);
+
+/* USER CODE BEGIN EFP */
   extern TIM_HandleTypeDef htim2;
   extern UART_HandleTypeDef huart1;
   extern ADC_HandleTypeDef hadc1;
@@ -85,9 +93,9 @@ extern "C"
 #define Play_LED_Pin GPIO_PIN_7
 #define Play_LED_GPIO_Port GPIOB
 
-  /* USER CODE BEGIN Private defines */
+/* USER CODE BEGIN Private defines */
 
-  /* USER CODE END Private defines */
+/* USER CODE END Private defines */
 
 #ifdef __cplusplus
 }
