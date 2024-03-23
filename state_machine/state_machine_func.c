@@ -6,13 +6,13 @@
 #include "stm32f1xx_hal_gpio.h"
 #include "string.h"
 #include "w25qxx.h"
-#include"Typedef.h"
+
 extern uint16_t Buffer1[AdcArraySize];
 extern uint16_t Buffer2[AdcArraySize];
-extern struct adc_ adc_stru;
-extern struct pwm_ pwm_stru;
-extern struct voice_struc voice;
-extern struct flags flag;
+extern struct ADC_ptr adc_stru;
+extern struct PWM_ptr pwm_stru;
+extern struct Voice_ptr voice;
+extern struct Flags_ptr flag;
 extern uint8_t InputKey;
 extern uint8_t WitchVoiceWantToPlay;
 extern uint8_t state;
@@ -30,7 +30,7 @@ void init_value()
   /** adc init value*/
 
   adc_stru.counter = 0;
-  flag.AdcArryFull = 0;
+  flag.AdcArrayFull = 0;
   adc_stru.TotallyStopTim = SampleRate * StopTimeInSec;
   adc_stru.StopTimeCounter = 0;
   voice.ArrayGoToSave = 0;
@@ -364,16 +364,16 @@ void RecordStatefunc()
   HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
   flag.InterruptSwitch = 1;
   voice.ArrayGoToSave = 0;
-  flag.AdcArryFull = 0;
+  flag.AdcArrayFull = 0;
   HAL_TIM_Base_Start_IT(&htim2);
   while (1)
   {
-    if (flag.AdcArryFull == 1)
+    if (flag.AdcArrayFull == 1)
     {
       conv_adc_val_to_pwm_duty(Buffer1); // may be need RTOS
       save_2k_array(voice.number, voice.ArrayGoToSave, Buffer1);
       voice.ArrayGoToSave++;
-      flag.AdcArryFull = 0;
+      flag.AdcArrayFull = 0;
     }
     if (adc_stru.StopTimeCounter >= (adc_stru.TotallyStopTim + 1))
     {
@@ -403,7 +403,7 @@ void AdcGettingSample()
     }
 
     adc_stru.counter = 0;
-    flag.AdcArryFull = 1;
+    flag.AdcArrayFull = 1;
   }
   else
   {
@@ -419,7 +419,7 @@ void AdcGettingSample()
         Buffer1[i] = Buffer2[i];
         Buffer2[i] = 0;
       }
-      flag.AdcArryFull = 1;
+      flag.AdcArrayFull = 1;
     }
   }
 }

@@ -9,10 +9,10 @@
 #include "w25qxx.h"
 extern uint16_t Buffer1[AdcArraySize];
 extern uint16_t Buffer2[AdcArraySize];
-extern struct adc_ adc_stru;
-extern struct pwm_ pwm_stru;
-extern struct voice_struc voice;
-extern struct flags flag;
+extern struct ADC_ptr adc_stru;
+extern struct PWM_ptr pwm_stru;
+extern struct Voice_ptr voice;
+extern struct Flags_ptr flag;
 extern uint8_t InputKey;
 extern uint8_t WitchVoiceWantToPlay;
 extern uint8_t state;
