@@ -2,6 +2,9 @@
   "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
   "cmake.configureOnOpen": true,
   "files.associations": {
-    "plays_functions.h": "c"
+    "plays_functions.h": "c",
+    "record_functions.h": "c",
+    "seven_segment_and_leds.h": "c",
+    "state_machine.h": "c"
   }
 }

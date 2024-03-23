@@ -1,6 +1,5 @@
-#ifndef _PALYS_FUNCTIONS_H
-#define _PALYS_FUNCTIONS_H
-
+#ifndef  _RECORD_FUNCTION_H
+#define _RECORD_FUNCTION_H
 #include "main.h"
 #include "tim.h"
 #include "adc.h"
@@ -11,10 +10,7 @@
 #include "Typedef.h"
 #include "write_to_flash.h"
 
+void StopRecording();
+void StartRecording();
 
-
-
-void PlayStateFun();
-void StopPlaying();
-void SetupForPlay(uint8_t VoiceNumber);
 #endif

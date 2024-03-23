@@ -14,25 +14,21 @@
 #include "write_to_flash.h"
 
 
-void StopRecording();
-void StartRecording();
+
 void AdcGettingSample();
 
 
 
 void choose_AudioOutput(AudioOutput out);
-void SevenSegmentDisplay(uint8_t number);
-void RecordLED_OFF();
-void PalyLED_ON();
-void RecordLED_ON();
+
 
 void FlashPrint();
 void FlashEraseFunc();
 
 
-void conv_adc_val_to_pwm_duty(uint16_t *val);
-void pwm_part();
-void ChooseVoiceForPlayfunc();
+void ConversionADCValueToPWMDuty(uint16_t *val);
+void MakePWM_Wave();
+void ChooseVoiceForPlay();
 void NextPinFunc();
 void DummyFunc();
 void interrupt_func(void);

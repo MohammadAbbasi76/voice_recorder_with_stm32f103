@@ -45,25 +45,7 @@ void StopPlaying()
     HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);
     VoiceArrayReadFromFlash = voice_t.ArrayGoToSave;
 }
-void LoopPLayFunc()
-{
-    uint32_t TT1 = 0;
-    TT1 = HAL_GetTick() + PlayLoopTime;
-    while (1)
-    {
-        if (FLGForVoiceStop == 1)
-            break;
-        if (((TT1 - HAL_GetTick()) < 5))
-        {
-            break;
-        }
-        SetupForPlay(NumberOfVoiceForLoopPlay);
-        PlayStateFun();
-        SetupForPlay(9);
-        PlayStateFun();
-    }
-    FLGForVoiceStop = 0;
-}
+
 
 void PlayStateFun()
 {
