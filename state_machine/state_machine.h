@@ -1,13 +1,18 @@
 
 
-#ifndef  STATE_MACHINE
+#ifndef STATE_MACHINE
 #define STATE_MACHINE
 
-
-
-#include"Typedef.h"
-#include"main.h"
+#include "main.h"
+#include "tim.h"
+#include "adc.h"
+#include "usart.h"
+#include "stm32f1xx_hal_gpio.h"
+#include "string.h"
+#include "w25qxx.h"
+#include "Typedef.h"
 #include "write_to_flash.h"
+
 void interrupt_func(void);
 void state_machine(void);
 void init_value();
@@ -18,7 +23,6 @@ void RecordStatefunc();
 void AdcGettingSample();
 void ChooseVoiceForPlayfunc();
 void choose_AudioOutput(AudioOutput out);
-void UartReceiveFnc();
 void SetupForPlay(uint8_t VoiceNumber);
 void StopPlaying();
 void SevenSegmentDisplay(uint8_t number);

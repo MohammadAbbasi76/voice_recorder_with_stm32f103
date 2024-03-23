@@ -17,22 +17,6 @@ void state_machine()
   {
   case ReadKeyboardState:
   {
-	  int a=(UartFLush_T1 - (HAL_GetTick()));
-    if (a < 1)
-    {
-      for (int i = 0; i < UartArraySize; i++)
-        UartReceive[i] = 0;
-      HAL_UART_Abort_IT(&huart1);
-      __HAL_UART_FLUSH_DRREGISTER(&huart1);
-      UartFLush_T1 = HAL_GetTick() + UartTimeDataExpire;
-    }
-    HAL_UART_Receive_IT(&huart1, UartReceive, UartArraySize);
-    state = ReadKeyboardState;
-    break;
-  }
-  case UartDataReceive:
-  {
-    HAL_UART_Receive_IT(&huart1, UartReceive, UartArraySize);
     state = ReadKeyboardState;
     break;
   }
@@ -42,14 +26,13 @@ void state_machine()
     timing_1 = HAL_GetTick();
     RecordStatefunc();
     timing_1 = HAL_GetTick() - timing_1;
-    //  FlashPrint();
-    state = UartDataReceive;
+    state = ReadKeyboardState;
     break;
   }
   case ChooseVoiceForPlay:
   {
     ChooseVoiceForPlayfunc();
-    state = UartDataReceive;
+    state = ReadKeyboardState;
     break;
   }
   case PlayState:
@@ -58,7 +41,7 @@ void state_machine()
     timing_1 = HAL_GetTick();
     PlayStateFun();
     timing_1 = HAL_GetTick() - timing_1;
-    state = UartDataReceive;
+    state = ReadKeyboardState;
     break;
   }
   case M66State:
@@ -71,14 +54,13 @@ void state_machine()
   case FlashEraseState:
   {
     FlashEraseFunc();
-    state = UartDataReceive;
+    state = ReadKeyboardState;
     break;
   }
   case PLayLoop:
   {
-    HAL_UART_Receive_IT(&huart1, UartReceive, UartArraySize);
     LoopPLayFunc();
-    state = UartDataReceive;
+    state = ReadKeyboardState;
     break;
   }
   }

@@ -20,14 +20,13 @@
 
 uint16_t Buffer1[AdcArraySize];
 uint16_t Buffer2[AdcArraySize];
+uint8_t UartReceive[UartArraySize];
 uint8_t InputKey;
 uint8_t WitchVoiceWantToPlay;
 uint8_t VoiceArrayReadFromFlash;
 uint8_t state;
 uint32_t ccr_pwm_val;
 uint8_t FirstTimeFLG;
-uint8_t UartReceive[UartArraySize];
-uint32_t UartFLush_T1;
 uint8_t VoiceForPlayLoop;
 uint8_t FLGForVoiceStop;
 uint32_t LastTimeKeyPress;
@@ -54,7 +53,7 @@ typedef enum
     M66State,
     FlashEraseState,
     PLayLoop
-} state_;
+} state_t;
 
 typedef enum
 {
@@ -66,19 +65,19 @@ struct ADC_ptr
     uint32_t counter;
     uint32_t TotallyStopTim;
     uint32_t StopTimeCounter;
-} adc_stru;
+} ADC_t;
 struct PWM_ptr
 {
     uint32_t counter;
     uint32_t CountDataFromTotally[MaxNumberOfVoice];
 
-} pwm_stru;
+} PWM_t;
 struct Voice_ptr
 {
     uint8_t ArrayGoToSave;
     uint8_t number;
     uint8_t WitchVoiceIsRecord[MaxNumberOfVoice];
-} voice;
+} voice_t;
 struct Flags_ptr
 {
     uint8_t AdcArrayFull;

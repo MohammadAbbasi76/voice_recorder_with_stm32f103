@@ -178,11 +178,6 @@ static void MX_NVIC_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
-{
-  UartReceiveFnc();
-}
 #ifdef Print
 void UART_Printf(const char *fmt, ...)
 {
