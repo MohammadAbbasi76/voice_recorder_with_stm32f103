@@ -66,12 +66,7 @@ void StopRecording()
   HAL_TIM_Base_Stop_IT(&htim2);
   ADC_t.StopTimeCounter = (ADC_t.TotallyStopTim + 2);
 }
-void StopPlaying()
-{
-  HAL_TIM_Base_Stop_IT(&htim2);
-  HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);
-  VoiceArrayReadFromFlash = voice_t.ArrayGoToSave;
-}
+
 void DummyFunc()
 {
   int a = 0;
@@ -81,44 +76,7 @@ void DummyFunc()
   }
 }
 
-void SetupForPlay(uint8_t VoiceNumber)
-{
-  if (voice_t.WitchVoiceIsRecord[VoiceNumber] == 1)
-  {
-    voice_t.number = VoiceNumber;
-    flag.InterruptSwitch = 0;
-    flag.PwmArrayEmpty = 0;
-    VoiceArrayReadFromFlash = 0;
-    for (int i = 0; i < AdcArraySize; i++)
-    {
-      Buffer2[i] = 0;
-    }
-    RestoreDetail(voice_t.WitchVoiceIsRecord, voice_t.number, &(voice_t.ArrayGoToSave));
-    restore_2k_array(voice_t.number, VoiceArrayReadFromFlash, Buffer2);
-    PWM_t.CountDataFromTotally[voice_t.number] = (uint32_t)((voice_t.ArrayGoToSave) * (AdcArraySize));
-    for (int i = 0; i < AdcArraySize; i++)
-    {
-      Buffer1[i] = Buffer2[i];
-    }
-  }
-  else
-  {
-    voice_t.number = VoiceNumber;
-    flag.InterruptSwitch = 0;
-    flag.PwmArrayEmpty = 0;
-    VoiceArrayReadFromFlash = 0;
-    for (int i = 0; i < AdcArraySize; i++)
-    {
-      Buffer2[i] = 0;
-    }
-    for (int i = 0; i < AdcArraySize; i++)
-    {
-      Buffer1[i] = 0;
-      Buffer2[i] = 0;
-    }
-    StopPlaying();
-  }
-}
+
 void choose_AudioOutput(AudioOutput out)
 {
   if (out == Speaker)

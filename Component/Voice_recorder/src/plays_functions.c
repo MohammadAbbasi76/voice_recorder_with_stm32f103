@@ -1,63 +1,105 @@
 
-#include"plays_functions.h"
+#include "plays_functions.h"
 
-
-void LoopPLayFunc()
+void SetupForPlay(uint8_t VoiceNumber)
 {
-  uint32_t TT1 = 0;
-  TT1 = HAL_GetTick() + PlayLoopTime;
-  while (1)
-  {
-    if (FLGForVoiceStop == 1)
-      break;
-    if (((TT1 - HAL_GetTick()) < 5))
+    if (voice_t.WitchVoiceIsRecord[VoiceNumber] == 1)
     {
-      break;
-    }
-    SetupForPlay(NumberOfVoiceForLoopPlay);
-    PlayStateFun();
-    SetupForPlay(9);
-    PlayStateFun();
-  }
-  FLGForVoiceStop = 0;
-}
-
-
-void PlayStateFun()
-{
-  PalyLED_ON();
-  SetupForPlay(WitchVoiceWantToPlay);
-  HAL_TIM_Base_Start_IT(&htim2);
-  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1); // Start Pwm signal on PB-6 Pin
-  uint8_t flg_use = 0;
-  while (1)
-  {
-    if (VoiceArrayReadFromFlash == voice_t.ArrayGoToSave)
-    {
-      break;
-    }
-    if (flag.PwmArrayEmpty == 0)
-    {
-      if (flg_use == 0)
-      {
-        VoiceArrayReadFromFlash++;
+        voice_t.number = VoiceNumber;
+        flag.InterruptSwitch = 0;
+        flag.PwmArrayEmpty = 0;
+        VoiceArrayReadFromFlash = 0;
+        for (int i = 0; i < AdcArraySize; i++)
+        {
+            Buffer2[i] = 0;
+        }
+        RestoreDetail(voice_t.WitchVoiceIsRecord, voice_t.number, &(voice_t.ArrayGoToSave));
         restore_2k_array(voice_t.number, VoiceArrayReadFromFlash, Buffer2);
-        flg_use = 1;
-      }
+        PWM_t.CountDataFromTotally[voice_t.number] = (uint32_t)((voice_t.ArrayGoToSave) * (AdcArraySize));
+        for (int i = 0; i < AdcArraySize; i++)
+        {
+            Buffer1[i] = Buffer2[i];
+        }
     }
     else
     {
-      for (int i = 0; i < AdcArraySize; i++)
-      {
-        Buffer1[i] = Buffer2[i];
-        Buffer2[i] = 0;
-      }
-      flag.PwmArrayEmpty = 0;
-      flg_use = 0;
+        voice_t.number = VoiceNumber;
+        flag.InterruptSwitch = 0;
+        flag.PwmArrayEmpty = 0;
+        VoiceArrayReadFromFlash = 0;
+        for (int i = 0; i < AdcArraySize; i++)
+        {
+            Buffer2[i] = 0;
+        }
+        for (int i = 0; i < AdcArraySize; i++)
+        {
+            Buffer1[i] = 0;
+            Buffer2[i] = 0;
+        }
+        StopPlaying();
     }
-  }
-  VoiceArrayReadFromFlash = 0;
-  HAL_TIM_Base_Stop_IT(&htim2);
-  HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);
-  PlayLED_OFF();
+}
+void StopPlaying()
+{
+    HAL_TIM_Base_Stop_IT(&htim2);
+    HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);
+    VoiceArrayReadFromFlash = voice_t.ArrayGoToSave;
+}
+void LoopPLayFunc()
+{
+    uint32_t TT1 = 0;
+    TT1 = HAL_GetTick() + PlayLoopTime;
+    while (1)
+    {
+        if (FLGForVoiceStop == 1)
+            break;
+        if (((TT1 - HAL_GetTick()) < 5))
+        {
+            break;
+        }
+        SetupForPlay(NumberOfVoiceForLoopPlay);
+        PlayStateFun();
+        SetupForPlay(9);
+        PlayStateFun();
+    }
+    FLGForVoiceStop = 0;
+}
+
+void PlayStateFun()
+{
+    PalyLED_ON();
+    SetupForPlay(WitchVoiceWantToPlay);
+    HAL_TIM_Base_Start_IT(&htim2);
+    HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1); // Start Pwm signal on PB-6 Pin
+    uint8_t flg_use = 0;
+    while (1)
+    {
+        if (VoiceArrayReadFromFlash == voice_t.ArrayGoToSave)
+        {
+            break;
+        }
+        if (flag.PwmArrayEmpty == 0)
+        {
+            if (flg_use == 0)
+            {
+                VoiceArrayReadFromFlash++;
+                restore_2k_array(voice_t.number, VoiceArrayReadFromFlash, Buffer2);
+                flg_use = 1;
+            }
+        }
+        else
+        {
+            for (int i = 0; i < AdcArraySize; i++)
+            {
+                Buffer1[i] = Buffer2[i];
+                Buffer2[i] = 0;
+            }
+            flag.PwmArrayEmpty = 0;
+            flg_use = 0;
+        }
+    }
+    VoiceArrayReadFromFlash = 0;
+    HAL_TIM_Base_Stop_IT(&htim2);
+    HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);
+    PlayLED_OFF();
 }
