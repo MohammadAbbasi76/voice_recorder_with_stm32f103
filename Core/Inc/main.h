@@ -1,21 +1,21 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file           : main.h
-  * @brief          : Header for main.c file.
-  *                   This file contains the common defines of the application.
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2023 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file           : main.h
+ * @brief          : Header for main.c file.
+ *                   This file contains the common defines of the application.
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2023 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
@@ -23,7 +23,8 @@
 #define __MAIN_H
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -35,19 +36,21 @@ extern "C" {
 #include <stdarg.h>
 #include <stdbool.h>
 #include <stdio.h>
-/* USER CODE END Includes */
+  /* USER CODE END Includes */
 
-/* Exported types ------------------------------------------------------------*/
-/* USER CODE BEGIN ET */
-uint16_t ADC_read();
-void UART_Printf(const char *fmt, ...);
-/* USER CODE END EM */
+  /* Exported types ------------------------------------------------------------*/
+  /* USER CODE BEGIN ET */
+  uint16_t ADC_read();
+  void UART_Printf(const char *fmt, ...);
+  /* USER CODE END EM */
 
-/* Exported functions prototypes ---------------------------------------------*/
-void Error_Handler(void);
+  /* Exported functions prototypes ---------------------------------------------*/
+  void Error_Handler(void);
 
-/* USER CODE BEGIN EFP */
-
+  /* USER CODE BEGIN EFP */
+  extern TIM_HandleTypeDef htim2;
+  extern UART_HandleTypeDef huart1;
+  extern ADC_HandleTypeDef hadc1;
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
@@ -82,9 +85,9 @@ void Error_Handler(void);
 #define Play_LED_Pin GPIO_PIN_7
 #define Play_LED_GPIO_Port GPIOB
 
-/* USER CODE BEGIN Private defines */
+  /* USER CODE BEGIN Private defines */
 
-/* USER CODE END Private defines */
+  /* USER CODE END Private defines */
 
 #ifdef __cplusplus
 }

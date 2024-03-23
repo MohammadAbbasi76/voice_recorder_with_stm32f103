@@ -7,21 +7,10 @@
 #include "stm32f1xx_hal_gpio.h"
 #include "string.h"
 #include "w25qxx.h"
-extern uint16_t Buffer1[AdcArraySize];
-extern uint16_t Buffer2[AdcArraySize];
-extern struct ADC_ptr adc_stru;
-extern struct PWM_ptr pwm_stru;
-extern struct Voice_ptr voice;
-extern struct Flags_ptr flag;
-extern uint8_t InputKey;
-extern uint8_t WitchVoiceWantToPlay;
-extern uint8_t state;
-extern uint32_t ccr_pwm_val;
+
 uint32_t timing_1 = 0;
-extern TIM_HandleTypeDef htim2;
-extern UART_HandleTypeDef huart1;
-extern ADC_HandleTypeDef hadc1;
-extern uint32_t UartFLush_T1;
+
+
 void state_machine()
 {
   switch (state)
