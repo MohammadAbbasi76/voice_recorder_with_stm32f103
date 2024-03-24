@@ -69,8 +69,6 @@ target_sources(
     "Component\\Log\\src\\print_with_uart.c"
     "Component\\Voice_recorder\\src\\plays_functions.c"
     "Component\\Voice_recorder\\src\\record_functions.c"
-    "Component\\Voice_recorder\\src\\seven_segment_and_LEDS.c"
-    "Component\\Voice_recorder\\src\\state_machine_func.c"
     "Component\\Voice_recorder\\src\\state_machine.c"
     "Core\\Src\\adc.c"
     "Core\\Src\\gpio.c"
@@ -101,6 +99,7 @@ target_sources(
     "Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_tim.c"
     "Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_uart.c"
     "Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal.c"
+    "Component\\seven_segment_and_led\\src\\seven_segment_and_LEDS.c"
 )
 
 add_custom_command(
