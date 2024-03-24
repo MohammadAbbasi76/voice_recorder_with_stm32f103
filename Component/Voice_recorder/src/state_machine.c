@@ -28,7 +28,7 @@ void state_machine()
     state = ReadKeyboardState;
     break;
   }
-  case ChooseVoiceForPlay:
+  case ChooseVoice:
   {
     ChooseVoiceForPlay();
     state = ReadKeyboardState;
@@ -61,10 +61,8 @@ void init_value()
   ADC_t.StopTimeCounter = 0;
   voice_t.ArrayGoToSave = 0;
   voice_t.number = 0;
-  FLGForVoiceStop = 0;
   flag.InterruptSwitch = 1;
   state = ReadKeyboardState;
-  InputKey = non_;
   PWM_t.counter = 0;
   flag.PwmArrayEmpty = 0;
   state = ReadKeyboardState;
@@ -72,7 +70,6 @@ void init_value()
   memset(voice_t.WitchVoiceIsRecord, 0x0, MaxNumberOfVoice);
   memset(PWM_t.CountDataFromTotally, 0x0, MaxNumberOfVoice);
   HAL_ADCEx_Calibration_Start(&hadc1);
-  FirstTimeFLG = 1;
   if (!W25qxx_Init())
   {
     while (1)
@@ -91,7 +88,6 @@ void init_value()
   }
   Blinking();
   LastTimeKeyPress = HAL_GetTick() + 100;
-  NumberOfVoiceForLoopPlay = 0;
   SevenSegmentDisplay(WitchVoiceWantToPlay);
 }
 
@@ -176,7 +172,7 @@ void NextPinFunc()
       WitchVoiceWantToPlay = 1;
     }
     SevenSegmentDisplay(WitchVoiceWantToPlay);
-    state = ChooseVoiceForPlay;
+    state = ChooseVoice;
     LastTimeKeyPress = DebounceTime + HAL_GetTick();
   }
 }

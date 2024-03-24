@@ -5,6 +5,7 @@
     "plays_functions.h": "c",
     "record_functions.h": "c",
     "seven_segment_and_leds.h": "c",
-    "state_machine.h": "c"
+    "state_machine.h": "c",
+    "stdbool.h": "c"
   }
 }
