@@ -1,4 +1,4 @@
-#include "Typedef.h"
+#include "type_define.h"
 #include "state_machine.h"
 #include "main.h"
 #include "tim.h"
@@ -28,7 +28,7 @@ void state_machine()
     state = ReadKeyboardState;
     break;
   }
-  case ChooseVoice:
+  case ChoosingState:
   {
     ChooseVoiceForPlay();
     state = ReadKeyboardState;
@@ -149,11 +149,11 @@ void DummyFunc()
 
 void choose_AudioOutput(AudioOutput out)
 {
-  if (out == Speaker)
+  if (out == TurnOnSpeaker)
   {
     HAL_GPIO_WritePin(Relay_SW_GPIO_Port, Relay_SW_Pin, GPIO_PIN_SET);
   }
-  else if (out == M66_mic_in)
+  else if (out == TurnOffSpeaker)
   {
     HAL_GPIO_WritePin(Relay_SW_GPIO_Port, Relay_SW_Pin, GPIO_PIN_RESET);
   }
@@ -172,7 +172,7 @@ void NextPinFunc()
       WitchVoiceWantToPlay = 1;
     }
     SevenSegmentDisplay(WitchVoiceWantToPlay);
-    state = ChooseVoice;
+    state = ChoosingState;
     LastTimeKeyPress = DebounceTime + HAL_GetTick();
   }
 }

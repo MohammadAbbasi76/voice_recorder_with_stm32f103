@@ -49,7 +49,10 @@ extern "C" {
 
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
-
+#define AdcArraySize 2000
+#define MaxNumberOfVoice 10
+#define SampleRate 25000
+#define Print
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/

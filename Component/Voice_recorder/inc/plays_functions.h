@@ -8,7 +8,7 @@
 #include "stm32f1xx_hal_gpio.h"
 #include "string.h"
 #include "w25qxx.h"
-#include "Typedef.h"
+#include "type_define.h"
 #include "write_to_flash.h"
 
 

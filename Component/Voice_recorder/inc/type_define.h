@@ -6,13 +6,8 @@
 #include <stdio.h>
 #include "main.h"
 
-#define AdcArraySize 2000
-#define StopTimeInSec 10
-#define MaxNumberOfVoice 10
-#define SampleRate 25000
-#define Print
 #define DebounceTime 400 // in millis
-
+#define StopTimeInSec 10
 
 uint16_t Buffer1[AdcArraySize];
 uint16_t Buffer2[AdcArraySize];
@@ -25,7 +20,7 @@ typedef enum
 {
     RecordState,
     PlayState,
-    ChooseVoice,
+    ChoosingState,
     PauseState,
     ReadKeyboardState,
     FlashEraseState
@@ -33,8 +28,8 @@ typedef enum
 
 typedef enum
 {
-    M66_mic_in,
-    Speaker
+    TurnOffSpeaker,
+    TurnOnSpeaker
 } AudioOutput;
 struct ADC_ptr
 {
