@@ -5,8 +5,9 @@
     "plays_functions.h": "c",
     "record_functions.h": "c",
     "seven_segment_and_leds.h": "c",
-    "state_machine.h": "c",
+    "voice_recorder.h": "c",
     "stdbool.h": "c",
-    "string.h": "c"
+    "string.h": "c",
+    "type_define.h": "c"
   }
 }

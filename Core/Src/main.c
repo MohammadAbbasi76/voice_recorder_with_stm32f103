@@ -31,9 +31,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-#include "w25qxx.h"
-#include"state_machine.h"
-extern uint8_t state;
+#include "voice_recorder.h"
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -45,7 +43,7 @@ extern uint8_t state;
 /* USER CODE BEGIN PM */
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
-void interrupt_func(void);
+
 
 /* USER CODE END PM */
 
@@ -163,7 +161,15 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+  ReadKeyBoard(GPIO_Pin);
+}
 
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  interrupt_func();
+}
 /* USER CODE END 4 */
 
 /**

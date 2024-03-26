@@ -80,13 +80,13 @@ void MX_GPIO_Init(void)
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PtPin */
-  GPIO_InitStruct.Pin = pause_Pin;
+  GPIO_InitStruct.Pin = Pause_Key_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
-  HAL_GPIO_Init(pause_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(Pause_Key_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PBPin PBPin PBPin */
-  GPIO_InitStruct.Pin = play_Pin|recod_Pin|Next_Pin;
+  GPIO_InitStruct.Pin = Play_Key_Pin|Record_Key_Pin|Next_Key_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);

@@ -9,12 +9,8 @@
 #include "adc.h"
 #include "usart.h"
 #include "stm32f1xx_hal_gpio.h"
-#include "w25qxx.h"
-#include "type_define.h"
-#include "write_to_flash.h"
-#include"seven_segment_and_LEDS.h"
+#include "STM_Log.h"
 
-#define DebounceTime 400 // in millis
 #define StopTimeInSec 10
 
 uint16_t Buffer1[AdcArraySize];

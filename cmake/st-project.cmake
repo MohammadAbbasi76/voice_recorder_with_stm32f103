@@ -64,13 +64,6 @@ target_link_options(
 
 target_sources(
     ${TARGET_NAME} PRIVATE
-    "Component\\Log\\src\\print_with_uart.c"
-    "Component\\Seven_segment_and_led\\src\\seven_segment_and_LEDS.c"
-    "Component\\Voice_recorder\\src\\plays_functions.c"
-    "Component\\Voice_recorder\\src\\record_functions.c"
-    "Component\\Voice_recorder\\src\\state_machine.c"
-    "Component\\W25QXX_deriver\\src\\w25qxx.c"
-    "Component\\W25QXX_deriver\\src\\write_to_flash.c"
     "Core\\Src\\adc.c"
     "Core\\Src\\gpio.c"
     "Core\\Src\\main.c"
@@ -100,6 +93,14 @@ target_sources(
     "Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_tim.c"
     "Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_uart.c"
     "Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal.c"
+    "MySource\\Component\\Voice_recorder\\src\\plays_functions.c"
+    "MySource\\Component\\Voice_recorder\\src\\read_keyboard.c"
+    "MySource\\Component\\Voice_recorder\\src\\record_functions.c"
+    "MySource\\Component\\Voice_recorder\\src\\voice_recorder.c"
+    "MySource\\Library\\W25QXX_deriver\\src\\w25qxx.c"
+    "MySource\\Library\\W25QXX_deriver\\src\\write_to_flash.c"
+    "MySource\\Utilities\\Log\\src\\print_with_uart.c"
+    "MySource\\Utilities\\Seven_segment_and_led\\src\\seven_segment_and_LEDS.c"
 )
 
 add_custom_command(

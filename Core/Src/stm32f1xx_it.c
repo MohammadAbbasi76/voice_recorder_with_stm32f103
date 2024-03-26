@@ -220,10 +220,10 @@ void EXTI15_10_IRQHandler(void)
   /* USER CODE BEGIN EXTI15_10_IRQn 0 */
 
   /* USER CODE END EXTI15_10_IRQn 0 */
-  HAL_GPIO_EXTI_IRQHandler(pause_Pin);
-  HAL_GPIO_EXTI_IRQHandler(play_Pin);
-  HAL_GPIO_EXTI_IRQHandler(recod_Pin);
-  HAL_GPIO_EXTI_IRQHandler(Next_Pin);
+  HAL_GPIO_EXTI_IRQHandler(Pause_Key_Pin);
+  HAL_GPIO_EXTI_IRQHandler(Play_Key_Pin);
+  HAL_GPIO_EXTI_IRQHandler(Record_Key_Pin);
+  HAL_GPIO_EXTI_IRQHandler(Next_Key_Pin);
   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
 
   /* USER CODE END EXTI15_10_IRQn 1 */
