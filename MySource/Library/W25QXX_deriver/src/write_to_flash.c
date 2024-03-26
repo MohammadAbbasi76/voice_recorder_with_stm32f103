@@ -45,7 +45,7 @@ uint8_t save_2k_array(uint8_t count_of_voice, uint8_t count_of_arras, uint16_t *
  * if have correct input return 1
  * if dose not return 0
  */
-uint8_t restore_2k_array(uint8_t count_of_voice, uint8_t count_of_arras, uint16_t *array)
+uint8_t RestoreArrayFromFlash(uint8_t count_of_voice, uint8_t count_of_arras, uint16_t *array)
 {
 	if (count_of_voice > MaxNumberOfVoice || count_of_arras > sector_needs)
 	        {

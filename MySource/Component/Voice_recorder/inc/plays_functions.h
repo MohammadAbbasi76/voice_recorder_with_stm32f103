@@ -9,7 +9,7 @@
 
 
 
-void PlayStateFun();
+void StartPlaying();
 void StopPlaying();
 void SetupForPlay(uint8_t VoiceNumber);
 #endif

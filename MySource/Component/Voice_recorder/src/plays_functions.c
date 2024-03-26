@@ -9,14 +9,14 @@ void SetupForPlay(uint8_t VoiceNumber)
         flag.InterruptSwitch = 0;
         flag.PwmArrayEmpty = 0;
         VoiceArrayReadFromFlash = 0;
-        for (int i = 0; i < AdcArraySize; i++)
+        for (int i = 0; i < VoiceArraySize; i++)
         {
             Buffer2[i] = 0;
         }
         RestoreDetail(voice_t.WitchVoiceIsRecord, voice_t.number, &(voice_t.ArrayGoToSave));
-        restore_2k_array(voice_t.number, VoiceArrayReadFromFlash, Buffer2);
-        PWM_t.CountDataFromTotally[voice_t.number] = (uint32_t)((voice_t.ArrayGoToSave) * (AdcArraySize));
-        for (int i = 0; i < AdcArraySize; i++)
+        RestoreArrayFromFlash(voice_t.number, VoiceArrayReadFromFlash, Buffer2);
+        PWM_t.CountDataFromTotally[voice_t.number] = (uint32_t)((voice_t.ArrayGoToSave) * (VoiceArraySize));
+        for (int i = 0; i < VoiceArraySize; i++)
         {
             Buffer1[i] = Buffer2[i];
         }
@@ -27,11 +27,11 @@ void SetupForPlay(uint8_t VoiceNumber)
         flag.InterruptSwitch = 0;
         flag.PwmArrayEmpty = 0;
         VoiceArrayReadFromFlash = 0;
-        for (int i = 0; i < AdcArraySize; i++)
+        for (int i = 0; i < VoiceArraySize; i++)
         {
             Buffer2[i] = 0;
         }
-        for (int i = 0; i < AdcArraySize; i++)
+        for (int i = 0; i < VoiceArraySize; i++)
         {
             Buffer1[i] = 0;
             Buffer2[i] = 0;
@@ -41,19 +41,23 @@ void SetupForPlay(uint8_t VoiceNumber)
 }
 void StopPlaying()
 {
+    // flag.InterruptSwitch = 0;
+    // flag.PwmArrayEmpty = 0;
+    // VoiceArrayReadFromFlash = 0;
+    // memset(Buffer2, 0x0, VoiceArraySize);
+    // memset(Buffer1, 0x0, VoiceArraySize);
     HAL_TIM_Base_Stop_IT(&htim2);
     HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);
     VoiceArrayReadFromFlash = voice_t.ArrayGoToSave;
 }
 
-
-void PlayStateFun()
+void StartPlaying()
 {
     PalyLED_ON();
     SetupForPlay(WitchVoiceWantToPlay);
     HAL_TIM_Base_Start_IT(&htim2);
     HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1); // Start Pwm signal on PB-6 Pin
-    uint8_t flg_use = 0;
+    uint8_t dataReadyFlag = 0;
     while (1)
     {
         if (VoiceArrayReadFromFlash == voice_t.ArrayGoToSave)
@@ -62,22 +66,22 @@ void PlayStateFun()
         }
         if (flag.PwmArrayEmpty == 0)
         {
-            if (flg_use == 0)
+            if (dataReadyFlag == 0)
             {
                 VoiceArrayReadFromFlash++;
-                restore_2k_array(voice_t.number, VoiceArrayReadFromFlash, Buffer2);
-                flg_use = 1;
+                RestoreArrayFromFlash(voice_t.number, VoiceArrayReadFromFlash, Buffer2);
+                dataReadyFlag = 1;
             }
         }
         else
         {
-            for (int i = 0; i < AdcArraySize; i++)
+            for (int i = 0; i < VoiceArraySize; i++)
             {
                 Buffer1[i] = Buffer2[i];
                 Buffer2[i] = 0;
             }
             flag.PwmArrayEmpty = 0;
-            flg_use = 0;
+            dataReadyFlag = 0;
         }
     }
     VoiceArrayReadFromFlash = 0;

@@ -1,5 +1,5 @@
-#ifndef __TYPEDEF_H1_
-#define __TYPEDEF_H1_
+#ifndef __TYPEDEF_H_
+#define __TYPEDEF_H_
 #include <string.h>
 #include <stdarg.h>
 #include <stdbool.h>
@@ -13,8 +13,8 @@
 
 #define StopTimeInSec 10
 
-uint16_t Buffer1[AdcArraySize];
-uint16_t Buffer2[AdcArraySize];
+uint16_t Buffer1[VoiceArraySize];
+uint16_t Buffer2[VoiceArraySize];
 uint8_t WitchVoiceWantToPlay;
 uint8_t VoiceArrayReadFromFlash;
 uint8_t state;
@@ -24,7 +24,7 @@ typedef enum
 {
     RecordState,
     PlayState,
-    ChoosingState,
+    ChooseTrack,
     PauseState,
     ReadKeyboardState,
     FlashEraseState

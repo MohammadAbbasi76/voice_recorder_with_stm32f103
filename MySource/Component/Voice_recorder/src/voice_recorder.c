@@ -2,7 +2,7 @@
 
 uint32_t timing_1 = 0;
 
-void state_machine()
+void VoiceRecorder()
 {
   switch (state)
   {
@@ -11,33 +11,27 @@ void state_machine()
     state = ReadKeyboardState;
     break;
   }
-  case RecordState:
-  {
-    timing_1 = 0;
-    timing_1 = HAL_GetTick();
-    StartRecording();
-    timing_1 = HAL_GetTick() - timing_1;
-    state = ReadKeyboardState;
-    break;
-  }
-  case ChoosingState:
+  case ChooseTrack:
   {
     ChooseVoiceForPlay();
+    state = PlayState;
+    break;
+  }
+  case RecordState:
+  {
+    StartRecording();
     state = ReadKeyboardState;
     break;
   }
   case PlayState:
   {
-    timing_1 = 0;
-    timing_1 = HAL_GetTick();
-    PlayStateFun();
-    timing_1 = HAL_GetTick() - timing_1;
+    StartPlaying();
     state = ReadKeyboardState;
     break;
   }
   case FlashEraseState:
   {
-    FlashEraseFunc();
+    FlashErase();
     state = ReadKeyboardState;
     break;
   }
@@ -94,27 +88,19 @@ void ChooseVoiceForPlay()
     flag.InterruptSwitch = 0;
     flag.PwmArrayEmpty = 0;
     VoiceArrayReadFromFlash = 0;
-    memset(Buffer2, 0x0, AdcArraySize);
+    memset(Buffer1, 0x0, VoiceArraySize);
     RestoreDetail(voice_t.WitchVoiceIsRecord, voice_t.number, &(voice_t.ArrayGoToSave));
-    restore_2k_array(voice_t.number, VoiceArrayReadFromFlash, Buffer2);
-    PWM_t.CountDataFromTotally[voice_t.number] = (uint32_t)((voice_t.ArrayGoToSave) * (AdcArraySize));
-    for (int i = 0; i < AdcArraySize; i++)
-    {
-      Buffer1[i] = Buffer2[i];
-    }
+    RestoreArrayFromFlash(voice_t.number, VoiceArrayReadFromFlash, Buffer1);
+    PWM_t.CountDataFromTotally[voice_t.number] = (uint32_t)((voice_t.ArrayGoToSave) * (VoiceArraySize));
   }
   else
   {
-    flag.InterruptSwitch = 0;
-    flag.PwmArrayEmpty = 0;
-    VoiceArrayReadFromFlash = 0;
-    memset(Buffer2, 0x0, AdcArraySize);
-    memset(Buffer1, 0x0, AdcArraySize);
+
     StopPlaying();
   }
 }
 
-void FlashEraseFunc()
+void FlashErase()
 {
   if (!W25qxx_Init())
   {
@@ -151,7 +137,7 @@ void NextTrack()
     WitchVoiceWantToPlay = 1;
   }
   SevenSegmentDisplay(WitchVoiceWantToPlay);
-  state = ChoosingState;
+  state = ChooseTrack;
 }
 
 void ADCSampling()
@@ -159,7 +145,7 @@ void ADCSampling()
   if (ADC_t.StopTimeCounter == ADC_t.TotallyStopTim)
   {
     ADC_t.StopTimeCounter++;
-    for (int i = 0; i < AdcArraySize; i++)
+    for (int i = 0; i < VoiceArraySize; i++)
     {
       Buffer1[i] = Buffer2[i];
       Buffer2[i] = 0;
@@ -173,10 +159,10 @@ void ADCSampling()
     Buffer2[ADC_t.counter] = ADC_read();
     ADC_t.counter++;
     ADC_t.StopTimeCounter++;
-    if (ADC_t.counter == (AdcArraySize))
+    if (ADC_t.counter == (VoiceArraySize))
     {
       ADC_t.counter = 0;
-      for (int i = 0; i < AdcArraySize; i++)
+      for (int i = 0; i < VoiceArraySize; i++)
       {
         Buffer1[i] = Buffer2[i];
         Buffer2[i] = 0;
@@ -185,7 +171,7 @@ void ADCSampling()
     }
   }
 }
-void interrupt_func(void)
+void InterruptFunc(void)
 {
   if (flag.InterruptSwitch == 1)
   {
@@ -203,7 +189,7 @@ void MakePWM_Wave()
     __HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, (uint16_t)(Buffer1[PWM_t.counter]));
     PWM_t.counter++;
     //      PWM_t.CountDataFromTotally[voice.number]--;
-    if (PWM_t.counter == AdcArraySize)
+    if (PWM_t.counter == VoiceArraySize)
     {
       PWM_t.counter = 0;
       flag.PwmArrayEmpty = 1;
@@ -215,7 +201,7 @@ void ConversionADCValueToPWMDuty(uint16_t *val)
 {
   uint32_t Temp = 0;
   uint32_t PWM_ARR = __HAL_TIM_GET_AUTORELOAD(&htim3);
-  for (int i = 0; i < AdcArraySize; i++)
+  for (int i = 0; i < VoiceArraySize; i++)
   {
     Temp = val[i];
     Temp = (Temp * 1000) / 4095;

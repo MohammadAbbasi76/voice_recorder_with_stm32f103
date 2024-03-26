@@ -1,5 +1,5 @@
-#ifndef VOICE_RECORDER
-#define VOICE_RECORDER
+#ifndef VOICE_RECORDER_H
+#define VOICE_RECORDER_H
 
 #include"type_define.h"
 #include"record_functions.h"
@@ -9,11 +9,8 @@
 #include"seven_segment_and_LEDS.h"
 
 void ADCSampling();
-void AudioOutputControl(AudioOutput out);
-
-
-void FlashPrint();
-void FlashEraseFunc();
+void AudioOutputControl(AudioOutput AudioOutputValue);
+void FlashErase();
 
 
 void ConversionADCValueToPWMDuty(uint16_t *val);
@@ -21,8 +18,8 @@ void MakePWM_Wave();
 void ChooseVoiceForPlay();
 void NextTrack();
 void DummyFunc();
-void interrupt_func(void);
-void state_machine(void);
+void InterruptFunc(void);
+void VoiceRecorder(void);
 void init_value();
 
 

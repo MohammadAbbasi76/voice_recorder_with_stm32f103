@@ -109,7 +109,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    state_machine();
+    VoiceRecorder();
   }
   /* USER CODE END 3 */
 }
@@ -168,7 +168,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-  interrupt_func();
+  InterruptFunc();
 }
 /* USER CODE END 4 */
 
