@@ -10,7 +10,6 @@
 					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
@@ -52,6 +51,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/voice_player/Component/Log/inc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/voice_player/Component/Voice_recorder/inc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/voice_player/Component/W25QXX_deriver/inc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/voice_player/Component/Seven_segment_and_led/inc}&quot;"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.400409454" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
 							</tool>
@@ -65,6 +65,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:C:\Users\MJA\Desktop\voice_recorder\Component\Voice_recorder\inc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/voice_player/Component/Log/inc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/voice_player/Component/W25QXX_deriver/inc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/voice_player/Component/Seven_segment_and_led/inc}&quot;"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.linker.input.373027581" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -83,9 +84,10 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="Component/W25QXX_deriver/src"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="Component/Log/src"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="Component/Seven_segment_and_led/src"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="Component/Voice_recorder/src"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="Component/W25QXX_deriver/src"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
 					</sourceEntries>
@@ -102,7 +104,6 @@
 					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
@@ -183,4 +184,5 @@
 		</scannerConfigBuildInfo>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+	<storageModule moduleId="refreshScope"/>
 </cproject>

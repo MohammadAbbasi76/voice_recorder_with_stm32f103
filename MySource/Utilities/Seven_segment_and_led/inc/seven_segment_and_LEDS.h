@@ -2,8 +2,6 @@
 #define _SEVEN_SEGMENT_AND_LED_DERIVER
 #include "main.h"
 #include "stm32f1xx_hal_gpio.h"
-#include "type_define.h"
-
 
 
 void SevenSegmentDisplay(uint8_t number);

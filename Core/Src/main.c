@@ -32,7 +32,7 @@
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
 #include "w25qxx.h"
-
+#include"state_machine.h"
 extern uint8_t state;
 /* USER CODE END PTD */
 
@@ -111,7 +111,6 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    HAL_UART_Receive_IT(&huart1, UartReceive, UartArraySize);
     state_machine();
   }
   /* USER CODE END 3 */

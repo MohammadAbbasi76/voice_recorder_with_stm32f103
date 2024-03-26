@@ -3,22 +3,12 @@
 #ifndef STATE_MACHINE
 #define STATE_MACHINE
 
-#include "main.h"
-#include "tim.h"
-#include "adc.h"
-#include "usart.h"
-#include "stm32f1xx_hal_gpio.h"
-#include "string.h"
-#include "w25qxx.h"
-#include "type_define.h"
-#include "write_to_flash.h"
-
+#include"type_define.h"
+#include"record_functions.h"
+#include"plays_functions.h"
 
 
 void AdcGettingSample();
-
-
-
 void choose_AudioOutput(AudioOutput out);
 
 

@@ -1,12 +1,5 @@
-#include "type_define.h"
-#include "state_machine.h"
-#include "main.h"
-#include "tim.h"
-#include "adc.h"
-#include "usart.h"
-#include "stm32f1xx_hal_gpio.h"
-#include "string.h"
-#include "w25qxx.h"
+#include"state_machine.h"
+
 
 uint32_t timing_1 = 0;
 
