@@ -99,7 +99,7 @@ target_sources(
     "MySource\\Component\\Voice_recorder\\src\\voice_recorder.c"
     "MySource\\Library\\W25QXX_deriver\\src\\w25qxx.c"
     "MySource\\Library\\W25QXX_deriver\\src\\write_to_flash.c"
-    "MySource\\Utilities\\Log\\src\\print_with_uart.c"
+    "MySource\\Utilities\\Log\\src\\STM_Log.c"
     "MySource\\Utilities\\Seven_segment_and_led\\src\\seven_segment_and_LEDS.c"
 )
 
