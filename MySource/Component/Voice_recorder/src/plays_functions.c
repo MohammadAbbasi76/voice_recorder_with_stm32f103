@@ -1,7 +1,6 @@
-
 #include "plays_functions.h"
 
-void SetupForPlay(uint8_t VoiceNumber)
+void PrepareForPlay(uint8_t VoiceNumber)
 {
     if (voice_t.WitchVoiceIsRecord[VoiceNumber] == 1)
     {
@@ -54,7 +53,7 @@ void StopPlaying()
 void StartPlaying()
 {
     PalyLED_ON();
-    SetupForPlay(WitchVoiceWantToPlay);
+    PrepareForPlay(WitchVoiceWantToPlay);
     HAL_TIM_Base_Start_IT(&htim2);
     HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1); // Start Pwm signal on PB-6 Pin
     uint8_t dataReadyFlag = 0;
@@ -88,4 +87,16 @@ void StartPlaying()
     HAL_TIM_Base_Stop_IT(&htim2);
     HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);
     PlayLED_OFF();
+}
+
+void NextTrack()
+{
+    WitchVoiceWantToPlay++;
+    // if (WitchVoiceWannaToPlay > (FindFreeSpceInflash(voice.WitchVoiceIsRecord) + 1))
+    if (WitchVoiceWantToPlay > (MaxNumberOfVoice - 1))
+    {
+        WitchVoiceWantToPlay = 1;
+    }
+    SevenSegmentDisplay(WitchVoiceWantToPlay);
+    state = ChooseTrack;
 }

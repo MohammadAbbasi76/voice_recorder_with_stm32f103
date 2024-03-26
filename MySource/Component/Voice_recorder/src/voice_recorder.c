@@ -128,17 +128,7 @@ void AudioOutputControl(AudioOutput AudioOutputValue)
   }
 }
 
-void NextTrack()
-{
-  WitchVoiceWantToPlay++;
-  // if (WitchVoiceWannaToPlay > (FindFreeSpceInflash(voice.WitchVoiceIsRecord) + 1))
-  if (WitchVoiceWantToPlay > (MaxNumberOfVoice - 1))
-  {
-    WitchVoiceWantToPlay = 1;
-  }
-  SevenSegmentDisplay(WitchVoiceWantToPlay);
-  state = ChooseTrack;
-}
+
 
 void ADCSampling()
 {

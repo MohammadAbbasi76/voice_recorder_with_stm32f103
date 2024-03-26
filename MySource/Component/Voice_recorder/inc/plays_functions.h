@@ -11,5 +11,5 @@
 
 void StartPlaying();
 void StopPlaying();
-void SetupForPlay(uint8_t VoiceNumber);
+void PrepareForPlay(uint8_t VoiceNumber);
 #endif

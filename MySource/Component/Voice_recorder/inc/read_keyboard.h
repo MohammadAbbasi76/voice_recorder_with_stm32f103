@@ -3,7 +3,7 @@
 
 
 #include"type_define.h"
-
+#include"voice_recorder.h"
 
 
 #define DebounceTime 300 // in millis
