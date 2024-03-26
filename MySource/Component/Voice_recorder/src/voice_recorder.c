@@ -43,24 +43,30 @@ void state_machine()
   }
   }
 }
-
+void RestoreInformationFromFlash()
+{
+  RestoreDetail(voice_t.WitchVoiceIsRecord, voice_t.number, &(voice_t.ArrayGoToSave));
+  if (voice_t.WitchVoiceIsRecord[0] == 255)
+  {
+    voice_t.number = 0;
+    for (uint8_t i = 0; i < MaxNumberOfVoice; i++)
+      voice_t.WitchVoiceIsRecord[i] = 0;
+    voice_t.ArrayGoToSave = 0;
+  }
+}
 void init_value()
 {
-  /** adc init value*/
   ADC_t.counter = 0;
-  flag.AdcArrayFull = 0;
   ADC_t.TotallyStopTim = SampleRate * StopTimeInSec;
   ADC_t.StopTimeCounter = 0;
   voice_t.ArrayGoToSave = 0;
   voice_t.number = 0;
   flag.InterruptSwitch = 1;
-  state = ReadKeyboardState;
-  PWM_t.counter = 0;
   flag.PwmArrayEmpty = 0;
-  state = ReadKeyboardState;
-  WitchVoiceWantToPlay = 1;
-  memset(voice_t.WitchVoiceIsRecord, 0x0, MaxNumberOfVoice);
+  flag.AdcArrayFull = 0;
+  PWM_t.counter = 0;
   memset(PWM_t.CountDataFromTotally, 0x0, MaxNumberOfVoice);
+  memset(voice_t.WitchVoiceIsRecord, 0x0, MaxNumberOfVoice);
   HAL_ADCEx_Calibration_Start(&hadc1);
   if (!W25qxx_Init())
   {
@@ -70,14 +76,9 @@ void init_value()
     // flash have problem !
   }
   //  W25qxx_EraseChip();
-  RestoreDetail(voice_t.WitchVoiceIsRecord, voice_t.number, &(voice_t.ArrayGoToSave));
-  if (voice_t.WitchVoiceIsRecord[0] == 255)
-  {
-    voice_t.number = 0;
-    for (uint8_t i = 0; i < MaxNumberOfVoice; i++)
-      voice_t.WitchVoiceIsRecord[i] = 0;
-    voice_t.ArrayGoToSave = 0;
-  }
+  RestoreInformationFromFlash();
+  state = ReadKeyboardState;
+  WitchVoiceWantToPlay = 1;
   Blinking();
   SevenSegmentDisplay(WitchVoiceWantToPlay);
 }
@@ -128,8 +129,6 @@ void FlashEraseFunc()
   HAL_GPIO_WritePin(GPIOB, Record_LED_Pin, GPIO_PIN_RESET);
   HAL_GPIO_WritePin(GPIOB, Play_LED_Pin, GPIO_PIN_RESET);
 }
-
-
 
 void AudioOutputControl(AudioOutput AudioOutputValue)
 {
