@@ -6,6 +6,12 @@ void VoiceRecorder()
 {
   switch (state)
   {
+  case init:
+  {
+    VoiceRecorderInitial();
+    state = ReadKeyboardState;
+    break;
+  }
   case ReadKeyboardState:
   {
     state = ReadKeyboardState;
@@ -48,7 +54,7 @@ void RestoreInformationFromFlash()
     voice_t.ArrayGoToSave = 0;
   }
 }
-void init_value()
+void VoiceRecorderInitial()
 {
   ADC_t.counter = 0;
   ADC_t.TotallyStopTim = SampleRate * StopTimeInSec;
@@ -59,8 +65,8 @@ void init_value()
   flag.PwmArrayEmpty = 0;
   flag.AdcArrayFull = 0;
   PWM_t.counter = 0;
-  memset(PWM_t.CountDataFromTotally, 0x0, MaxNumberOfVoice);
-  memset(voice_t.WitchVoiceIsRecord, 0x0, MaxNumberOfVoice);
+  memset(PWM_t.CountDataFromTotally, 0x0, sizeof(PWM_t.CountDataFromTotally));
+  memset(voice_t.WitchVoiceIsRecord, 0x0, sizeof(voice_t.WitchVoiceIsRecord));
   HAL_ADCEx_Calibration_Start(&hadc1);
   if (!W25qxx_Init())
   {
@@ -71,7 +77,6 @@ void init_value()
   }
   //  W25qxx_EraseChip();
   RestoreInformationFromFlash();
-  state = ReadKeyboardState;
   WitchVoiceWantToPlay = 1;
   Blinking();
   SevenSegmentDisplay(WitchVoiceWantToPlay);
@@ -81,21 +86,19 @@ void ChooseVoiceForPlay()
 {
   voice_t.number = WitchVoiceWantToPlay;
   UART_Printf("voice_t.number =%d\n", voice_t.number);
-  SevenSegmentDisplay(voice_t.number);
   if (voice_t.WitchVoiceIsRecord[voice_t.number] == 1)
   {
     SevenSegmentDisplay(voice_t.number);
     flag.InterruptSwitch = 0;
     flag.PwmArrayEmpty = 0;
     VoiceArrayReadFromFlash = 0;
-    memset(Buffer1, 0x0, VoiceArraySize);
+    memset(Buffer1, 0x0, sizeof(Buffer1));
     RestoreDetail(voice_t.WitchVoiceIsRecord, voice_t.number, &(voice_t.ArrayGoToSave));
     RestoreArrayFromFlash(voice_t.number, VoiceArrayReadFromFlash, Buffer1);
     PWM_t.CountDataFromTotally[voice_t.number] = (uint32_t)((voice_t.ArrayGoToSave) * (VoiceArraySize));
   }
   else
   {
-
     StopPlaying();
   }
 }
@@ -111,7 +114,7 @@ void FlashErase()
   HAL_GPIO_WritePin(GPIOB, Record_LED_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(GPIOB, Play_LED_Pin, GPIO_PIN_SET);
   W25qxx_EraseChip();
-  init_value();
+  VoiceRecorderInitial();
   HAL_GPIO_WritePin(GPIOB, Record_LED_Pin, GPIO_PIN_RESET);
   HAL_GPIO_WritePin(GPIOB, Play_LED_Pin, GPIO_PIN_RESET);
 }
@@ -127,8 +130,6 @@ void AudioOutputControl(AudioOutput AudioOutputValue)
     HAL_GPIO_WritePin(Relay_SW_GPIO_Port, Relay_SW_Pin, GPIO_PIN_RESET);
   }
 }
-
-
 
 void ADCSampling()
 {
@@ -146,7 +147,7 @@ void ADCSampling()
   else
   {
     // Buffer2[adc_stru.counter] = HAL_ADC_GetValue(&hadc1);
-    Buffer2[ADC_t.counter] = ADC_read();
+    Buffer2[ADC_t.counter] = HAL_ADC_GetValue(&hadc1);
     ADC_t.counter++;
     ADC_t.StopTimeCounter++;
     if (ADC_t.counter == (VoiceArraySize))

@@ -7,6 +7,8 @@
 #include "w25qxx.h"
 #include "write_to_flash.h"
 #include"seven_segment_and_LEDS.h"
+#include"read_keyboard.h"
+
 
 void ADCSampling();
 void AudioOutputControl(AudioOutput AudioOutputValue);
@@ -20,8 +22,6 @@ void NextTrack();
 void DummyFunc();
 void InterruptFunc(void);
 void VoiceRecorder(void);
-void init_value();
-
-
+void VoiceRecorderInitial();
 
 #endif

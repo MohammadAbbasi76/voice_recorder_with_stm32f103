@@ -8,6 +8,7 @@
     "voice_recorder.h": "c",
     "stdbool.h": "c",
     "string.h": "c",
-    "type_define.h": "c"
+    "type_define.h": "c",
+    "read_keyboard.h": "c"
   }
 }

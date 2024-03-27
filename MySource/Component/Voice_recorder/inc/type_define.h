@@ -22,6 +22,7 @@ uint32_t LastTimeKeyPress;
 
 typedef enum
 {
+    init,
     RecordState,
     PlayState,
     ChooseTrack,
