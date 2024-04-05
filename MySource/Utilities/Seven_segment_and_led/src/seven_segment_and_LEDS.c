@@ -1,15 +1,13 @@
-
-#include"seven_segment_and_LEDS.h"
-
+#include "seven_segment_and_LEDS.h"
 void Blinking()
 {
   for (uint8_t i = 0; i < 3; i++)
   {
-    HAL_GPIO_WritePin(GPIOB, Record_LED_Pin, GPIO_PIN_RESET);
-    HAL_GPIO_WritePin(GPIOB, Play_LED_Pin, GPIO_PIN_RESET);
-    HAL_Delay(500);
     HAL_GPIO_WritePin(GPIOB, Record_LED_Pin, GPIO_PIN_SET);
     HAL_GPIO_WritePin(GPIOB, Play_LED_Pin, GPIO_PIN_SET);
+    HAL_Delay(500);
+    HAL_GPIO_WritePin(GPIOB, Record_LED_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(GPIOB, Play_LED_Pin, GPIO_PIN_RESET);
     HAL_Delay(500);
   }
 }

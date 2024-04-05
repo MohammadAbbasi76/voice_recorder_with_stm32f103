@@ -89,18 +89,6 @@ void StartPlaying()
     PlayLED_OFF();
 }
 
-void NextTrack()
-{
-    WitchVoiceWantToPlay++;
-    // if (WitchVoiceWannaToPlay > (FindFreeSpceInflash(voice.RecodedArray) + 1))
-    if (WitchVoiceWantToPlay > (MaxNumberOfVoice - 1))
-    {
-        WitchVoiceWantToPlay = 1;
-    }
-    SevenSegmentDisplay(WitchVoiceWantToPlay);
-    state = ChooseTrack;
-}
-
 void MakePWM_Wave()
 {
     if (VoiceRecorderSt.Flag.PwmArrayEmpty == 0)

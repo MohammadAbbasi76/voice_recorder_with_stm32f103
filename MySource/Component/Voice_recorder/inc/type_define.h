@@ -10,6 +10,7 @@
 #include "usart.h"
 #include "stm32f1xx_hal_gpio.h"
 #include "STM_Log.h"
+#include"seven_segment_and_LEDS.h"
 
 #define StopTimeInSec 10
 

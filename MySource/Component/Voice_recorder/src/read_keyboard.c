@@ -8,7 +8,16 @@ void DummyFunc()
         Temp++;
     }
 }
-
+void NextTrack()
+{
+    WitchVoiceWantToPlay++;
+    // if (WitchVoiceWannaToPlay > (FindFreeSpceInflash(voice.RecodedArray) + 1))
+    if (WitchVoiceWantToPlay > (MaxNumberOfVoice - 1))
+    {
+        WitchVoiceWantToPlay = 1;
+    }
+    SevenSegmentDisplay(WitchVoiceWantToPlay);
+}
 void ReadKeyBoard(uint16_t GPIO_Pin)
 {
     static uint32_t Time;
