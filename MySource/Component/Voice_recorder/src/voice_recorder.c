@@ -79,6 +79,12 @@ void VoiceRecorderInitiation()
   RestoreInformationFromFlash();
   WitchVoiceWantToPlay = 1;
   Blinking();
+  for (uint8_t i = 0; i < 9; i++)
+  {
+    HAL_Delay(500);
+    SevenSegmentDisplay(i);
+    HAL_Delay(500);
+  }
   SevenSegmentDisplay(WitchVoiceWantToPlay);
 }
 
