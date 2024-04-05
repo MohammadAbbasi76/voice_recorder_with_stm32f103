@@ -19,10 +19,9 @@ uint8_t WitchVoiceWantToPlay;
 uint8_t VoiceArrayReadFromFlash;
 uint8_t state;
 uint32_t LastTimeKeyPress;
-
 typedef enum
 {
-    init,
+    Init,
     RecordState,
     PlayState,
     ChooseTrack,
@@ -30,35 +29,40 @@ typedef enum
     ReadKeyboardState,
     FlashEraseState
 } state_t;
-
 typedef enum
 {
     TurnOffSpeaker,
     TurnOnSpeaker
 } AudioOutput;
-struct ADC_ptr
+typedef struct 
 {
-    uint32_t counter;
+    uint32_t Counter;
     uint32_t TotallyStopTim;
     uint32_t StopTimeCounter;
-} ADC_t;
-struct PWM_ptr
+} ADC_St;
+typedef struct 
 {
-    uint32_t counter;
+    uint32_t Counter;
     uint32_t CountDataFromTotally[MaxNumberOfVoice];
-
-} PWM_t;
-struct Voice_ptr
+} PWM_St;
+typedef struct 
 {
-    uint8_t ArrayGoToSave;
+    uint8_t CountOfArraySaved;
     uint8_t number;
-    uint8_t WitchVoiceIsRecord[MaxNumberOfVoice];
-} voice_t;
-struct Flags_ptr
+    uint8_t RecodedArray[MaxNumberOfVoice];
+} Voice_St;
+typedef struct
 {
     uint8_t AdcArrayFull;
     uint8_t InterruptSwitch;
     uint8_t PwmArrayEmpty;
-} flag;
-
+} Flags_St;
+typedef struct 
+{
+    ADC_St ADC;
+    PWM_St PWM;
+    Flags_St Flag;
+    Voice_St Voice;
+}VoiceRecorder_St;
+VoiceRecorder_St VoiceRecorderSt;
 #endif

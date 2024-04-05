@@ -6,7 +6,7 @@
 
 
 void SevenSegmentDisplay(uint8_t number);
-void RecordLED_OFF();
+void RecordLED_Off();
 void RecordLED_ON();
 void PalyLED_ON();
 void PlayLED_OFF();

@@ -10,18 +10,17 @@
 #include"read_keyboard.h"
 
 
-void ADCSampling();
+
 void AudioOutputControl(AudioOutput AudioOutputValue);
 void FlashErase();
 
 
-void ConversionADCValueToPWMDuty(uint16_t *val);
-void MakePWM_Wave();
+
 void ChooseVoiceForPlay();
 void NextTrack();
 void DummyFunc();
 void InterruptFunc(void);
 void VoiceRecorder(void);
-void VoiceRecorderInitial();
+void VoiceRecorderInitiation();
 
 #endif

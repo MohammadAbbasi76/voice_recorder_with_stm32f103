@@ -44,7 +44,7 @@ void RecordLED_ON()
 {
   HAL_GPIO_WritePin(GPIOB, Record_LED_Pin, GPIO_PIN_SET);
 }
-void RecordLED_OFF()
+void RecordLED_Off()
 {
   HAL_GPIO_WritePin(GPIOB, Record_LED_Pin, GPIO_PIN_RESET);
 }
