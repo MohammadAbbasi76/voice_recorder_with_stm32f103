@@ -15,7 +15,7 @@ void StartRecording()
         SevenSegmentDisplay(0);
         RemoveVoice(VoiceRecorderSt.Voice.RecordedArray, VoiceRecorderSt.Voice.number);
     }
-    RecordLED_ON();
+    RecordLedOn();
     SevenSegmentDisplay(VoiceRecorderSt.Voice.number);
     VoiceRecorderSt.Voice.number = VoiceRecorderSt.Track;
     MX_ADC1_Init();
@@ -48,7 +48,7 @@ void StartRecording()
     VoiceRecorderSt.Voice.CountOfSavedArray = 0;
     VoiceRecorderSt.ADC.StopTimeCounter = 0;
     HAL_ADC_Stop(&hadc1);
-    RecordLED_Off();
+    RecordLedOff();
     //  HAL_Delay(1000);
 }
 void ADC_Sampling()

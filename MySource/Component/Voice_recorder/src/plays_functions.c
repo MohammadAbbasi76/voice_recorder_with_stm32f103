@@ -8,14 +8,10 @@ void PrepareForPlay(uint8_t VoiceNumber)
         VoiceRecorderSt.Flag.InterruptSwitch = 0;
         VoiceRecorderSt.Flag.PwmArrayEmpty = 0;
         VoiceRecorderSt.ReadFromFlash = 0;
-        memset(Buffer2, 0x0, VoiceArraySize);
+        memset(Buffer1, 0x0, VoiceArraySize);
         RestoreDetail(VoiceRecorderSt.Voice.RecordedArray, VoiceRecorderSt.Voice.number, &(VoiceRecorderSt.Voice.CountOfSavedArray));
-        RestoreArrayFromFlash(VoiceRecorderSt.Voice.number, VoiceRecorderSt.ReadFromFlash, Buffer2);
+        RestoreArrayFromFlash(VoiceRecorderSt.Voice.number, VoiceRecorderSt.ReadFromFlash, Buffer1);
         VoiceRecorderSt.PWM.CountDataFromTotally[VoiceRecorderSt.Voice.number] = (uint32_t)((VoiceRecorderSt.Voice.CountOfSavedArray) * (VoiceArraySize));
-        for (int i = 0; i < VoiceArraySize; i++)
-        {
-            Buffer1[i] = Buffer2[i];
-        }
     }
     else
     {
@@ -42,7 +38,7 @@ void StopPlaying()
 
 void StartPlaying()
 {
-    PalyLED_ON();
+    PalyLedOn();
     PrepareForPlay(VoiceRecorderSt.Track);
     HAL_TIM_Base_Start_IT(&htim2);
     HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1); // Start Pwm signal on PB-6 Pin
@@ -76,7 +72,7 @@ void StartPlaying()
     VoiceRecorderSt.ReadFromFlash = 0;
     HAL_TIM_Base_Stop_IT(&htim2);
     HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);
-    PlayLED_OFF();
+    PlayLedOff();
 }
 
 void MakePwmWave()

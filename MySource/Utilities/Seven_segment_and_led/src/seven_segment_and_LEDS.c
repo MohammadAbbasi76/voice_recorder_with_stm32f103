@@ -38,19 +38,19 @@ void SevenSegmentDisplay(uint8_t number)
   else
     HAL_GPIO_WritePin(BCD_D_GPIO_Port, BCD_D_Pin, GPIO_PIN_RESET);
 }
-void RecordLED_ON()
+void RecordLedOn()
 {
   HAL_GPIO_WritePin(GPIOB, Record_LED_Pin, GPIO_PIN_SET);
 }
-void RecordLED_Off()
+void RecordLedOff()
 {
   HAL_GPIO_WritePin(GPIOB, Record_LED_Pin, GPIO_PIN_RESET);
 }
-void PalyLED_ON()
+void PalyLedOn()
 {
   HAL_GPIO_WritePin(GPIOB, Play_LED_Pin, GPIO_PIN_SET);
 }
-void PlayLED_OFF()
+void PlayLedOff()
 {
   HAL_GPIO_WritePin(GPIOB, Play_LED_Pin, GPIO_PIN_RESET);
 }
