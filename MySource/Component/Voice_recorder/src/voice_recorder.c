@@ -54,7 +54,7 @@ void VoiceRecorderInitiation()
   VoiceRecorderSt.ADC.TotallyStopTim = SampleRate * StopTimeInSec;
   VoiceRecorderSt.ADC.StopTimeCounter = 0;
   VoiceRecorderSt.Voice.CountOfSavedArray = 0;
-  VoiceRecorderSt.Track = 0;
+  VoiceRecorderSt.Track = 1;
   VoiceRecorderSt.Flag.InterruptSwitch = 1;
   VoiceRecorderSt.Flag.PwmArrayEmpty = 0;
   VoiceRecorderSt.Flag.AdcArrayFull = 0;
@@ -79,7 +79,7 @@ void RestFactory()
   HAL_GPIO_WritePin(GPIOB, Record_LED_Pin, GPIO_PIN_RESET);
   HAL_GPIO_WritePin(GPIOB, Play_LED_Pin, GPIO_PIN_RESET);
 }
-void InterruptFunc(void)
+void InterruptFunc()
 {
   if (VoiceRecorderSt.Flag.InterruptSwitch == 1)
   {

@@ -12,14 +12,11 @@
 
 
 void RestFactory();
-
-
-
 void ChooseVoiceForPlay();
 void NextTrack();
 void DummyFunc();
-void InterruptFunc(void);
-void VoiceRecorder(void);
+void InterruptFunc();
+void VoiceRecorder();
 void VoiceRecorderInitiation();
 
 #endif
