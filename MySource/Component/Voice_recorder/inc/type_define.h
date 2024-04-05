@@ -22,16 +22,10 @@ typedef enum
     Init,
     RecordState,
     PlayState,
-    // ChooseTrack,
     PauseState,
     ReadKeyboardState,
     FlashEraseState
 } state_t;
-typedef enum
-{
-    TurnOffSpeaker,
-    TurnOnSpeaker
-} AudioOutput;
 typedef struct 
 {
     uint32_t Counter;
@@ -46,7 +40,6 @@ typedef struct
 typedef struct 
 {
     uint8_t CountOfSavedArray;
-    uint8_t number;
     uint8_t RecordedArray[MaxNumberOfVoice];
 } Voice_St;
 typedef struct

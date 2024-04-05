@@ -11,8 +11,7 @@
 
 
 
-void AudioOutputControl(AudioOutput AudioOutputValue);
-void FlashErase();
+void RestFactory();
 
 
 

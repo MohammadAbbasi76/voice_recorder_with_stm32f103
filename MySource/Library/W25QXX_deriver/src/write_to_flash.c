@@ -179,3 +179,13 @@ uint8_t HowManyVoiceIsRecord(uint8_t
   }
   return (uint8_t)0;
 }
+void TestingFlash()
+{
+    if (!W25qxx_Init())
+    {
+        while (1)
+        {
+            // flash have problem !
+        }
+    }
+}

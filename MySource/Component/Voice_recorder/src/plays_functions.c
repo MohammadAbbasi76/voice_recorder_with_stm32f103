@@ -1,24 +1,19 @@
 #include "plays_functions.h"
 
-void PrepareForPlay(uint8_t VoiceNumber)
+void PrepareForPlay()
 {
-    if (VoiceRecorderSt.Voice.RecordedArray[VoiceNumber] == 1)
+    VoiceRecorderSt.Flag.InterruptSwitch = 0;
+    VoiceRecorderSt.Flag.PwmArrayEmpty = 0;
+    VoiceRecorderSt.ReadFromFlash = 0;
+    if (VoiceRecorderSt.Voice.RecordedArray[VoiceRecorderSt.Track] == 1)
     {
-        VoiceRecorderSt.Voice.number = VoiceNumber;
-        VoiceRecorderSt.Flag.InterruptSwitch = 0;
-        VoiceRecorderSt.Flag.PwmArrayEmpty = 0;
-        VoiceRecorderSt.ReadFromFlash = 0;
         memset(Buffer1, 0x0, VoiceArraySize);
-        RestoreDetail(VoiceRecorderSt.Voice.RecordedArray, VoiceRecorderSt.Voice.number, &(VoiceRecorderSt.Voice.CountOfSavedArray));
-        RestoreArrayFromFlash(VoiceRecorderSt.Voice.number, VoiceRecorderSt.ReadFromFlash, Buffer1);
-        VoiceRecorderSt.PWM.CountDataFromTotally[VoiceRecorderSt.Voice.number] = (uint32_t)((VoiceRecorderSt.Voice.CountOfSavedArray) * (VoiceArraySize));
+        RestoreDetail(VoiceRecorderSt.Voice.RecordedArray, VoiceRecorderSt.Track, &(VoiceRecorderSt.Voice.CountOfSavedArray));
+        RestoreArrayFromFlash(VoiceRecorderSt.Track, VoiceRecorderSt.ReadFromFlash, Buffer1);
+        VoiceRecorderSt.PWM.CountDataFromTotally[VoiceRecorderSt.Track] = (uint32_t)((VoiceRecorderSt.Voice.CountOfSavedArray) * (VoiceArraySize));
     }
     else
     {
-        VoiceRecorderSt.Voice.number = VoiceNumber;
-        VoiceRecorderSt.Flag.InterruptSwitch = 0;
-        VoiceRecorderSt.Flag.PwmArrayEmpty = 0;
-        VoiceRecorderSt.ReadFromFlash = 0;
         memset(Buffer1, 0x0, VoiceArraySize);
         memset(Buffer2, 0x0, VoiceArraySize);
         StopPlaying();
@@ -26,11 +21,6 @@ void PrepareForPlay(uint8_t VoiceNumber)
 }
 void StopPlaying()
 {
-    // VoiceRecorderSt.Flag.InterruptSwitch = 0;
-    // VoiceRecorderSt.Flag.PwmArrayEmpty = 0;
-    // VoiceRecorderSt.ReadFromFlash = 0;
-    // memset(Buffer2, 0x0, VoiceArraySize);
-    // memset(Buffer1, 0x0, VoiceArraySize);
     HAL_TIM_Base_Stop_IT(&htim2);
     HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);
     VoiceRecorderSt.ReadFromFlash = VoiceRecorderSt.Voice.CountOfSavedArray;
@@ -39,7 +29,7 @@ void StopPlaying()
 void StartPlaying()
 {
     PalyLedOn();
-    PrepareForPlay(VoiceRecorderSt.Track);
+    PrepareForPlay();
     HAL_TIM_Base_Start_IT(&htim2);
     HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1); // Start Pwm signal on PB-6 Pin
     uint8_t dataReadyFlag = 0;
@@ -54,7 +44,7 @@ void StartPlaying()
             if (dataReadyFlag == 0)
             {
                 VoiceRecorderSt.ReadFromFlash++;
-                RestoreArrayFromFlash(VoiceRecorderSt.Voice.number, VoiceRecorderSt.ReadFromFlash, Buffer2);
+                RestoreArrayFromFlash(VoiceRecorderSt.Track, VoiceRecorderSt.ReadFromFlash, Buffer2);
                 dataReadyFlag = 1;
             }
         }
