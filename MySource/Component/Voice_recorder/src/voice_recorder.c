@@ -4,54 +4,54 @@ uint32_t timing_1 = 0;
 
 void VoiceRecorder()
 {
-  switch (state)
+  switch (VoiceRecorderSt.State)
   {
   case Init:
   {
     VoiceRecorderInitiation();
-    state = ReadKeyboardState;
+    VoiceRecorderSt.State = ReadKeyboardState;
     break;
   }
   case ReadKeyboardState:
   {
-    state = ReadKeyboardState;
+    VoiceRecorderSt.State = ReadKeyboardState;
     break;
   }
   case ChooseTrack:
   {
     ChooseVoiceForPlay();
-    state = PlayState;
+    VoiceRecorderSt.State = PlayState;
     break;
   }
   case RecordState:
   {
     StartRecording();
-    state = ReadKeyboardState;
+    VoiceRecorderSt.State = ReadKeyboardState;
     break;
   }
   case PlayState:
   {
     StartPlaying();
-    state = ReadKeyboardState;
+    VoiceRecorderSt.State = ReadKeyboardState;
     break;
   }
   case FlashEraseState:
   {
     FlashErase();
-    state = ReadKeyboardState;
+    VoiceRecorderSt.State = ReadKeyboardState;
     break;
   }
   }
 }
 void RestoreInformationFromFlash()
 {
-  RestoreDetail(VoiceRecorderSt.Voice.RecodedArray, VoiceRecorderSt.Voice.number, &(VoiceRecorderSt.Voice.CountOfArraySaved));
-  if (VoiceRecorderSt.Voice.RecodedArray[0] == 255)
+  RestoreDetail(VoiceRecorderSt.Voice.RecordedArray, VoiceRecorderSt.Voice.number, &(VoiceRecorderSt.Voice.CountOfSavedArray));
+  if (VoiceRecorderSt.Voice.RecordedArray[0] == 255)
   {
     VoiceRecorderSt.Voice.number = 0;
     for (uint8_t i = 0; i < MaxNumberOfVoice; i++)
-      VoiceRecorderSt.Voice.RecodedArray[i] = 0;
-    VoiceRecorderSt.Voice.CountOfArraySaved = 0;
+      VoiceRecorderSt.Voice.RecordedArray[i] = 0;
+    VoiceRecorderSt.Voice.CountOfSavedArray = 0;
   }
 }
 void VoiceRecorderInitiation()
@@ -59,14 +59,14 @@ void VoiceRecorderInitiation()
   VoiceRecorderSt.ADC.Counter = 0;
   VoiceRecorderSt.ADC.TotallyStopTim = SampleRate * StopTimeInSec;
   VoiceRecorderSt.ADC.StopTimeCounter = 0;
-  VoiceRecorderSt.Voice.CountOfArraySaved = 0;
+  VoiceRecorderSt.Voice.CountOfSavedArray = 0;
   VoiceRecorderSt.Voice.number = 0;
   VoiceRecorderSt.Flag.InterruptSwitch = 1;
   VoiceRecorderSt.Flag.PwmArrayEmpty = 0;
   VoiceRecorderSt.Flag.AdcArrayFull = 0;
   VoiceRecorderSt.PWM.Counter = 0;
   memset(VoiceRecorderSt.PWM.CountDataFromTotally, 0x0, sizeof(VoiceRecorderSt.PWM.CountDataFromTotally));
-  memset(VoiceRecorderSt.Voice.RecodedArray, 0x0, sizeof(VoiceRecorderSt.Voice.RecodedArray));
+  memset(VoiceRecorderSt.Voice.RecordedArray, 0x0, sizeof(VoiceRecorderSt.Voice.RecordedArray));
   HAL_ADCEx_Calibration_Start(&hadc1);
   if (!W25qxx_Init())
   {
@@ -77,7 +77,7 @@ void VoiceRecorderInitiation()
   }
   //  W25qxx_EraseChip();
   RestoreInformationFromFlash();
-  WitchVoiceWantToPlay = 1;
+  VoiceRecorderSt.Track = 1;
   Blinking();
   for (uint8_t i = 0; i < 9; i++)
   {
@@ -85,23 +85,23 @@ void VoiceRecorderInitiation()
     SevenSegmentDisplay(i);
     HAL_Delay(500);
   }
-  SevenSegmentDisplay(WitchVoiceWantToPlay);
+  SevenSegmentDisplay(VoiceRecorderSt.Track);
 }
 
 void ChooseVoiceForPlay()
 {
-  VoiceRecorderSt.Voice.number = WitchVoiceWantToPlay;
+  VoiceRecorderSt.Voice.number = VoiceRecorderSt.Track;
   UART_Printf("VoiceRecorderSt.Voice.number =%d\n", VoiceRecorderSt.Voice.number);
-  if (VoiceRecorderSt.Voice.RecodedArray[VoiceRecorderSt.Voice.number] == 1)
+  if (VoiceRecorderSt.Voice.RecordedArray[VoiceRecorderSt.Voice.number] == 1)
   {
     SevenSegmentDisplay(VoiceRecorderSt.Voice.number);
     VoiceRecorderSt.Flag.InterruptSwitch = 0;
     VoiceRecorderSt.Flag.PwmArrayEmpty = 0;
-    VoiceArrayReadFromFlash = 0;
+    VoiceRecorderSt.ReadFromFlash = 0;
     memset(Buffer1, 0x0, sizeof(Buffer1));
-    RestoreDetail(VoiceRecorderSt.Voice.RecodedArray, VoiceRecorderSt.Voice.number, &(VoiceRecorderSt.Voice.CountOfArraySaved));
-    RestoreArrayFromFlash(VoiceRecorderSt.Voice.number, VoiceArrayReadFromFlash, Buffer1);
-    VoiceRecorderSt.PWM.CountDataFromTotally[VoiceRecorderSt.Voice.number] = (uint32_t)((VoiceRecorderSt.Voice.CountOfArraySaved) * (VoiceArraySize));
+    RestoreDetail(VoiceRecorderSt.Voice.RecordedArray, VoiceRecorderSt.Voice.number, &(VoiceRecorderSt.Voice.CountOfSavedArray));
+    RestoreArrayFromFlash(VoiceRecorderSt.Voice.number, VoiceRecorderSt.ReadFromFlash, Buffer1);
+    VoiceRecorderSt.PWM.CountDataFromTotally[VoiceRecorderSt.Voice.number] = (uint32_t)((VoiceRecorderSt.Voice.CountOfSavedArray) * (VoiceArraySize));
   }
   else
   {
@@ -145,6 +145,6 @@ void InterruptFunc(void)
   }
   else
   {
-    MakePWM_Wave();
+    MakePwmWave();
   }
 }

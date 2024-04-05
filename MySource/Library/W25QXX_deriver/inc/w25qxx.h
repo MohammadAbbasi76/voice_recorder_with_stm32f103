@@ -82,7 +82,7 @@ extern "C"
  * @{
  */
 #define W25Q_WRITE_ENABLE 0x06U			///< sets WEL bit, must be set before any write/program/erase
-#define W25Q_WRITE_DISABLE 0x04U		///< resets WEL bit (state after power-up)
+#define W25Q_WRITE_DISABLE 0x04U		///< resets WEL bit (VoiceRecorderSt.State after power-up)
 #define W25Q_ENABLE_VOLATILE_SR 0x50U	///< check 7.1 in datasheet
 #define W25Q_READ_SR1 0x05U				///< read status-register 1
 #define W25Q_READ_SR2 0x35U				///< read status-register 2

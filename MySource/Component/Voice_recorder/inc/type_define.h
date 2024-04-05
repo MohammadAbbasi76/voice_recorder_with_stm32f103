@@ -16,10 +16,7 @@
 
 uint16_t Buffer1[VoiceArraySize];
 uint16_t Buffer2[VoiceArraySize];
-uint8_t WitchVoiceWantToPlay;
-uint8_t VoiceArrayReadFromFlash;
-uint8_t state;
-uint32_t LastTimeKeyPress;
+
 typedef enum
 {
     Init,
@@ -48,9 +45,9 @@ typedef struct
 } PWM_St;
 typedef struct 
 {
-    uint8_t CountOfArraySaved;
+    uint8_t CountOfSavedArray;
     uint8_t number;
-    uint8_t RecodedArray[MaxNumberOfVoice];
+    uint8_t RecordedArray[MaxNumberOfVoice];
 } Voice_St;
 typedef struct
 {
@@ -64,6 +61,9 @@ typedef struct
     PWM_St PWM;
     Flags_St Flag;
     Voice_St Voice;
+    uint8_t Track;
+    uint8_t ReadFromFlash;
+    uint8_t State;
 }VoiceRecorder_St;
 VoiceRecorder_St VoiceRecorderSt;
 #endif

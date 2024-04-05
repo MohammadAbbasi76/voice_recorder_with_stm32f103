@@ -9,21 +9,21 @@ void StopRecording()
 void StartRecording()
 {
     // voice.number = NextFreeSpaceInFlash(voice.VoiceRecoredArray);
-    VoiceRecorderSt.Voice.number = WitchVoiceWantToPlay;
-    if (VoiceRecorderSt.Voice.RecodedArray[VoiceRecorderSt.Voice.number] == 1)
+    VoiceRecorderSt.Voice.number = VoiceRecorderSt.Track;
+    if (VoiceRecorderSt.Voice.RecordedArray[VoiceRecorderSt.Voice.number] == 1)
     {
         SevenSegmentDisplay(0);
-        RemoveVoice(VoiceRecorderSt.Voice.RecodedArray, VoiceRecorderSt.Voice.number);
+        RemoveVoice(VoiceRecorderSt.Voice.RecordedArray, VoiceRecorderSt.Voice.number);
     }
     RecordLED_ON();
     SevenSegmentDisplay(VoiceRecorderSt.Voice.number);
-    VoiceRecorderSt.Voice.number = WitchVoiceWantToPlay;
+    VoiceRecorderSt.Voice.number = VoiceRecorderSt.Track;
     MX_ADC1_Init();
     HAL_ADCEx_Calibration_Start(&hadc1);
     HAL_ADC_Start(&hadc1);
     HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
     VoiceRecorderSt.Flag.InterruptSwitch = 1;
-    VoiceRecorderSt.Voice.CountOfArraySaved = 0;
+    VoiceRecorderSt.Voice.CountOfSavedArray = 0;
     VoiceRecorderSt.Flag.AdcArrayFull = 0;
     HAL_TIM_Base_Start_IT(&htim2);
     while (1)
@@ -31,21 +31,21 @@ void StartRecording()
         if (VoiceRecorderSt.Flag.AdcArrayFull == 1)
         {
             ConversionADCValueToPWMDuty(Buffer1); // may be need RTOS
-            save_2k_array(VoiceRecorderSt.Voice.number, VoiceRecorderSt.Voice.CountOfArraySaved, Buffer1);
-            VoiceRecorderSt.Voice.CountOfArraySaved++;
+            save_2k_array(VoiceRecorderSt.Voice.number, VoiceRecorderSt.Voice.CountOfSavedArray, Buffer1);
+            VoiceRecorderSt.Voice.CountOfSavedArray++;
             VoiceRecorderSt.Flag.AdcArrayFull = 0;
         }
         if (VoiceRecorderSt.ADC.StopTimeCounter >= (VoiceRecorderSt.ADC.TotallyStopTim + 1))
         {
-            VoiceRecorderSt.Voice.RecodedArray[VoiceRecorderSt.Voice.number] = 1;
-            SaveDetail(VoiceRecorderSt.Voice.RecodedArray, VoiceRecorderSt.Voice.number, VoiceRecorderSt.Voice.CountOfArraySaved);
+            VoiceRecorderSt.Voice.RecordedArray[VoiceRecorderSt.Voice.number] = 1;
+            SaveDetail(VoiceRecorderSt.Voice.RecordedArray, VoiceRecorderSt.Voice.number, VoiceRecorderSt.Voice.CountOfSavedArray);
             break;
         }
     }
     HAL_TIM_Base_Stop_IT(&htim2);
     // voice.number++;
-    // WitchVoiceWantToPlay = voice.number;
-    VoiceRecorderSt.Voice.CountOfArraySaved = 0;
+    // VoiceRecorderSt.Track = voice.number;
+    VoiceRecorderSt.Voice.CountOfSavedArray = 0;
     VoiceRecorderSt.ADC.StopTimeCounter = 0;
     HAL_ADC_Stop(&hadc1);
     RecordLED_Off();

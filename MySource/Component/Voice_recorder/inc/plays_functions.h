@@ -13,6 +13,6 @@ void StartPlaying();
 void StopPlaying();
 void PrepareForPlay(uint8_t VoiceNumber);
 void ConversionADCValueToPWMDuty(uint16_t *val);
-void MakePWM_Wave();
+void MakePwmWave();
 
 #endif

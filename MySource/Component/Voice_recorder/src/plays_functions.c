@@ -2,19 +2,16 @@
 
 void PrepareForPlay(uint8_t VoiceNumber)
 {
-    if (VoiceRecorderSt.Voice.RecodedArray[VoiceNumber] == 1)
+    if (VoiceRecorderSt.Voice.RecordedArray[VoiceNumber] == 1)
     {
         VoiceRecorderSt.Voice.number = VoiceNumber;
         VoiceRecorderSt.Flag.InterruptSwitch = 0;
         VoiceRecorderSt.Flag.PwmArrayEmpty = 0;
-        VoiceArrayReadFromFlash = 0;
-        for (int i = 0; i < VoiceArraySize; i++)
-        {
-            Buffer2[i] = 0;
-        }
-        RestoreDetail(VoiceRecorderSt.Voice.RecodedArray, VoiceRecorderSt.Voice.number, &(VoiceRecorderSt.Voice.CountOfArraySaved));
-        RestoreArrayFromFlash(VoiceRecorderSt.Voice.number, VoiceArrayReadFromFlash, Buffer2);
-        VoiceRecorderSt.PWM.CountDataFromTotally[VoiceRecorderSt.Voice.number] = (uint32_t)((VoiceRecorderSt.Voice.CountOfArraySaved) * (VoiceArraySize));
+        VoiceRecorderSt.ReadFromFlash = 0;
+        memset(Buffer2, 0x0, VoiceArraySize);
+        RestoreDetail(VoiceRecorderSt.Voice.RecordedArray, VoiceRecorderSt.Voice.number, &(VoiceRecorderSt.Voice.CountOfSavedArray));
+        RestoreArrayFromFlash(VoiceRecorderSt.Voice.number, VoiceRecorderSt.ReadFromFlash, Buffer2);
+        VoiceRecorderSt.PWM.CountDataFromTotally[VoiceRecorderSt.Voice.number] = (uint32_t)((VoiceRecorderSt.Voice.CountOfSavedArray) * (VoiceArraySize));
         for (int i = 0; i < VoiceArraySize; i++)
         {
             Buffer1[i] = Buffer2[i];
@@ -25,16 +22,9 @@ void PrepareForPlay(uint8_t VoiceNumber)
         VoiceRecorderSt.Voice.number = VoiceNumber;
         VoiceRecorderSt.Flag.InterruptSwitch = 0;
         VoiceRecorderSt.Flag.PwmArrayEmpty = 0;
-        VoiceArrayReadFromFlash = 0;
-        for (int i = 0; i < VoiceArraySize; i++)
-        {
-            Buffer2[i] = 0;
-        }
-        for (int i = 0; i < VoiceArraySize; i++)
-        {
-            Buffer1[i] = 0;
-            Buffer2[i] = 0;
-        }
+        VoiceRecorderSt.ReadFromFlash = 0;
+        memset(Buffer1, 0x0, VoiceArraySize);
+        memset(Buffer2, 0x0, VoiceArraySize);
         StopPlaying();
     }
 }
@@ -42,24 +32,24 @@ void StopPlaying()
 {
     // VoiceRecorderSt.Flag.InterruptSwitch = 0;
     // VoiceRecorderSt.Flag.PwmArrayEmpty = 0;
-    // VoiceArrayReadFromFlash = 0;
+    // VoiceRecorderSt.ReadFromFlash = 0;
     // memset(Buffer2, 0x0, VoiceArraySize);
     // memset(Buffer1, 0x0, VoiceArraySize);
     HAL_TIM_Base_Stop_IT(&htim2);
     HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);
-    VoiceArrayReadFromFlash = VoiceRecorderSt.Voice.CountOfArraySaved;
+    VoiceRecorderSt.ReadFromFlash = VoiceRecorderSt.Voice.CountOfSavedArray;
 }
 
 void StartPlaying()
 {
     PalyLED_ON();
-    PrepareForPlay(WitchVoiceWantToPlay);
+    PrepareForPlay(VoiceRecorderSt.Track);
     HAL_TIM_Base_Start_IT(&htim2);
     HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1); // Start Pwm signal on PB-6 Pin
     uint8_t dataReadyFlag = 0;
     while (1)
     {
-        if (VoiceArrayReadFromFlash == VoiceRecorderSt.Voice.CountOfArraySaved)
+        if (VoiceRecorderSt.ReadFromFlash == VoiceRecorderSt.Voice.CountOfSavedArray)
         {
             break;
         }
@@ -67,8 +57,8 @@ void StartPlaying()
         {
             if (dataReadyFlag == 0)
             {
-                VoiceArrayReadFromFlash++;
-                RestoreArrayFromFlash(VoiceRecorderSt.Voice.number, VoiceArrayReadFromFlash, Buffer2);
+                VoiceRecorderSt.ReadFromFlash++;
+                RestoreArrayFromFlash(VoiceRecorderSt.Voice.number, VoiceRecorderSt.ReadFromFlash, Buffer2);
                 dataReadyFlag = 1;
             }
         }
@@ -83,13 +73,13 @@ void StartPlaying()
             dataReadyFlag = 0;
         }
     }
-    VoiceArrayReadFromFlash = 0;
+    VoiceRecorderSt.ReadFromFlash = 0;
     HAL_TIM_Base_Stop_IT(&htim2);
     HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);
     PlayLED_OFF();
 }
 
-void MakePWM_Wave()
+void MakePwmWave()
 {
     if (VoiceRecorderSt.Flag.PwmArrayEmpty == 0)
     {
