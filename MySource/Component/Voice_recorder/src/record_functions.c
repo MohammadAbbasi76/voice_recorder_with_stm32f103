@@ -2,54 +2,56 @@
 
 void StopRecording()
 {
-    HAL_TIM_Base_Stop_IT(&htim2);
-    VoiceRecorderSt.ADC.StopTimeCounter = (VoiceRecorderSt.ADC.TotallyStopTim + 2);
+  HAL_TIM_Base_Stop_IT(&htim2);
+  VoiceRecorderSt.ADC.StopTimeCounter = (VoiceRecorderSt.ADC.TotallyStopTim + 2);
 }
-
+void AdcConfigForRecord()
+{
+  MX_ADC1_Init();
+  HAL_ADCEx_Calibration_Start(&hadc1);
+  HAL_ADC_Start(&hadc1);
+  HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
+}
+void PrepareForRecording()
+{
+  if (VoiceRecorderSt.Voice.RecordedArray[VoiceRecorderSt.Track] == 1)
+  {
+    RemoveVoice(VoiceRecorderSt.Voice.RecordedArray, VoiceRecorderSt.Track);
+  }
+  RecordLedOn();
+  SevenSegmentDisplay(VoiceRecorderSt.Track);
+  AdcConfigForRecord();
+  VoiceRecorderSt.Flag.InterruptSwitch = 1;
+  VoiceRecorderSt.Voice.CountOfSavedArray = 0;
+  VoiceRecorderSt.Flag.AdcArrayFull = 0;
+  HAL_TIM_Base_Start_IT(&htim2);
+}
 void StartRecording()
 {
-    // voice.number = NextFreeSpaceInFlash(voice.VoiceRecoredArray);
-    VoiceRecorderSt.Voice.number = VoiceRecorderSt.Track;
-    if (VoiceRecorderSt.Voice.RecordedArray[VoiceRecorderSt.Voice.number] == 1)
+  PrepareForRecording();
+  while (1)
+  {
+    if (VoiceRecorderSt.Flag.AdcArrayFull == 1)
     {
-        SevenSegmentDisplay(0);
-        RemoveVoice(VoiceRecorderSt.Voice.RecordedArray, VoiceRecorderSt.Voice.number);
+      ConversionADCValueToPWMDuty(Buffer1);
+      save_2k_array(VoiceRecorderSt.Track, VoiceRecorderSt.Voice.CountOfSavedArray, Buffer1);
+      VoiceRecorderSt.Voice.CountOfSavedArray++;
+      VoiceRecorderSt.Flag.AdcArrayFull = 0;
     }
-    RecordLedOn();
-    SevenSegmentDisplay(VoiceRecorderSt.Voice.number);
-    VoiceRecorderSt.Voice.number = VoiceRecorderSt.Track;
-    MX_ADC1_Init();
-    HAL_ADCEx_Calibration_Start(&hadc1);
-    HAL_ADC_Start(&hadc1);
-    HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
-    VoiceRecorderSt.Flag.InterruptSwitch = 1;
-    VoiceRecorderSt.Voice.CountOfSavedArray = 0;
-    VoiceRecorderSt.Flag.AdcArrayFull = 0;
-    HAL_TIM_Base_Start_IT(&htim2);
-    while (1)
+    if (VoiceRecorderSt.ADC.StopTimeCounter >= (VoiceRecorderSt.ADC.TotallyStopTim + 1))
     {
-        if (VoiceRecorderSt.Flag.AdcArrayFull == 1)
-        {
-            ConversionADCValueToPWMDuty(Buffer1); // may be need RTOS
-            save_2k_array(VoiceRecorderSt.Voice.number, VoiceRecorderSt.Voice.CountOfSavedArray, Buffer1);
-            VoiceRecorderSt.Voice.CountOfSavedArray++;
-            VoiceRecorderSt.Flag.AdcArrayFull = 0;
-        }
-        if (VoiceRecorderSt.ADC.StopTimeCounter >= (VoiceRecorderSt.ADC.TotallyStopTim + 1))
-        {
-            VoiceRecorderSt.Voice.RecordedArray[VoiceRecorderSt.Voice.number] = 1;
-            SaveDetail(VoiceRecorderSt.Voice.RecordedArray, VoiceRecorderSt.Voice.number, VoiceRecorderSt.Voice.CountOfSavedArray);
-            break;
-        }
+      VoiceRecorderSt.Voice.RecordedArray[VoiceRecorderSt.Track] = 1;
+      SaveDetail(VoiceRecorderSt.Voice.RecordedArray, VoiceRecorderSt.Track, VoiceRecorderSt.Voice.CountOfSavedArray);
+      break;
     }
-    HAL_TIM_Base_Stop_IT(&htim2);
-    // voice.number++;
-    // VoiceRecorderSt.Track = voice.number;
-    VoiceRecorderSt.Voice.CountOfSavedArray = 0;
-    VoiceRecorderSt.ADC.StopTimeCounter = 0;
-    HAL_ADC_Stop(&hadc1);
-    RecordLedOff();
-    //  HAL_Delay(1000);
+  }
+  HAL_TIM_Base_Stop_IT(&htim2);
+  // voice.number++;
+  // VoiceRecorderSt.Track = voice.number;
+  VoiceRecorderSt.Voice.CountOfSavedArray = 0;
+  VoiceRecorderSt.ADC.StopTimeCounter = 0;
+  HAL_ADC_Stop(&hadc1);
+  RecordLedOff();
 }
 void ADC_Sampling()
 {

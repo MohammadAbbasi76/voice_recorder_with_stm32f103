@@ -22,7 +22,7 @@ typedef enum
     Init,
     RecordState,
     PlayState,
-    ChooseTrack,
+    // ChooseTrack,
     PauseState,
     ReadKeyboardState,
     FlashEraseState

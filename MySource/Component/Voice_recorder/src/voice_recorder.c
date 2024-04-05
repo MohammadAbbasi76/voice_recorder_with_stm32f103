@@ -17,12 +17,6 @@ void VoiceRecorder()
     VoiceRecorderSt.State = ReadKeyboardState;
     break;
   }
-  case ChooseTrack:
-  {
-    ChooseVoiceForPlay();
-    VoiceRecorderSt.State = PlayState;
-    break;
-  }
   case RecordState:
   {
     StartRecording();
@@ -87,28 +81,6 @@ void VoiceRecorderInitiation()
   }
   SevenSegmentDisplay(VoiceRecorderSt.Track);
 }
-
-void ChooseVoiceForPlay()
-{
-  VoiceRecorderSt.Voice.number = VoiceRecorderSt.Track;
-  UART_Printf("VoiceRecorderSt.Voice.number =%d\n", VoiceRecorderSt.Voice.number);
-  if (VoiceRecorderSt.Voice.RecordedArray[VoiceRecorderSt.Voice.number] == 1)
-  {
-    SevenSegmentDisplay(VoiceRecorderSt.Voice.number);
-    VoiceRecorderSt.Flag.InterruptSwitch = 0;
-    VoiceRecorderSt.Flag.PwmArrayEmpty = 0;
-    VoiceRecorderSt.ReadFromFlash = 0;
-    memset(Buffer1, 0x0, sizeof(Buffer1));
-    RestoreDetail(VoiceRecorderSt.Voice.RecordedArray, VoiceRecorderSt.Voice.number, &(VoiceRecorderSt.Voice.CountOfSavedArray));
-    RestoreArrayFromFlash(VoiceRecorderSt.Voice.number, VoiceRecorderSt.ReadFromFlash, Buffer1);
-    VoiceRecorderSt.PWM.CountDataFromTotally[VoiceRecorderSt.Voice.number] = (uint32_t)((VoiceRecorderSt.Voice.CountOfSavedArray) * (VoiceArraySize));
-  }
-  else
-  {
-    StopPlaying();
-  }
-}
-
 void FlashErase()
 {
   if (!W25qxx_Init())
