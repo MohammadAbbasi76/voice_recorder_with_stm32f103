@@ -17,10 +17,13 @@ This module facilitates to record voice and play it with
 
 
 ## Introduction
+This project aims to create a voice recorder that uses a microcontroller, specifically the STM32F103 model, to generate analog signals. We achieved this by employing Pulse Width Modulation (PWM) techniques instead of utilizing a dedicated Digital-to-Analog Converter (DAC) unit. Additionally, we used external flash memory to store data efficiently.
 
-This project aims to create a voice recorder using a microcontroller (STM32F103) with limited processing power and without a dedicated Digital-to-Analog Converter (DAC) unit. Instead, we utilize Pulse Width Modulation (PWM) techniques to generate analog-like signals and external flash memory for data storage.
+Our approach offers a cost-effective solution for generating analog waveforms compared to using a DAC. DACs can be costly and may lack the necessary resolution for certain applications.
 
-## Technical Framework
+We demonstrate that PWM-based analog signal generation can effectively create analog voltage levels suitable for driving various analog circuits or devices by modulating the duty cycle of a PWM signal. This approach allows for the generation of arbitrary analog waveforms without the need for a dedicated DAC, which may have limited resolution.
+
+Our solution provides an alternative to DAC-dependent methods and offers a versatile solution that is both cost-effective and capable of generating high-resolution analog waveforms. It addresses the issue of resolution limitations and overcomes the constraints of DACs.
 
 ## Microcontroller Limitations
 Our setup revolves around a microcontroller ((STM32F103) )with constrained computational capabilities and lacking a built-in DAC unit, necessitating alternative approaches for sound reproduction.
