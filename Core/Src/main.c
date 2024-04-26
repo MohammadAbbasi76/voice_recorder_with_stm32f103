@@ -110,7 +110,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    VoiceRecorder();
+//    VoiceRecorder();
   }
   /* USER CODE END 3 */
 }

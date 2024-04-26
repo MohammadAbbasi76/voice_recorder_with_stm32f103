@@ -64,6 +64,8 @@ target_link_options(
 
 target_sources(
     ${TARGET_NAME} PRIVATE
+    "MySource\\Utilities\\Log\\src\\STM_Log.c"
+    "MySource\\Utilities\\Seven_segment_and_led\\src\\seven_segment_and_LEDS.c"
     "Core\\Src\\adc.c"
     "Core\\Src\\gpio.c"
     "Core\\Src\\main.c"
@@ -76,6 +78,8 @@ target_sources(
     "Core\\Src\\tim.c"
     "Core\\Src\\usart.c"
     "Core\\Startup\\startup_stm32f103c8tx.s"
+    "MySource\\Library\\W25QXX_deriver\\src\\w25qxx.c"
+    "MySource\\Library\\W25QXX_deriver\\src\\write_to_flash.c"
     "Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_adc_ex.c"
     "Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_adc.c"
     "Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_cortex.c"
@@ -97,10 +101,6 @@ target_sources(
     "MySource\\Component\\Voice_recorder\\src\\read_keyboard.c"
     "MySource\\Component\\Voice_recorder\\src\\record_functions.c"
     "MySource\\Component\\Voice_recorder\\src\\voice_recorder.c"
-    "MySource\\Library\\W25QXX_deriver\\src\\w25qxx.c"
-    "MySource\\Library\\W25QXX_deriver\\src\\write_to_flash.c"
-    "MySource\\Utilities\\Log\\src\\STM_Log.c"
-    "MySource\\Utilities\\Seven_segment_and_led\\src\\seven_segment_and_LEDS.c"
 )
 
 add_custom_command(

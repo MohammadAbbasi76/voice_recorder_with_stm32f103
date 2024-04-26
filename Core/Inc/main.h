@@ -73,16 +73,12 @@ void Error_Handler(void);
 #define BCD_D_GPIO_Port GPIOB
 #define Pause_Key_Pin GPIO_PIN_11
 #define Pause_Key_GPIO_Port GPIOB
-#define Pause_Key_EXTI_IRQn EXTI15_10_IRQn
 #define Play_Key_Pin GPIO_PIN_12
 #define Play_Key_GPIO_Port GPIOB
-#define Play_Key_EXTI_IRQn EXTI15_10_IRQn
 #define Record_Key_Pin GPIO_PIN_13
 #define Record_Key_GPIO_Port GPIOB
-#define Record_Key_EXTI_IRQn EXTI15_10_IRQn
 #define Next_Key_Pin GPIO_PIN_14
 #define Next_Key_GPIO_Port GPIOB
-#define Next_Key_EXTI_IRQn EXTI15_10_IRQn
 #define BCD_C_Pin GPIO_PIN_8
 #define BCD_C_GPIO_Port GPIOA
 #define BCD_B_Pin GPIO_PIN_11
