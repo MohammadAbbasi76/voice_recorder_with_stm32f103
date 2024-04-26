@@ -11,7 +11,7 @@
 
 void StartPlaying();
 void StopPlaying();
-void PrepareForPlay();
+void PrepareToPlay();
 void ConversionADCValueToPWMDuty(uint16_t *val);
 void MakePwmWave();
 

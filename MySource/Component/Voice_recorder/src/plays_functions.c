@@ -1,6 +1,6 @@
 #include "plays_functions.h"
 
-void PrepareForPlay()
+void PrepareToPlay()
 {
     VoiceRecorderSt.Flag.InterruptSwitch = 0;
     VoiceRecorderSt.Flag.PwmArrayEmpty = 0;
@@ -29,7 +29,7 @@ void StopPlaying()
 void StartPlaying()
 {
     PalyLedOn();
-    PrepareForPlay();
+    PrepareToPlay();
     HAL_TIM_Base_Start_IT(&htim2);
     HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1); // Start Pwm signal on PB-6 Pin
     uint8_t dataReadyFlag = 0;

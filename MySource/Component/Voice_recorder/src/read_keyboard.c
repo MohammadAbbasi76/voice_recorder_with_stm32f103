@@ -15,9 +15,13 @@ void NextTrack()
     {
         VoiceRecorderSt.Track = 1;
     }
+    SevenSegmentDisplay(VoiceRecorderSt.Track);
 }
 void ReadKeyBoard(uint16_t GPIO_Pin)
 {
+    static uint32_t Time;
+    if (HAL_GetTick() - Time > DebounceTime)
+    {
         if (GPIO_Pin == Play_Key_Pin) // If The INT Source Is EXTI Line8 (B12 Pin)
         {
             VoiceRecorderSt.State = PlayState;
@@ -42,4 +46,6 @@ void ReadKeyBoard(uint16_t GPIO_Pin)
             NextTrack();
         }
         SevenSegmentDisplay(VoiceRecorderSt.Track);
+        Time = HAL_GetTick();
+    }
 }

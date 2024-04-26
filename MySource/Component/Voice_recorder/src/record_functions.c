@@ -12,14 +12,16 @@ void AdcConfigForRecord()
   HAL_ADC_Start(&hadc1);
   HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
 }
-void PrepareForRecording()
+void PrepareToRecord()
 {
+  RecordLedOn();
+  PalyLedOn();
   if (VoiceRecorderSt.Voice.RecordedArray[VoiceRecorderSt.Track] == 1)
   {
     RemoveVoice(VoiceRecorderSt.Voice.RecordedArray, VoiceRecorderSt.Track);
   }
+  PlayLedOff();
   RecordLedOn();
-  SevenSegmentDisplay(VoiceRecorderSt.Track);
   AdcConfigForRecord();
   VoiceRecorderSt.Flag.InterruptSwitch = 1;
   VoiceRecorderSt.Voice.CountOfSavedArray = 0;
@@ -28,7 +30,7 @@ void PrepareForRecording()
 }
 void StartRecording()
 {
-  PrepareForRecording();
+  PrepareToRecord();
   while (1)
   {
     if (VoiceRecorderSt.Flag.AdcArrayFull == 1)
@@ -46,8 +48,6 @@ void StartRecording()
     }
   }
   HAL_TIM_Base_Stop_IT(&htim2);
-  // voice.number++;
-  // VoiceRecorderSt.Track = voice.number;
   VoiceRecorderSt.Voice.CountOfSavedArray = 0;
   VoiceRecorderSt.ADC.StopTimeCounter = 0;
   HAL_ADC_Stop(&hadc1);
