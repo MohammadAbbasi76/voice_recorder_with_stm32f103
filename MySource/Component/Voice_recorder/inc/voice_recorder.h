@@ -11,7 +11,7 @@
 
 
 
-void RestFactory();
+void RestFactoryFunction();
 void ChooseVoiceForPlay();
 void NextTrack();
 void DummyFunc();

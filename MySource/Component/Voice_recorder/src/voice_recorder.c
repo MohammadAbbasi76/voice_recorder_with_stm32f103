@@ -31,7 +31,7 @@ void VoiceRecorder()
   }
   case FlashEraseState:
   {
-    RestFactory();
+    RestFactoryFunction();
     VoiceRecorderSt.State = ReadKeyboardState;
     break;
   }
@@ -70,7 +70,7 @@ void VoiceRecorderInitiation()
   Blinking();
   SevenSegmentDisplay(VoiceRecorderSt.Track);
 }
-void RestFactory()
+void RestFactoryFunction()
 {
   HAL_GPIO_WritePin(GPIOB, Record_LED_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(GPIOB, Play_LED_Pin, GPIO_PIN_SET);
