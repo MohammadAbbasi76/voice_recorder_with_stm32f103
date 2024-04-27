@@ -121,3 +121,7 @@ uint16_t ReadKeyBoard(void)
         return 0;
     }
 }
+ void PauseKey()
+ {
+    
+ }
