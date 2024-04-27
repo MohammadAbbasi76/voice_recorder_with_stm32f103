@@ -11,4 +11,5 @@
 
 uint16_t ReadKeyBoard(void);
 void KeyBoard();
+void PauseKey(uint16_t InputKey);
 #endif

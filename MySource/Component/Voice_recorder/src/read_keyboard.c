@@ -31,7 +31,7 @@ void KeyBoard()
         else /*detect  double  key pressed and  change mode*/
         {
             Hold_time = HAL_GetTick() - Start_time;
-            if (KeyPress == (Pause_Key_Pin | Record_Key_Pin) && Hold_time >=   GO_TO_FACTORYRESET_MODE_TIME)
+            if (KeyPress == (Pause_Key_Pin | Record_Key_Pin) && Hold_time >= GO_TO_FACTORYRESET_MODE_TIME)
             {
                 if (VoiceRecorderSt.DeviceMode == NormalMode) /*go to learning mode*/
                 {
@@ -51,26 +51,15 @@ void KeyBoard()
         first_time_holding_flag = 1;
         if (VoiceRecorderSt.DeviceMode == NormalMode)
         {
-            if ( LastKeyPress == Play_Key_Pin)
+            if (LastKeyPress == Play_Key_Pin)
             {
                 VoiceRecorderSt.State = PlayState;
             }
-            else if ( LastKeyPress == Record_Key_Pin)
+            else if (LastKeyPress == Record_Key_Pin)
             {
                 VoiceRecorderSt.State = RecordState;
             }
-            else if ( LastKeyPress == Pause_Key_Pin)
-            {
-                if (VoiceRecorderSt.State == PlayState)
-                {
-                    StopPlaying();
-                }
-                if (VoiceRecorderSt.State == RecordState)
-                {
-                    StopRecording();
-                }
-            }
-            else if ( LastKeyPress == Next_Key_Pin)
+            else if (LastKeyPress == Next_Key_Pin)
             {
                 NextTrack();
             }
@@ -121,7 +110,21 @@ uint16_t ReadKeyBoard(void)
         return 0;
     }
 }
- void PauseKey()
- {
-    
- }
+void PauseKey(uint16_t InputKey)
+{
+    if (DebounceTime < HAL_GetTick())
+    {
+        if (InputKey == Pause_Key_Pin)
+        {
+            if (VoiceRecorderSt.State == PlayState)
+            {
+                StopPlaying();
+            }
+            if (VoiceRecorderSt.State == RecordState)
+            {
+                StopRecording();
+            }
+        }
+        DebounceTime = HAL_GetTick() + DefaultDebounceTime;
+    }
+}
