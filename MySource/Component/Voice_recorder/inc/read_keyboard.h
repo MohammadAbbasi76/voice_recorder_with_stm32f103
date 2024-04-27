@@ -9,5 +9,6 @@
 
 #define DefaultDebounceTime 300 // in millis
 
-void ReadKeyBoard(uint16_t GPIO_Pin);
+uint16_t ReadKeyBoard(void);
+void KeyBoard();
 #endif

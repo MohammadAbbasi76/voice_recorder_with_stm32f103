@@ -13,6 +13,7 @@
 #include "seven_segment_and_LEDS.h"
 
 #define StopTimeInSec 10
+#define   GO_TO_FACTORYRESET_MODE_TIME 5000
 
 uint16_t Buffer1[VoiceArraySize];
 uint16_t Buffer2[VoiceArraySize];

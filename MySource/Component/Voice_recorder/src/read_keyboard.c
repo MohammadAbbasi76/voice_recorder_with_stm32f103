@@ -1,13 +1,5 @@
 #include "read_keyboard.h"
 
-void DummyFunc()
-{
-    int Temp = 0;
-    for (int i = 0; i < 10000; i++)
-    {
-        Temp++;
-    }
-}
 void NextTrack()
 {
     VoiceRecorderSt.Track++;
@@ -17,8 +9,6 @@ void NextTrack()
     }
     SevenSegmentDisplay(VoiceRecorderSt.Track);
 }
-#define GOTO_LEARNING_MODE_TIME 5000
-#define GoToFactoryResetMode (1 << (SwitchLen - 1)) + 1
 uint8_t first_time_holding_flag = 1;
 uint16_t Start_time = 0;
 uint16_t Hold_time = 0;
@@ -27,24 +17,9 @@ uint32_t DebounceTime;
 
 uint16_t LastKeyPress;
 uint16_t KeyPress;
-static uint32_t Time;
 void KeyBoard()
 {
-    // Time = HAL_GetTick();
     KeyPress = ReadKeyBoard();
-    if (VoiceRecorderSt.DeviceMode == NormalMode)
-    {
-        if (KeyPress != 0)
-        {
-            HAL_GPIO_WritePin(GPIOB, Record_LED_Pin, GPIO_PIN_SET);
-            HAL_GPIO_WritePin(GPIOB, Play_LED_Pin, GPIO_PIN_SET);
-        }
-        else
-        {
-            HAL_GPIO_WritePin(GPIOB, Record_LED_Pin, GPIO_PIN_RESET);
-            HAL_GPIO_WritePin(GPIOB, Play_LED_Pin, GPIO_PIN_RESET);
-        }
-    }
     if (KeyPress != 0 && LastKeyPress != 0)
     {
         if (first_time_holding_flag)
@@ -56,7 +31,7 @@ void KeyBoard()
         else /*detect  double  key pressed and  change mode*/
         {
             Hold_time = HAL_GetTick() - Start_time;
-            if (KeyPress == (Pause_Key_Pin | Record_Key_Pin) && Hold_time >= GOTO_LEARNING_MODE_TIME)
+            if (KeyPress == (Pause_Key_Pin | Record_Key_Pin) && Hold_time >=   GO_TO_FACTORYRESET_MODE_TIME)
             {
                 if (VoiceRecorderSt.DeviceMode == NormalMode) /*go to learning mode*/
                 {
@@ -76,15 +51,15 @@ void KeyBoard()
         first_time_holding_flag = 1;
         if (VoiceRecorderSt.DeviceMode == NormalMode)
         {
-            if (KeyPress == Play_Key_Pin) // If The INT Source Is EXTI Line8 (B12 Pin)
+            if ( LastKeyPress == Play_Key_Pin)
             {
                 VoiceRecorderSt.State = PlayState;
             }
-            else if (KeyPress == Record_Key_Pin) // If The INT Source Is EXTI Line8 (B13 Pin)
+            else if ( LastKeyPress == Record_Key_Pin)
             {
                 VoiceRecorderSt.State = RecordState;
             }
-            else if (KeyPress == Pause_Key_Pin) // If The INT Source Is EXTI Line8 (B14 Pin)
+            else if ( LastKeyPress == Pause_Key_Pin)
             {
                 if (VoiceRecorderSt.State == PlayState)
                 {
@@ -95,7 +70,7 @@ void KeyBoard()
                     StopRecording();
                 }
             }
-            else if (KeyPress == Next_Key_Pin) // If The INT Source Is EXTI Line8 (B14 Pin)
+            else if ( LastKeyPress == Next_Key_Pin)
             {
                 NextTrack();
             }

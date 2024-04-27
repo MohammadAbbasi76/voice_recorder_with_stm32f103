@@ -15,6 +15,7 @@ void VoiceRecorder()
   case ReadKeyboardState:
   {
     VoiceRecorderSt.State = ReadKeyboardState;
+    KeyBoard();
     break;
   }
   case RecordState:
@@ -58,7 +59,7 @@ void VoiceRecorderInitiation()
   VoiceRecorderSt.Flag.InterruptSwitch = 1;
   VoiceRecorderSt.Flag.PwmArrayEmpty = 0;
   VoiceRecorderSt.Flag.AdcArrayFull = 0;
-  VoiceRecorderSt.DeviceMode=NormalMode;
+  VoiceRecorderSt.DeviceMode = NormalMode;
   VoiceRecorderSt.PWM.Counter = 0;
   memset(VoiceRecorderSt.PWM.CountDataFromTotally, 0x0, sizeof(VoiceRecorderSt.PWM.CountDataFromTotally));
   memset(VoiceRecorderSt.Voice.RecordedArray, 0x0, sizeof(VoiceRecorderSt.Voice.RecordedArray));
