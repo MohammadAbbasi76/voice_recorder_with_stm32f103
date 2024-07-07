@@ -8,8 +8,8 @@ void PrepareToPlay()
     if (VoiceRecorderSt.Voice.RecordedArray[VoiceRecorderSt.Track] == 1)
     {
         memset(Buffer1, 0x0, VoiceArraySize);
-        RestoreDetail(VoiceRecorderSt.Voice.RecordedArray, VoiceRecorderSt.Track, &(VoiceRecorderSt.Voice.CountOfSavedArray));
-        RestoreArrayFromFlash(VoiceRecorderSt.Track, VoiceRecorderSt.ReadFromFlash, Buffer1);
+        W25q_RestoreDetail(VoiceRecorderSt.Voice.RecordedArray, VoiceRecorderSt.Track, &(VoiceRecorderSt.Voice.CountOfSavedArray));
+        W25q_RestoreArrayFromFlash(VoiceRecorderSt.Track, VoiceRecorderSt.ReadFromFlash, Buffer1);
         VoiceRecorderSt.PWM.CountDataFromTotally[VoiceRecorderSt.Track] = (uint32_t)((VoiceRecorderSt.Voice.CountOfSavedArray) * (VoiceArraySize));
     }
     else
@@ -44,7 +44,7 @@ void StartPlaying()
             if (dataReadyFlag == 0)
             {
                 VoiceRecorderSt.ReadFromFlash++;
-                RestoreArrayFromFlash(VoiceRecorderSt.Track, VoiceRecorderSt.ReadFromFlash, Buffer2);
+                W25q_RestoreArrayFromFlash(VoiceRecorderSt.Track, VoiceRecorderSt.ReadFromFlash, Buffer2);
                 dataReadyFlag = 1;
             }
         }

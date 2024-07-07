@@ -18,7 +18,7 @@ void PrepareToRecord()
   PalyLedOn();
   if (VoiceRecorderSt.Voice.RecordedArray[VoiceRecorderSt.Track] == 1)
   {
-    RemoveVoice(VoiceRecorderSt.Voice.RecordedArray, VoiceRecorderSt.Track);
+    W25q_RemoveVoice(VoiceRecorderSt.Voice.RecordedArray, VoiceRecorderSt.Track);
   }
   PlayLedOff();
   RecordLedOn();
@@ -31,19 +31,19 @@ void PrepareToRecord()
 void StartRecording()
 {
   PrepareToRecord();
-  while (1)
+  while (true)
   {
     if (VoiceRecorderSt.Flag.AdcArrayFull == 1)
     {
       ConversionADCValueToPWMDuty(Buffer1);
-      save_2k_array(VoiceRecorderSt.Track, VoiceRecorderSt.Voice.CountOfSavedArray, Buffer1);
+      W25q_SaveBufferArray(VoiceRecorderSt.Track, VoiceRecorderSt.Voice.CountOfSavedArray, Buffer1);
       VoiceRecorderSt.Voice.CountOfSavedArray++;
       VoiceRecorderSt.Flag.AdcArrayFull = 0;
     }
     if (VoiceRecorderSt.ADC.StopTimeCounter >= (VoiceRecorderSt.ADC.TotallyStopTim + 1))
     {
       VoiceRecorderSt.Voice.RecordedArray[VoiceRecorderSt.Track] = 1;
-      SaveDetail(VoiceRecorderSt.Voice.RecordedArray, VoiceRecorderSt.Track, VoiceRecorderSt.Voice.CountOfSavedArray);
+      W25q_SaveDetail(VoiceRecorderSt.Voice.RecordedArray, VoiceRecorderSt.Track, VoiceRecorderSt.Voice.CountOfSavedArray);
       break;
     }
   }

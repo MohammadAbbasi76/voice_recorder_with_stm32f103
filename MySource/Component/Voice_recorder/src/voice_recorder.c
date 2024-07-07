@@ -40,7 +40,7 @@ void VoiceRecorder()
 }
 void RestoreInformationFromFlash()
 {
-  RestoreDetail(VoiceRecorderSt.Voice.RecordedArray, VoiceRecorderSt.Track, &(VoiceRecorderSt.Voice.CountOfSavedArray));
+  W25q_RestoreDetail(VoiceRecorderSt.Voice.RecordedArray, VoiceRecorderSt.Track, &(VoiceRecorderSt.Voice.CountOfSavedArray));
   if (VoiceRecorderSt.Voice.RecordedArray[0] == 255)
   {
     VoiceRecorderSt.Track = 0;
@@ -64,7 +64,7 @@ void VoiceRecorderInitiation()
   memset(VoiceRecorderSt.PWM.CountDataFromTotally, 0x0, sizeof(VoiceRecorderSt.PWM.CountDataFromTotally));
   memset(VoiceRecorderSt.Voice.RecordedArray, 0x0, sizeof(VoiceRecorderSt.Voice.RecordedArray));
   HAL_ADCEx_Calibration_Start(&hadc1);
-  TestingFlash();
+  W25q_TestingFlash();
   // W25qxx_EraseChip();
   RestoreInformationFromFlash();
   VoiceRecorderSt.Track = 1;
@@ -75,7 +75,7 @@ void RestFactoryFunction()
 {
   HAL_GPIO_WritePin(GPIOB, Record_LED_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(GPIOB, Play_LED_Pin, GPIO_PIN_SET);
-  TestingFlash();
+  W25q_TestingFlash();
   W25qxx_EraseChip();
   VoiceRecorderInitiation();
   HAL_GPIO_WritePin(GPIOB, Record_LED_Pin, GPIO_PIN_RESET);
