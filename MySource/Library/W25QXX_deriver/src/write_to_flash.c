@@ -1,7 +1,7 @@
 #include "main.h"
 #include "w25qxx.h"
-#define sector_needs (MaxNumberOfVoice * SampleRate) / VoiceArraySize
-#define detail_sector ((sector_needs + 1) * MaxNumberOfVoice) // some data include the number of voice and .... save in this sector
+#define Sectors (MaxNumberOfVoice * SampleRate) / VoiceArraySize
+#define detail_sector ((Sectors + 1) * MaxNumberOfVoice) // some data include the number of voice and .... save in this sector
 /**   every page
      in w25q have 256Byte size and every sector in w25q
      have 4KByte size ,
