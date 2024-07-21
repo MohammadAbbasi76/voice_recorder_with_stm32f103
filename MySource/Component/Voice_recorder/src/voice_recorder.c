@@ -30,6 +30,24 @@ void VoiceRecorder()
     VoiceRecorderSt.State = ReadKeyboardState;
     break;
   }
+  case StopPlayingState:
+  {
+    StopPlaying();
+    VoiceRecorderSt.State = ReadKeyboardState;
+    break;
+  }
+  case StopRecordingState:
+  {
+    StopRecording();
+    VoiceRecorderSt.State = ReadKeyboardState;
+    break;
+  }
+  case NextTrackState:
+  {
+    NextTrack();
+    VoiceRecorderSt.State = ReadKeyboardState;
+    break;
+  }
   case FlashEraseState:
   {
     RestFactoryFunction();
@@ -37,6 +55,15 @@ void VoiceRecorder()
     break;
   }
   }
+}
+void NextTrack()
+{
+    VoiceRecorderSt.Track++;
+    if (VoiceRecorderSt.Track > (MaxNumberOfVoice - 1))
+    {
+        VoiceRecorderSt.Track = 1;
+    }
+    SevenSegmentDisplay(VoiceRecorderSt.Track);
 }
 void RestoreInformationFromFlash()
 {

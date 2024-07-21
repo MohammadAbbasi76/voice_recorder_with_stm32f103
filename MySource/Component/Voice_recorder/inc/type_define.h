@@ -24,6 +24,9 @@ typedef enum
     RecordState,
     PlayState,
     PauseState,
+    StopRecordingState,
+    StopPlayingState,
+    NextTrackState,
     ReadKeyboardState,
     FlashEraseState
 } state_t;

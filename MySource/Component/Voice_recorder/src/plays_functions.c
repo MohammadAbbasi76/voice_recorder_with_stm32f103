@@ -16,7 +16,7 @@ void PrepareToPlay()
     {
         memset(Buffer1, 0x0, VoiceArraySize);
         memset(Buffer2, 0x0, VoiceArraySize);
-        StopPlaying();
+        StopPlayingState();
     }
 }
 void StopPlaying()
