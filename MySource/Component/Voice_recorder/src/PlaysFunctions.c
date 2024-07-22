@@ -1,5 +1,10 @@
 #include "PlaysFunctions.h"
 
+/**
+ * @brief Prepares the system for playback.
+ * This function initializes flags and buffers, and restores data from flash memory if a track is recorded.
+ * @return void
+ */
 void PrepareToPlay()
 {
     VoiceRecorderSt.Flag.InterruptSwitch = 0;
@@ -19,6 +24,12 @@ void PrepareToPlay()
         StopPlaying();
     }
 }
+
+/**
+ * @brief Stops the playback.
+ * This function stops the timers and PWM, and sets the read position to the end of the saved data.
+ * @return void
+ */
 void StopPlaying()
 {
     HAL_TIM_Base_Stop_IT(&htim2);
@@ -26,6 +37,12 @@ void StopPlaying()
     VoiceRecorderSt.ReadFromFlash = VoiceRecorderSt.Voice.CountOfSavedArray;
 }
 
+/**
+ * @brief Starts the playback process.
+ * This function turns on the playback LED, prepares the system for playback, starts timers and PWM, 
+ * and manages buffer switching during playback.
+ * @return void
+ */
 void StartPlaying()
 {
     PalyLedOn();
@@ -65,6 +82,11 @@ void StartPlaying()
     PlayLedOff();
 }
 
+/**
+ * @brief Generates the PWM wave for playback.
+ * This function sets the PWM compare value based on the buffer and updates the buffer status.
+ * @return void
+ */
 void MakePwmWave()
 {
     if (VoiceRecorderSt.Flag.PwmArrayEmpty == 0)
@@ -80,6 +102,12 @@ void MakePwmWave()
     }
 }
 
+/**
+ * @brief Converts ADC values to PWM duty cycle values.
+ * This function converts an array of ADC values to corresponding PWM duty cycle values.
+ * @param val Pointer to the array of ADC values.
+ * @return void
+ */
 void ConversionADCValueToPWMDuty(uint16_t *val)
 {
     uint32_t Temp = 0;
