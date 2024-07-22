@@ -1,4 +1,4 @@
-#include "SevenSegmentAnd_LEDS.h.h"
+#include "SevenSegmentAnd_LEDS.h"
 void Blinking()
 {
   for (uint8_t i = 0; i < 3; i++)

@@ -31,7 +31,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-#include "VoiceRecorder.h"
+#include "VoiceRecorderInterface.h"
 #include "ReadKeyboard.h"
 /* USER CODE END PTD */
 

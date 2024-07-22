@@ -4,8 +4,8 @@
   "files.associations": {
     "PlaysFunctions.h": "c",
     "RecordFunctions.h": "c",
-    "SevenSegmentAnd_LEDS.h.h": "c",
-    "VoiceRecorder.h": "c",
+    "SevenSegmentAnd_LEDS.h": "c",
+    "VoiceRecorderInterface.h": "c",
     "stdbool.h": "c",
     "string.h": "c",
     "TypeDefine.h": "c",
@@ -17,7 +17,8 @@
     "tim.h": "c",
     "adc.h": "c",
     "stm32f1xx_hal_gpio.h": "c",
-    "usart.h": "c"
+    "usart.h": "c",
+    "stm_log.h": "c"
   },
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#65c89b",
