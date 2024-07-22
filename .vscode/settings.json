@@ -9,7 +9,8 @@
     "stdbool.h": "c",
     "string.h": "c",
     "type_define.h": "c",
-    "read_keyboard.h": "c"
+    "read_keyboard.h": "c",
+    "compare": "c"
   },
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#65c89b",

@@ -7,9 +7,9 @@
 #include"record_functions.h"
 #include"plays_functions.h"
 
-#define DefaultDebounceTime 300 // in millis
+#define DEBOUNCE_DELAY 50 // Debounce delay in milliseconds
+#define PRESS_DELAY 5000  // Press delay in milliseconds (5 seconds)
 
-uint16_t ReadKeyBoard(void);
 void KeyBoard();
-void PauseKey(uint16_t InputKey);
+
 #endif

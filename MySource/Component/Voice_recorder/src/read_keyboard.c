@@ -1,51 +1,17 @@
 #include "read_keyboard.h"
 
-
-
-#define DEBOUNCE_DELAY 50 // Debounce delay in milliseconds
-#define PRESS_DELAY 5000  // Press delay in milliseconds (5 seconds)
-
-void HandleKey1Press(uint32_t *timer)
+uint16_t HandleKey1Press(uint32_t DebounceTime)
 {
-    if (ReadKeyBoard() == Pause_Key_Pin)
+    static uint32_t timer;
+    timer += DebounceTime;
+    if (timer >= PRESS_DELAY)
     {
-        *timer += DEBOUNCE_DELAY;
-        if (*timer >= PRESS_DELAY)
-        {
-            VoiceRecorderSt.State = FlashEraseState;
-            *timer = 0; // Reset the timer to prevent immediate toggle
-        }
-        else
-        {
-            PauseKey();
-        }
+        VoiceRecorderSt.State = FlashEraseState;
+        timer = 0;
+        return true;
     }
+    return false;
 }
-void KeyBoard()
-{
-    uint16_t KeysPressed;
-    ReadKeyBoard();
-    if (DebounceTime < HAL_GetTick())
-    {
-        if (KeysPressed == Pause_Key_Pin)
-        {
-            PauseKey();
-        }
-        if (KeysPressed == Play_Key_Pin)
-        {
-            VoiceRecorderSt.State = PlayState;
-        }
-        if (KeysPressed == Record_Key_Pin)
-        {
-            VoiceRecorderSt.State == RecordState;
-        }
-        if (KeysPressed == Next_Key_Pin)
-        {
-           VoiceRecorderSt.State =NextTrackState;
-        }
-    }
-}
-
 uint16_t ReadKeyBoard(void)
 {
     uint16_t KeyPressed = 0;
@@ -87,6 +53,44 @@ void PauseKey()
     }
     if (VoiceRecorderSt.State == RecordState)
     {
-        VoiceRecorderSt.State = StopRecording;
+        VoiceRecorderSt.State = StopRecordingState;
     }
+}
+
+void KeyBoard()
+{
+    uint16_t KeysPressed;
+    static uint32_t DebounceTime;
+    KeysPressed = ReadKeyBoard();
+    if (KeysPressed != 0)
+    {
+        if (DebounceTime >= (6 * DEBOUNCE_DELAY))
+        {
+            if (KeysPressed == Pause_Key_Pin)
+            {
+                PauseKey();
+                DebounceTime = 0;
+            }
+            else if (KeysPressed == Play_Key_Pin)
+            {
+                VoiceRecorderSt.State = PlayState;
+                DebounceTime = 0;
+            }
+            else if (KeysPressed == Record_Key_Pin)
+            {
+                VoiceRecorderSt.State == RecordState;
+                DebounceTime = 0;
+            }
+            else if (KeysPressed == Next_Key_Pin)
+            {
+                VoiceRecorderSt.State = NextTrackState;
+            }
+            else if (KeysPressed == Pause_Key_Pin | Next_Key_Pin)
+            {
+                if (HandleKey1Press(DebounceTime))
+                    DebounceTime = 0;
+            }
+        }
+    }
+    DebounceTime += DEBOUNCE_DELAY;
 }
