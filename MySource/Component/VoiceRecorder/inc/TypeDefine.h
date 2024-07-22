@@ -10,7 +10,6 @@
 #include "usart.h"
 #include "stm32f1xx_hal_gpio.h"
 
-#include "VoiceRecorderInterface.h"
 #include "RecordFunctions.h"
 #include "PlaysFunctions.h"
 #include "WriteToFlash.h"
