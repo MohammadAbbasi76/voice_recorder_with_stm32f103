@@ -1,6 +1,5 @@
 #include "voice_recorder.h"
 
-uint32_t timing_1 = 0;
 
 void VoiceRecorder()
 {
@@ -92,7 +91,6 @@ void VoiceRecorderInitiation()
   memset(VoiceRecorderSt.Voice.RecordedArray, 0x0, sizeof(VoiceRecorderSt.Voice.RecordedArray));
   HAL_ADCEx_Calibration_Start(&hadc1);
   W25q_TestingFlash();
-  // W25qxx_EraseChip();
   RestoreInformationFromFlash();
   VoiceRecorderSt.Track = 1;
   Blinking();

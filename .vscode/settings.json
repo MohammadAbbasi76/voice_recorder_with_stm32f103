@@ -10,7 +10,8 @@
     "string.h": "c",
     "type_define.h": "c",
     "read_keyboard.h": "c",
-    "compare": "c"
+    "compare": "c",
+    "stdarg.h": "c"
   },
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#65c89b",
