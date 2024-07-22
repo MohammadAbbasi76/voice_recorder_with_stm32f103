@@ -26,7 +26,7 @@ void StopPlaying();
  * @param val Pointer to the array of ADC values.
  * @return void
  */
-void ConversionADCValueToPWMDuty(uint16_t *val);
+void ConversionADCValueToPWMDuty(uint16_t *Array);
 
 /**
  * @brief Generates the PWM wave for playback.

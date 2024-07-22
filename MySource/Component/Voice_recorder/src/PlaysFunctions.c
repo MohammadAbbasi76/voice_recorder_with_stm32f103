@@ -105,20 +105,20 @@ void MakePwmWave()
 /**
  * @brief Converts ADC values to PWM duty cycle values.
  * This function converts an array of ADC values to corresponding PWM duty cycle values.
- * @param val Pointer to the array of ADC values.
+ * @param Array Pointer to the array of ADC values.
  * @return void
  */
-void ConversionADCValueToPWMDuty(uint16_t *val)
+void ConversionADCValueToPWMDuty(uint16_t *Array)
 {
     uint32_t Temp = 0;
     uint32_t PWM_ARR = __HAL_TIM_GET_AUTORELOAD(&htim3);
     for (int i = 0; i < VoiceArraySize; i++)
     {
-        Temp = val[i];
+        Temp = Array[i];
         Temp = (Temp * 1000) / 4095;
         //        Temp=100-Temp;
         Temp = (PWM_ARR)*Temp;
         Temp = Temp / 1000;
-        val[i] = (uint16_t)(Temp);
+        Array[i] = (uint16_t)(Temp);
     }
 }
