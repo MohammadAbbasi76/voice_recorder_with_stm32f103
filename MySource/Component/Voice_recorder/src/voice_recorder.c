@@ -58,12 +58,12 @@ void VoiceRecorder()
 }
 void NextTrack()
 {
-    VoiceRecorderSt.Track++;
-    if (VoiceRecorderSt.Track > (MaxNumberOfVoice - 1))
-    {
-        VoiceRecorderSt.Track = 1;
-    }
-    SevenSegmentDisplay(VoiceRecorderSt.Track);
+  VoiceRecorderSt.Track++;
+  if (VoiceRecorderSt.Track > (MaxNumberOfVoice - 1))
+  {
+    VoiceRecorderSt.Track = 1;
+  }
+  SevenSegmentDisplay(VoiceRecorderSt.Track);
 }
 void RestoreInformationFromFlash()
 {

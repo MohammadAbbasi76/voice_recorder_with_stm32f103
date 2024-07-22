@@ -45,7 +45,7 @@ uint16_t ReadKeyBoard(void)
     }
 }
 
-void PauseKey()
+void PauseKey(void)
 {
     if (VoiceRecorderSt.State == PlayState)
     {
@@ -57,7 +57,7 @@ void PauseKey()
     }
 }
 
-void KeyBoard()
+void KeyBoard(void)
 {
     uint16_t KeysPressed;
     static uint32_t DebounceTime;
