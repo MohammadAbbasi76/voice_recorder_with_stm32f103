@@ -1,6 +1,12 @@
 #include "ReadKeyboard.h"
 
-uint16_t HandleKey1Press(uint32_t DebounceTime)
+/**
+ * @brief Handles the press of Key 1 with debounce.
+ * This function manages the debounce timing for Key 1 and updates the recorder state if the key press is confirmed.
+ * @param DebounceTime Time elapsed since the last key press in milliseconds.
+ * @return uint16_t Returns true if the key press is valid, false otherwise.
+ */
+uint16_t ChangeMode(uint32_t DebounceTime)
 {
     static uint32_t timer;
     timer += DebounceTime;
@@ -12,6 +18,12 @@ uint16_t HandleKey1Press(uint32_t DebounceTime)
     }
     return false;
 }
+
+/**
+ * @brief Reads the state of the keyboard.
+ * This function reads the state of multiple keys and returns the state of the pressed key.
+ * @return uint16_t Returns the pin number of the pressed key or 0 if no key is pressed.
+ */
 uint16_t ReadKeyBoard(void)
 {
     uint16_t KeyPressed = 0;
@@ -45,6 +57,11 @@ uint16_t ReadKeyBoard(void)
     }
 }
 
+/**
+ * @brief Handles the pause key functionality.
+ * This function updates the recorder state when the pause key is pressed, stopping playback or recording as needed.
+ * @return void
+ */
 void PauseKey(void)
 {
     if (VoiceRecorderSt.State == PlayState)
@@ -57,6 +74,11 @@ void PauseKey(void)
     }
 }
 
+/**
+ * @brief Main keyboard handler.
+ * This function reads key presses, manages debounce, and updates the recorder state based on the pressed key.
+ * @return void
+ */
 void KeyBoard(void)
 {
     uint16_t KeysPressed;
@@ -87,7 +109,7 @@ void KeyBoard(void)
             }
             else if (KeysPressed == Pause_Key_Pin | Next_Key_Pin)
             {
-                if (HandleKey1Press(DebounceTime))
+                if (ChangeMode(DebounceTime))
                     DebounceTime = 0;
             }
         }
