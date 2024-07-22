@@ -1,7 +1,7 @@
 #ifndef _PALYS_FUNCTIONS_H
 #define _PALYS_FUNCTIONS_H
 
-#include "type_define.h"
+#include "TypeDefine.h"
 
 
 

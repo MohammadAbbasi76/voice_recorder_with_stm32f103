@@ -10,14 +10,14 @@
 #include "usart.h"
 #include "stm32f1xx_hal_gpio.h"
 
-#include "voice_recorder.h"
-#include "record_functions.h"
-#include "plays_functions.h"
-#include "write_to_flash.h"
+#include "VoiceRecorder.h"
+#include "RecordFunctions.h"
+#include "PlaysFunctions.h"
+#include "WriteToFlash.h"
 
 #include "w25qxx.h"
-#include "read_keyboard.h"
-#include "seven_segment_and_LEDS.h"
+#include "ReadKeyboard.h"
+#include "SevenSegmentAnd_LEDS.h.h"
 #include "STM_Log.h"
 
 #define StopTimeInSec 10

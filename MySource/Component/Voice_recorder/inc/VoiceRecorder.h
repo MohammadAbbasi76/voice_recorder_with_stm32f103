@@ -1,7 +1,7 @@
 #ifndef VOICE_RECORDER_H
 #define VOICE_RECORDER_H
 
-#include"type_define.h"
+#include"TypeDefine.h"
 
 
 

@@ -1,4 +1,4 @@
-#include "plays_functions.h"
+#include "PlaysFunctions.h"
 
 void PrepareToPlay()
 {
