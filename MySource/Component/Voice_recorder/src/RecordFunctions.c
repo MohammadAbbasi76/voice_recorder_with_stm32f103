@@ -15,12 +15,6 @@ void AdcConfigForRecord()
 void PrepareToRecord()
 {
   RecordLedOn();
-  // PalyLedOn();
-  // if (VoiceRecorderSt.Voice.RecordedArray[VoiceRecorderSt.Track] == 1)
-  // {
-    // W25q_RemoveVoice(VoiceRecorderSt.Voice.RecordedArray, VoiceRecorderSt.Track);
-  // }
-  // PlayLedOff();
   RecordLedOn();
   AdcConfigForRecord();
   VoiceRecorderSt.Flag.InterruptSwitch = 1;
