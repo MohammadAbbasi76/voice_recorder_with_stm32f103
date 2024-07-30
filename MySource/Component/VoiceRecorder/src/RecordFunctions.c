@@ -1,10 +1,21 @@
-#include "record_functions.h"
+#include "RecordFunctions.h"
 
+/**
+ * @brief Stops the recording process.
+ * This function stops the recording timer and updates the stop time counter.
+ * @return void
+ */
 void StopRecording()
 {
   HAL_TIM_Base_Stop_IT(&htim2);
   VoiceRecorderSt.ADC.StopTimeCounter = (VoiceRecorderSt.ADC.TotallyStopTim + 2);
 }
+
+/**
+ * @brief Configures ADC for recording.
+ * This function initializes and calibrates the ADC, then starts it and waits for conversion.
+ * @return void
+ */
 void AdcConfigForRecord()
 {
   MX_ADC1_Init();
@@ -12,15 +23,15 @@ void AdcConfigForRecord()
   HAL_ADC_Start(&hadc1);
   HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
 }
+
+/**
+ * @brief Prepares the system to start recording.
+ * This function turns on the recording LED, configures ADC, and sets initial recording state.
+ * @return void
+ */
 void PrepareToRecord()
 {
   RecordLedOn();
-  PalyLedOn();
-  if (VoiceRecorderSt.Voice.RecordedArray[VoiceRecorderSt.Track] == 1)
-  {
-    RemoveVoice(VoiceRecorderSt.Voice.RecordedArray, VoiceRecorderSt.Track);
-  }
-  PlayLedOff();
   RecordLedOn();
   AdcConfigForRecord();
   VoiceRecorderSt.Flag.InterruptSwitch = 1;
@@ -28,22 +39,28 @@ void PrepareToRecord()
   VoiceRecorderSt.Flag.AdcArrayFull = 0;
   HAL_TIM_Base_Start_IT(&htim2);
 }
+
+/**
+ * @brief Starts the recording process.
+ * This function prepares the system to record and enters a loop to handle ADC sampling and data storage.
+ * @return void
+ */
 void StartRecording()
 {
   PrepareToRecord();
-  while (1)
+  while (true)
   {
     if (VoiceRecorderSt.Flag.AdcArrayFull == 1)
     {
       ConversionADCValueToPWMDuty(Buffer1);
-      save_2k_array(VoiceRecorderSt.Track, VoiceRecorderSt.Voice.CountOfSavedArray, Buffer1);
+      W25q_SaveBufferArray(VoiceRecorderSt.Track, VoiceRecorderSt.Voice.CountOfSavedArray, Buffer1);
       VoiceRecorderSt.Voice.CountOfSavedArray++;
       VoiceRecorderSt.Flag.AdcArrayFull = 0;
     }
     if (VoiceRecorderSt.ADC.StopTimeCounter >= (VoiceRecorderSt.ADC.TotallyStopTim + 1))
     {
       VoiceRecorderSt.Voice.RecordedArray[VoiceRecorderSt.Track] = 1;
-      SaveDetail(VoiceRecorderSt.Voice.RecordedArray, VoiceRecorderSt.Track, VoiceRecorderSt.Voice.CountOfSavedArray);
+      W25q_SaveDetail(VoiceRecorderSt.Voice.RecordedArray, VoiceRecorderSt.Track, VoiceRecorderSt.Voice.CountOfSavedArray);
       break;
     }
   }
@@ -53,6 +70,12 @@ void StartRecording()
   HAL_ADC_Stop(&hadc1);
   RecordLedOff();
 }
+
+/**
+ * @brief Handles ADC sampling.
+ * This function samples ADC values, updates buffers, and sets flags when buffers are full.
+ * @return void
+ */
 void ADC_Sampling()
 {
   if (VoiceRecorderSt.ADC.StopTimeCounter == VoiceRecorderSt.ADC.TotallyStopTim)

@@ -31,8 +31,8 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-#include "voice_recorder.h"
-#include"read_keyboard.h"
+#include "VoiceRecorderInterface.h"
+#include "ReadKeyboard.h"
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -44,7 +44,6 @@
 /* USER CODE BEGIN PM */
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
-
 
 /* USER CODE END PM */
 
@@ -100,7 +99,6 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 
- 
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -164,7 +162,8 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-  ReadKeyBoard(GPIO_Pin);
+  //  ReadKeyBoard(GPIO_Pin);
+  PauseKey(GPIO_Pin);
 }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)

@@ -9,8 +9,8 @@ extern "C"
 
 #include <stdbool.h>
 #include "main.h"
-#include"write_to_flash.h"
-#include"type_define.h"
+#include"WriteToFlash.h"
+#include"TypeDefine.h"
 	typedef enum
 	{
 		W25Q10 = 1,
